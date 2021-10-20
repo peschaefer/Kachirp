@@ -31,7 +31,14 @@ public class TriviaParserTest {
 
     @Test
     public void getQuestion1CorrectAnswer(){
-        String correctAnswer = parser.parseForCorrectAnswer(triviaData);
+        String correctAnswer = parser.parseForCorrectAnswer(triviaData,0);
         Assertions.assertEquals("Tehran",correctAnswer);
     }
+
+    @Test
+    public void getQuestion2CorrectAnswer(){
+        String correctAnswer = parser.parseForCorrectAnswer(triviaData,1);
+        Assertions.assertEquals("The Searchers\u00a0",correctAnswer);
+    }
+
 }

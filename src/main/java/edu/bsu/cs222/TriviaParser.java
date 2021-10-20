@@ -7,7 +7,7 @@ public class TriviaParser {
         return JsonPath.read(triviaData,"$.[" + questionIndex + "].question");
     }
 
-    public String parseForCorrectAnswer(String triviaData) {
-        return JsonPath.read(triviaData,"$.[0].correctAnswer");
+    public String parseForCorrectAnswer(String triviaData, int questionIndex) {
+        return JsonPath.read(triviaData,"$.[" + questionIndex + "].correctAnswer");
     }
 }
