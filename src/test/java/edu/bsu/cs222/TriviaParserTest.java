@@ -41,4 +41,9 @@ public class TriviaParserTest {
         Assertions.assertEquals("The Searchers\u00a0",correctAnswer);
     }
 
+    @Test
+    public void getQuestion1IncorrectAnswer1(){
+        String[] incorrectAnswers = parser.parseForIncorrectAnswers(triviaData);
+        Assertions.assertEquals("Isfahan",incorrectAnswers[0]);
+    }
 }

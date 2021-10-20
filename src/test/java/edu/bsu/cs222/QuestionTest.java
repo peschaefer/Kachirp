@@ -24,6 +24,4 @@ public class QuestionTest {
                 "Brown");
         Assertions.assertEquals("Red",testQuestion.getIncorrectAnswers()[0]);
     }
-
-
 }
