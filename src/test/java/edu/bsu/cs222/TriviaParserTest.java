@@ -1,7 +1,6 @@
 package edu.bsu.cs222;
 
 import com.jayway.jsonpath.JsonPath;
-import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -43,7 +42,13 @@ public class TriviaParserTest {
 
     @Test
     public void getQuestion1IncorrectAnswer1(){
-        String[] incorrectAnswers = parser.parseForIncorrectAnswers(triviaData);
+        String[] incorrectAnswers = parser.parseForIncorrectAnswers(triviaData,0);
         Assertions.assertEquals("Isfahan",incorrectAnswers[0]);
+    }
+
+    @Test
+    public void getQuestion1IncorrectAnswer2(){
+        String[] incorrectAnswers = parser.parseForIncorrectAnswers(triviaData,1);
+        Assertions.assertEquals("The Lookers",incorrectAnswers[0]);
     }
 }
