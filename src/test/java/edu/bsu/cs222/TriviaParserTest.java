@@ -12,14 +12,26 @@ public class TriviaParserTest {
 
     InputStream testDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
     String triviaData = JsonPath.read(testDataStream,"$..*").toString();
+    TriviaParser parser = new TriviaParser();
 
     public TriviaParserTest() throws IOException {
     }
 
     @Test
     public void getQuestion1Text(){
-        TriviaParser parser = new TriviaParser();
-        String questionText = parser.parseForQuestionText(triviaData);
+        String questionText = parser.parseForQuestionText(triviaData,0);
         Assertions.assertEquals("What is the capital of Iran?",questionText);
+    }
+
+    @Test
+    public void getQuestion2Text(){
+        String questionText = parser.parseForQuestionText(triviaData,1);
+        Assertions.assertEquals("Who had a number 1 record in 1963 with Sweets For My Sweet?",questionText);
+    }
+
+    @Test
+    public void getQuestion1CorrectAnswer(){
+        String correctAnswer = parser.parseForCorrectAnswer(triviaData);
+        Assertions.assertEquals("Tehran",correctAnswer);
     }
 }
