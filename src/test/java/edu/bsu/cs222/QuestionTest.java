@@ -24,4 +24,14 @@ public class QuestionTest {
                 "Brown");
         Assertions.assertEquals("Red",testQuestion.getIncorrectAnswers()[0]);
     }
+
+    @Test
+    public void testForQuestionText(){
+        Question testQuestion = new Question("What is the color of the sky?",
+                "Blue" ,
+                "Red" ,
+                "Green" ,
+                "Brown");
+        Assertions.assertEquals("What is the color of the sky?",testQuestion.getQuestionText());
+    }
 }
