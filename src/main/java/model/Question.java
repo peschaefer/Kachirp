@@ -1,4 +1,4 @@
-package edu.bsu.cs222;
+package model;
 
 public class Question {
     String questionText;
