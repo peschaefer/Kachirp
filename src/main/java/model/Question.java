@@ -9,13 +9,13 @@ public class Question {
     int correctAnswerIndex;
     Random random = new Random();
 
-    public Question(String questionText,String correctAnswer,String incorrectAnswer1,String incorrectAnswer2, String incorrectAnswer3) {
+    public Question(String questionText,String correctAnswer,String[] incorrectAnswers) {
         this.questionText = questionText;
 //        this.correctAnswer = correctAnswer;
 //        this.incorrectAnswer1 = incorrectAnswer1;
 //        this.incorrectAnswer2 = incorrectAnswer2;
 //        this.incorrectAnswer3 = incorrectAnswer3;
-        correctAnswerIndex = randomizeAnswerChoices(correctAnswer,incorrectAnswer1,incorrectAnswer2,incorrectAnswer3);
+        correctAnswerIndex = randomizeAnswerChoices(correctAnswer,incorrectAnswers[0],incorrectAnswers[1],incorrectAnswers[2]);
     }
 
     private int randomizeAnswerChoices(String correct, String incorrect1,String incorrect2,String incorrect3) {
