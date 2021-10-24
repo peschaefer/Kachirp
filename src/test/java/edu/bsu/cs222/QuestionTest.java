@@ -12,7 +12,9 @@ public class QuestionTest {
             "Red",
             "Green",
             "Brown");
-        Assertions.assertEquals("Blue", testQuestion.getCorrectAnswer());
+        int index = testQuestion.getCorrectAnswerIndex();
+        //System.out.println(index);
+        Assertions.assertEquals("Blue", testQuestion.getAnswers()[index]);
     }
 
     @Test
@@ -22,7 +24,9 @@ public class QuestionTest {
                 "Red",
                 "Green",
                 "Brown");
-        Assertions.assertEquals("Red", testQuestion.getIncorrectAnswers()[0]);
+        int index = testQuestion.getCorrectAnswerIndex();
+        //System.out.println(index);
+        Assertions.assertNotEquals("Red", testQuestion.getAnswers()[index]);
     }
 
     @Test
