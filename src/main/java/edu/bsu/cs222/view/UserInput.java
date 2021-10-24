@@ -1,4 +1,4 @@
-package view;
+package edu.bsu.cs222.view;
 
 import java.util.Scanner;
 

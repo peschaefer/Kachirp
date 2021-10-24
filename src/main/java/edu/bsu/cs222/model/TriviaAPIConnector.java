@@ -1,4 +1,4 @@
-package model;
+package edu.bsu.cs222.model;
 
 import java.io.BufferedReader;
 import java.io.EOFException;
@@ -19,9 +19,10 @@ public class TriviaAPIConnector {
             connection.connect();
         }
         catch (ConnectException | EOFException | UnknownHostException connectionException) {
-            //Separate this view code out of the model code.
-            System.err.println("A network error has occurred");
-            System.exit(3);
+//            Separate this edu.bsu.cs222.view code out of the edu.bsu.cs222.model code.
+//            System.err.println("A network error has occurred");
+//            System.exit(3);
+            return "";
         }
         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 

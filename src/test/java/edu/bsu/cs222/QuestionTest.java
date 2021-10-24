@@ -1,6 +1,6 @@
 package edu.bsu.cs222;
 
-import model.Question;
+import edu.bsu.cs222.model.Question;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

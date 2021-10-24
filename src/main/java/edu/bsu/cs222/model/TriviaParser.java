@@ -1,4 +1,4 @@
-package model;
+package edu.bsu.cs222.model;
 
 import com.jayway.jsonpath.JsonPath;
 
