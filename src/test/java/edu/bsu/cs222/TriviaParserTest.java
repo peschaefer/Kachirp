@@ -54,8 +54,14 @@ public class TriviaParserTest {
     }
 
     @Test
-    public void addQuestionsTest(){
+    public void addQuestionsTest1(){
         parser.addQuestions(triviaData, 5);
         Assertions.assertEquals("What is the capital of Iran?",parser.getQuestionArrayList().get(0).getQuestionText());
+    }
+
+    @Test
+    public void addQuestionsTest2(){
+        parser.addQuestions(triviaData, 5);
+        Assertions.assertEquals("What is the second largest bone in the foot?",parser.getQuestionArrayList().get(4).getQuestionText());
     }
 }
