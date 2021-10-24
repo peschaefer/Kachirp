@@ -26,8 +26,15 @@ public class TriviaAPIConnector {
         }
         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
-        String inputLine = in.readLine();
+        StringBuilder triviaData = new StringBuilder();
+        while(true) {
+            String line = in.readLine();
+            if(line == null){
+                break;
+            }
+            triviaData.append(line);
+        }
         in.close();
-        return inputLine;
+        return triviaData.toString();
     }
 }
