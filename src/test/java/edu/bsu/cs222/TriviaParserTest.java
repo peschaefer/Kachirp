@@ -52,4 +52,10 @@ public class TriviaParserTest {
         String[] incorrectAnswers = parser.parseForIncorrectAnswers(triviaData,1);
         Assertions.assertEquals("The Lookers",incorrectAnswers[0]);
     }
+
+    @Test
+    public void addQuestionsTest(){
+        parser.addQuestions(triviaData, 5);
+        Assertions.assertEquals("What is the capital of Iran?",parser.getQuestionArrayList().get(0).getQuestionText());
+    }
 }
