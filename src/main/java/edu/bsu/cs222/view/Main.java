@@ -13,6 +13,7 @@ public class Main {
         TriviaParser parser = new TriviaParser();
         TriviaAPIConnector connector = new TriviaAPIConnector();
         String triviaData = connector.connectToApi("https://api.trivia.willfry.co.uk/questions?limit=5");
+        checkForValidConnection(triviaData);
         parser.addQuestions(triviaData, 5);
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 
@@ -25,6 +26,13 @@ public class Main {
             else{
                 System.out.println("\nYou are a failure, and you should feel bad.\n");
             }
+        }
+    }
+
+    private static void checkForValidConnection(String triviaData) {
+        if (triviaData.isEmpty()){
+            System.err.println("A network error has occurred");
+            System.exit(0);
         }
     }
 

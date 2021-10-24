@@ -19,9 +19,6 @@ public class TriviaAPIConnector {
             connection.connect();
         }
         catch (ConnectException | EOFException | UnknownHostException connectionException) {
-//            Separate this edu.bsu.cs222.view code out of the edu.bsu.cs222.model code.
-//            System.err.println("A network error has occurred");
-//            System.exit(3);
             return "";
         }
         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
