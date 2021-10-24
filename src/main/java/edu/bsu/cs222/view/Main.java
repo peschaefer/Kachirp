@@ -12,13 +12,18 @@ public class Main {
         TriviaParser parser = new TriviaParser();
         TriviaAPIConnector connector = new TriviaAPIConnector();
         String triviaData = connector.connectToApi("https://api.trivia.willfry.co.uk/questions?limit=5");
-//        System.out.println("**********");
-//        System.out.println(triviaData);
-//        System.out.println("**********");
         parser.addQuestions(triviaData, 5);
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
         for(int questionIndex = 0; questionIndex < 5; questionIndex++) {
-            System.out.println(questionArrayList.get(questionIndex).getQuestionText());
+            displayQuestionInformation(questionArrayList.get(questionIndex));
         }
+    }
+
+    private static void displayQuestionInformation(Question question){
+        System.out.println(question.getQuestionText()+"\n");
+        for(int index = 0;index < 4; index++) {
+            System.out.println(question.getAnswers()[index]);
+        }
+        System.out.println();
     }
 }

@@ -10,7 +10,6 @@ public class QuestionTest {
     public void testForCorrectAnswerResponse() {
         Question testQuestion = new Question("What is the color of the sky?", "Blue", incorrectAnswers);
         int index = testQuestion.getCorrectAnswerIndex();
-        //System.out.println(index);
         Assertions.assertEquals("Blue", testQuestion.getAnswers()[index]);
     }
 
@@ -18,7 +17,6 @@ public class QuestionTest {
     public void testForIncorrectAnswerResponse(){
         Question testQuestion = new Question("What is the color of the sky?", "Blue", incorrectAnswers);
         int index = testQuestion.getCorrectAnswerIndex();
-        //System.out.println(index);
         Assertions.assertNotEquals("Red", testQuestion.getAnswers()[index]);
     }
 
