@@ -27,12 +27,7 @@ public class Main {
                 questionIndex -= 1;
                 continue;
             }
-            if (userAnswer - 1 == questionArrayList.get(questionIndex).getCorrectAnswerIndex()){
-                System.out.println("\nGood Job! You got it right!\n");
-            }
-            else{
-                System.out.println("\nYou are a failure, and you should feel bad.\n");
-            }
+            checkAnswer(userAnswer,questionArrayList.get(questionIndex).getCorrectAnswerIndex());
         }
     }
 
@@ -49,5 +44,14 @@ public class Main {
             System.out.println(index+1+ ". " + question.getAnswers()[index]);
         }
         System.out.println();
+    }
+    private static void checkAnswer(int userAnswer, int correctAnswerIndex){
+        userAnswer -= 1;
+        if(userAnswer == correctAnswerIndex){
+            System.out.println("\nGood Job! You got it right!\n");
+        }
+        else{
+            System.out.println("\nYou are a failure, and you should feel bad.\n");
+        }
     }
 }
