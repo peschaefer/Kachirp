@@ -24,6 +24,8 @@ public class Main {
                 userAnswer = Integer.parseInt(userInput.getInput());
             }catch(NumberFormatException e){
                 System.out.println("\nThat is not a valid response.\n");
+                //Sets the question index back one and jumps back to the start of the loop.
+                //This allows the question to be printed again in the event that the user input is invalid i.e. not an int.
                 questionIndex -= 1;
                 continue;
             }
@@ -46,6 +48,7 @@ public class Main {
         System.out.println();
     }
     private static void checkAnswer(int userAnswer, int correctAnswerIndex){
+        //Since the code is numbered 0-3 and the user input is 1-4, it must be decreased by one to check correctness.
         userAnswer -= 1;
         if(userAnswer == correctAnswerIndex){
             System.out.println("\nGood Job! You got it right!\n");
