@@ -18,9 +18,16 @@ public class Main {
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 
         for(int questionIndex = 0; questionIndex < 5; questionIndex++) {
+            int userAnswer;
             displayQuestionInformation(questionArrayList.get(questionIndex));
-            int userAnswer = Integer.parseInt(userInput.getInput());
-            if (userAnswer-1 == questionArrayList.get(questionIndex).getCorrectAnswerIndex()){
+            try{
+                userAnswer = Integer.parseInt(userInput.getInput());
+            }catch(NumberFormatException e){
+                System.out.println("\nThat is not a valid response.\n");
+                questionIndex -= 1;
+                continue;
+            }
+            if (userAnswer - 1 == questionArrayList.get(questionIndex).getCorrectAnswerIndex()){
                 System.out.println("\nGood Job! You got it right!\n");
             }
             else{
