@@ -18,37 +18,37 @@ public class TriviaParserTest {
     }
 
     @Test
-    public void getQuestion1Text(){
+    public void getQuestion1TextTest(){
         String questionText = parser.parseForQuestionText(triviaData,0);
         Assertions.assertEquals("What is the capital of Iran?",questionText);
     }
 
     @Test
-    public void getQuestion2Text(){
+    public void getQuestion2TextTest(){
         String questionText = parser.parseForQuestionText(triviaData,1);
         Assertions.assertEquals("Who had a number 1 record in 1963 with Sweets For My Sweet?",questionText);
     }
 
     @Test
-    public void getQuestion1CorrectAnswer(){
+    public void getQuestion1CorrectAnswerTest(){
         String correctAnswer = parser.parseForCorrectAnswer(triviaData,0);
         Assertions.assertEquals("Tehran",correctAnswer);
     }
 
     @Test
-    public void getQuestion2CorrectAnswer(){
+    public void getQuestion2CorrectAnswerTest(){
         String correctAnswer = parser.parseForCorrectAnswer(triviaData,1);
         Assertions.assertEquals("The Searchers\u00a0",correctAnswer);
     }
 
     @Test
-    public void getQuestion1IncorrectAnswer1(){
+    public void getQuestion1IncorrectAnswer1Test(){
         String[] incorrectAnswers = parser.parseForIncorrectAnswers(triviaData,0);
         Assertions.assertEquals("Isfahan",incorrectAnswers[0]);
     }
 
     @Test
-    public void getQuestion1IncorrectAnswer2(){
+    public void getQuestion1IncorrectAnswer2Test(){
         String[] incorrectAnswers = parser.parseForIncorrectAnswers(triviaData,1);
         Assertions.assertEquals("The Lookers",incorrectAnswers[0]);
     }

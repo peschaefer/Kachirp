@@ -4,17 +4,12 @@ import java.util.Random;
 
 public class Question {
     String questionText;
-    //String correctAnswer;
     String[] answers = new String[4];
     int correctAnswerIndex;
     Random random = new Random();
 
     public Question(String questionText,String correctAnswer,String[] incorrectAnswers) {
         this.questionText = questionText;
-//        this.correctAnswer = correctAnswer;
-//        this.incorrectAnswer1 = incorrectAnswer1;
-//        this.incorrectAnswer2 = incorrectAnswer2;
-//        this.incorrectAnswer3 = incorrectAnswer3;
         correctAnswerIndex = randomizeAnswerChoices(correctAnswer,incorrectAnswers[0],incorrectAnswers[1],incorrectAnswers[2]);
     }
 
@@ -52,15 +47,9 @@ public class Question {
     public String[] getAnswers() {
         return answers;
     }
+
     public String getQuestionText() {
         return questionText;
     }
-//
-//    public String getCorrectAnswer() {
-//        return correctAnswer;
-//    }
-//
-//    public String[] getIncorrectAnswers() {
-//        return new String[]{incorrectAnswer1,incorrectAnswer2,incorrectAnswer3};
-//    }
+
 }
