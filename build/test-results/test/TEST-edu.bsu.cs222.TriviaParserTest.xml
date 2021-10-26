@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.bsu.cs222.TriviaParserTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-10-24T18:21:43" hostname="LAPTOP-L6S16H2U" time="0.047">
+<testsuite name="edu.bsu.cs222.TriviaParserTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-26T17:41:47" hostname="LAPTOP-L6S16H2U" time="0.04">
   <properties/>
-  <testcase name="getQuestion2CorrectAnswer()" classname="edu.bsu.cs222.TriviaParserTest" time="0.011"/>
-  <testcase name="getQuestion1CorrectAnswer()" classname="edu.bsu.cs222.TriviaParserTest" time="0.001"/>
-  <testcase name="getQuestion1IncorrectAnswer1()" classname="edu.bsu.cs222.TriviaParserTest" time="0.004"/>
-  <testcase name="getQuestion1IncorrectAnswer2()" classname="edu.bsu.cs222.TriviaParserTest" time="0.003"/>
-  <testcase name="getQuestion1Text()" classname="edu.bsu.cs222.TriviaParserTest" time="0.003"/>
-  <testcase name="getQuestion2Text()" classname="edu.bsu.cs222.TriviaParserTest" time="0.002"/>
+  <testcase name="getQuestion1IncorrectAnswer1Test()" classname="edu.bsu.cs222.TriviaParserTest" time="0.006"/>
+  <testcase name="getQuestion1IncorrectAnswer2Test()" classname="edu.bsu.cs222.TriviaParserTest" time="0.001"/>
+  <testcase name="getQuestion1CorrectAnswerTest()" classname="edu.bsu.cs222.TriviaParserTest" time="0.001"/>
+  <testcase name="getQuestion1TextTest()" classname="edu.bsu.cs222.TriviaParserTest" time="0.001"/>
+  <testcase name="addQuestionsTest1()" classname="edu.bsu.cs222.TriviaParserTest" time="0.005"/>
+  <testcase name="addQuestionsTest2()" classname="edu.bsu.cs222.TriviaParserTest" time="0.005"/>
+  <testcase name="getQuestion2CorrectAnswerTest()" classname="edu.bsu.cs222.TriviaParserTest" time="0.001"/>
+  <testcase name="getQuestion2TextTest()" classname="edu.bsu.cs222.TriviaParserTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

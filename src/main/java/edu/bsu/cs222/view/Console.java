@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Console {
-    QuestionFormatter formatter = new QuestionFormatter();
 
     public void runConsole() throws IOException {
+
 
         UserInput userInput = new UserInput();
         TriviaParser parser = new TriviaParser();
@@ -44,16 +44,22 @@ public class Console {
     }
 
     private void displayQuestionInformation (Question question){
+        QuestionFormatter formatter = new QuestionFormatter();
         System.out.println(formatter.formatQuestion(question));
     }
 
     private void checkAnswer ( int userAnswer, int correctAnswerIndex){
         //Since the index is numbered 0-3 and the user input is 1-4, it must be decremented to check correctness
+        int correctResponses = 0;
         userAnswer -= 1;
         if (userAnswer == correctAnswerIndex) {
             System.out.println("\nGood Job! You got it right!\n");
+            correctResponses+=1;
+
         } else {
             System.out.println("\nYou are a failure, and you should feel bad.\n");
         }
     }
+
+
 }
