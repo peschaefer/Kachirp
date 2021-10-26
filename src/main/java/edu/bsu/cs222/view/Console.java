@@ -31,6 +31,10 @@ public class Console {
                 System.out.println("\nThat is not a valid response.\n");
                 continue;
             }
+            if(userAnswer > 4 || userAnswer < 1){
+                System.out.println("\nPlease enter a number between 1 and 4.\n");
+                continue;
+            }
             checkAnswer(userAnswer, questionArrayList.get(questionIndex).getCorrectAnswerIndex());
             questionIndex++;
         }
