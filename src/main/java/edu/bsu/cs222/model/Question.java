@@ -10,7 +10,6 @@ public class Question {
 
     public Question(String questionText,String correctAnswer,String[] incorrectAnswers) {
         this.questionText = questionText;
-
         correctAnswerIndex = randomizeAnswerChoices(correctAnswer,incorrectAnswers[0],incorrectAnswers[1],incorrectAnswers[2]);
     }
 
@@ -48,6 +47,7 @@ public class Question {
     public String[] getAnswers() {
         return answers;
     }
+
     public String getQuestionText() {
         return questionText;
     }

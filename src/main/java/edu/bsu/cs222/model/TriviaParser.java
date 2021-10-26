@@ -31,6 +31,7 @@ public class TriviaParser {
             questionArrayList.add(question);
         }
     }
+
     public ArrayList<Question> getQuestionArrayList(){
         return questionArrayList;
     }
