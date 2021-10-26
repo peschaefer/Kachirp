@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Console {
+    int correctResponses = 0;
 
     public void runConsole() throws IOException {
-
 
         UserInput userInput = new UserInput();
         TriviaParser parser = new TriviaParser();
@@ -34,6 +34,8 @@ public class Console {
             checkAnswer(userAnswer, questionArrayList.get(questionIndex).getCorrectAnswerIndex());
             questionIndex++;
         }
+
+        displayPointTotal();
     }
 
     private void checkForValidConnection (String triviaData){
@@ -50,7 +52,6 @@ public class Console {
 
     private void checkAnswer ( int userAnswer, int correctAnswerIndex){
         //Since the index is numbered 0-3 and the user input is 1-4, it must be decremented to check correctness
-        int correctResponses = 0;
         userAnswer -= 1;
         if (userAnswer == correctAnswerIndex) {
             System.out.println("\nGood Job! You got it right!\n");
@@ -61,5 +62,7 @@ public class Console {
         }
     }
 
-
+    private void displayPointTotal(){
+        System.out.println("Point Total: " + correctResponses);
+    }
 }
