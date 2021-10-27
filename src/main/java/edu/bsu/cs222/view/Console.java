@@ -1,6 +1,7 @@
 package edu.bsu.cs222.view;
 
 import edu.bsu.cs222.model.Question;
+import edu.bsu.cs222.model.Timer;
 import edu.bsu.cs222.model.TriviaAPIConnector;
 import edu.bsu.cs222.model.TriviaParser;
 
@@ -15,6 +16,7 @@ public class Console {
         UserInput userInput = new UserInput();
         TriviaParser parser = new TriviaParser();
         TriviaAPIConnector connector = new TriviaAPIConnector();
+        Timer timer = new Timer();
 
         String triviaData = connector.connectToApi("https://api.trivia.willfry.co.uk/questions?limit=5");
         checkForValidConnection(triviaData);

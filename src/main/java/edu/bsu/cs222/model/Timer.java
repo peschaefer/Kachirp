@@ -31,11 +31,9 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class Timer {
 
 
-    public static void main(String[] args) {
-        runTimer();
-    }
+    //public static void main(String[] args) {runTimer();}
 
-    public static void runTimer(){
+    public void runTimer(){
         final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
         final Runnable timerRunner = new Runnable() {
