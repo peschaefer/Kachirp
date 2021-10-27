@@ -24,4 +24,10 @@ public class UrlBuilderTest {
         Assertions.assertEquals("https://api.trivia.willfry.co.uk/questions?categories=science,movies&limit=5",urlBuilder.BuildUrl("science,movies",5));
     }
 
+    @Test
+    public void buildUrlWithFoodAndDrinkTest(){
+        UrlBuilder urlBuilder = new UrlBuilder();
+        Assertions.assertEquals("https://api.trivia.willfry.co.uk/questions?categories=food_and_drink&limit=5",urlBuilder.BuildUrl("food and drink",5));
+    }
+
 }
