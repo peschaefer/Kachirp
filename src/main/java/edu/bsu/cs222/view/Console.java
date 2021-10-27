@@ -21,6 +21,8 @@ public class Console {
         parser.addQuestions(triviaData, 5);
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 
+        displayHeader();
+
         int questionIndex = 0;
         while (questionIndex < 5) {
             int userAnswer;
@@ -68,5 +70,16 @@ public class Console {
 
     private void displayPointTotal(){
         System.out.println("Point Total: " + correctResponses);
+    }
+
+    private void displayHeader(){
+        System.out.println(
+        """
+        +----------------------------------------+
+        |            Welcome to Kachirp!         |
+        |         To play, enter a number        |
+        |              1 through 4               |
+        +----------------------------------------+
+        """);
     }
 }
