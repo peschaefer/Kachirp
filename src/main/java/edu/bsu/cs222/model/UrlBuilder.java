@@ -5,7 +5,8 @@ public class UrlBuilder {
         if(categories.isEmpty()){
             return "https://api.trivia.willfry.co.uk/questions?limit="+numberOfQuestions;
         }
-        return "";
+
+        return "https://api.trivia.willfry.co.uk/questions?categories="+categories+"&limit="+numberOfQuestions;
     }
 
 }
