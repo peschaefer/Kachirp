@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Console {
-    QuestionFormatter formatter = new QuestionFormatter();
+    int correctResponses = 0;
 
     public void runConsole() throws IOException {
 
@@ -38,6 +38,8 @@ public class Console {
             checkAnswer(userAnswer, questionArrayList.get(questionIndex).getCorrectAnswerIndex());
             questionIndex++;
         }
+
+        displayPointTotal();
     }
 
     private void checkForValidConnection (String triviaData){
@@ -48,6 +50,7 @@ public class Console {
     }
 
     private void displayQuestionInformation (Question question){
+        QuestionFormatter formatter = new QuestionFormatter();
         System.out.println(formatter.formatQuestion(question));
     }
 
@@ -56,8 +59,14 @@ public class Console {
         userAnswer -= 1;
         if (userAnswer == correctAnswerIndex) {
             System.out.println("\nGood Job! You got it right!\n");
+            correctResponses+=1;
+
         } else {
             System.out.println("\nYou are a failure, and you should feel bad.\n");
         }
+    }
+
+    private void displayPointTotal(){
+        System.out.println("Point Total: " + correctResponses);
     }
 }

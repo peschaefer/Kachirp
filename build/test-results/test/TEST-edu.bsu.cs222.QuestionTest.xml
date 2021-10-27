@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.bsu.cs222.QuestionTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-26T17:41:47" hostname="LAPTOP-L6S16H2U" time="0.004">
+  <properties/>
+  <testcase name="incorrectAnswerResponseTest()" classname="edu.bsu.cs222.QuestionTest" time="0.001"/>
+  <testcase name="questionTextTest()" classname="edu.bsu.cs222.QuestionTest" time="0.0"/>
+  <testcase name="correctAnswerResponseTest()" classname="edu.bsu.cs222.QuestionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
