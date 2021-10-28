@@ -1,9 +1,6 @@
 package edu.bsu.cs222.view;
 
-import edu.bsu.cs222.model.Question;
-import edu.bsu.cs222.model.Timer;
-import edu.bsu.cs222.model.TriviaAPIConnector;
-import edu.bsu.cs222.model.TriviaParser;
+import edu.bsu.cs222.model.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,17 +13,22 @@ public class Console {
         UserInput userInput = new UserInput();
         TriviaParser parser = new TriviaParser();
         TriviaAPIConnector connector = new TriviaAPIConnector();
-        Timer timer = new Timer();
-
-        String triviaData = connector.connectToApi("https://api.trivia.willfry.co.uk/questions?limit=5");
-        checkForValidConnection(triviaData);
-        parser.addQuestions(triviaData, 5);
-        ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
+        //Timer timer = new Timer();
+        URLBuilder urlBuilder = new URLBuilder();
 
         displayHeader();
 
+        System.out.println("Start by entering the number of questions you would like:");
+        int numberOfQuestions = Integer.parseInt(userInput.getInput());
+        String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
+
+        String triviaData = connector.connectToApi(urlDestination);
+        checkForValidConnection(triviaData);
+        parser.addQuestions(triviaData, numberOfQuestions);
+        ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
+
         int questionIndex = 0;
-        while (questionIndex < 5) {
+        while (questionIndex < numberOfQuestions) {
             int userAnswer;
             displayQuestionInformation(questionArrayList.get(questionIndex));
             try {
