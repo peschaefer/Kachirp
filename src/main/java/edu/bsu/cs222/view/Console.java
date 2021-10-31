@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 public class Console {
     int correctResponses = 0;
-    int numberOfQuestions;
 
     public void runConsole() throws IOException {
 
@@ -20,7 +19,7 @@ public class Console {
         displayHeader();
 
         System.out.println("Start by entering the number of questions you would like:");
-        numberOfQuestions = Integer.parseInt(userInput.getInput());
+        int numberOfQuestions = Integer.parseInt(userInput.getInput());
         String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
 
         String triviaData = connector.connectToApi(urlDestination);
@@ -76,7 +75,7 @@ public class Console {
     }
 
     private void displayPointTotal(){
-        System.out.println("You got "+ correctResponses + " out of " + numberOfQuestions + " correct!");
+        System.out.println("Point Total: " + correctResponses);
     }
 
     private void displayHeader(){

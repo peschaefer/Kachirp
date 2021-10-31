@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class QuestionTest {
     String[] incorrectAnswers = new String[]{"Red","Green","Blue"};
+    String[] testAnswers = new String []{"Will","Peyton","Dawson","Will II"};
     @Test
     public void correctAnswerResponseTest() {
         Question testQuestion = new Question("What is the color of the sky?", "Blue", incorrectAnswers);
@@ -24,5 +25,11 @@ public class QuestionTest {
     public void questionTextTest(){
         Question testQuestion = new Question("What is the color of the sky?", "Blue", incorrectAnswers);
         Assertions.assertEquals("What is the color of the sky?",testQuestion.getQuestionText());
+    }
+
+    @Test
+    public void overloadedConstructorTest(){
+        Question testQuestion = new  Question("What is my name", testAnswers, 0);
+        Assertions.assertEquals("Will",testQuestion.getAnswers()[testQuestion.getCorrectAnswerIndex()]);
     }
 }

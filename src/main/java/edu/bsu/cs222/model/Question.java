@@ -13,6 +13,12 @@ public class Question {
         correctAnswerIndex = randomizeAnswerChoices(correctAnswer,incorrectAnswers[0],incorrectAnswers[1],incorrectAnswers[2]);
     }
 
+    public Question(String questionText,String[] answers, int correctAnswerIndex){
+        this.questionText = questionText;
+        this.answers = answers;
+        this.correctAnswerIndex = correctAnswerIndex;
+    }
+
     private int randomizeAnswerChoices(String correct, String incorrect1,String incorrect2,String incorrect3) {
         int answerNumber = random.nextInt(4);
         answers[answerNumber] = correct;
