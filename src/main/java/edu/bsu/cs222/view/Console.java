@@ -28,6 +28,7 @@ public class Console {
         parser.addQuestions(triviaData, numberOfQuestions);
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 
+        //extrapolate into a method?
         int questionIndex = 0;
         while (questionIndex < numberOfQuestions) {
             int userAnswer;
@@ -48,7 +49,7 @@ public class Console {
 
         displayPointTotal();
     }
-
+    //remove from console
     private void checkForValidConnection (String triviaData){
         if (triviaData.isEmpty()) {
             System.err.println("A network error has occurred");
@@ -61,6 +62,7 @@ public class Console {
         System.out.println(formatter.formatQuestion(question));
     }
 
+    //remove from console
     private void checkAnswer ( int userAnswer, int correctAnswerIndex){
         //Since the index is numbered 0-3 and the user input is 1-4, it must be decremented to check correctness
         userAnswer -= 1;
