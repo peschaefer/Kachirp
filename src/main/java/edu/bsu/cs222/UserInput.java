@@ -1,4 +1,4 @@
-package edu.bsu.cs222.view;
+package edu.bsu.cs222;
 
 import java.util.ArrayList;
 import java.util.Arrays;

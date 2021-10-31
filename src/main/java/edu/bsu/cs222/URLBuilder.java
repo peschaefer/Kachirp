@@ -1,4 +1,4 @@
-package edu.bsu.cs222.model;
+package edu.bsu.cs222;
 
 public class URLBuilder {
     public String buildURL(String categories, int numberOfQuestions){

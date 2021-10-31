@@ -1,7 +1,5 @@
 package edu.bsu.cs222;
 
-import edu.bsu.cs222.model.Question;
-import edu.bsu.cs222.view.QuestionFormatter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

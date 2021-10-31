@@ -1,7 +1,6 @@
 package edu.bsu.cs222;
 
 import com.jayway.jsonpath.JsonPath;
-import edu.bsu.cs222.model.TriviaParser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

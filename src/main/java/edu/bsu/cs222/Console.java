@@ -1,6 +1,4 @@
-package edu.bsu.cs222.view;
-
-import edu.bsu.cs222.model.*;
+package edu.bsu.cs222;
 
 import java.io.IOException;
 import java.util.ArrayList;

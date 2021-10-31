@@ -1,6 +1,4 @@
-package edu.bsu.cs222.view;
-
-import edu.bsu.cs222.model.Question;
+package edu.bsu.cs222;
 
 public class QuestionFormatter {
     public String formatQuestion(Question question){

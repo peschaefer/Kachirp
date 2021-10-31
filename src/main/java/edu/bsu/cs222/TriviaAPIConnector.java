@@ -1,4 +1,4 @@
-package edu.bsu.cs222.model;
+package edu.bsu.cs222;
 
 import java.io.BufferedReader;
 import java.io.EOFException;

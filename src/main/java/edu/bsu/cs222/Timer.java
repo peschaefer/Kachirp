@@ -21,7 +21,7 @@ Delete the main method and the static modifier, then call the runTimer() method 
 if they can run in tandem. I hope they can, as I did not have enough time to test it.
  */
 
-package edu.bsu.cs222.model;
+package edu.bsu.cs222;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
