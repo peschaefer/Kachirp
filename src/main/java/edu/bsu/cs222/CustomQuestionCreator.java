@@ -13,7 +13,7 @@ public class CustomQuestionCreator {
             System.out.println("Please enter your question or nothing to quit");
             String questionText = userInput.getInput();
 
-            if(questionText.isEmpty()){
+            if(questionText.isEmpty() || questionText.equalsIgnoreCase("nothing")){
                 break;
             }
 

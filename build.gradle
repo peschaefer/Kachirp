@@ -15,7 +15,8 @@ dependencies {
     //https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path
     implementation group: 'com.jayway.jsonpath', name: 'json-path', version: '2.6.0'
     implementation 'org.slf4j:slf4j-simple:1.7.30'
-
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.0'
 
 }
 
