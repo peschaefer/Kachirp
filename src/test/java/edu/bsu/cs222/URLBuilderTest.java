@@ -8,7 +8,7 @@ public class URLBuilderTest {
     @Test
     public void buildUrlRandomCategoriesTest(){
         URLBuilder urlBuilder = new URLBuilder();
-        Assertions.assertEquals("https://api.trivia.willfry.co.uk/questions?limit=5",urlBuilder.buildURL("",5));
+        Assertions.assertEquals("https://api.trivia.willfry.co.uk/questions?categories=&limit=5",urlBuilder.buildURL("",5));
     }
 
     @Test
