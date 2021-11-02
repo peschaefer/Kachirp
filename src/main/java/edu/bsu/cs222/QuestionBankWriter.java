@@ -13,6 +13,7 @@ public class QuestionBankWriter {
     public void writeNewQuestionBank(ArrayList<Question> questions, String questionBankName) throws IOException {
 
         File outputFile = new File("src/main/java/QuestionBanks/"+questionBankName+".json");
+        //("src/main/java/QuestionBanks/testBank.json"));
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(questions);
 

@@ -4,10 +4,15 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-//        CustomQuestionCreator cretor = new CustomQuestionCreator();
-//        QuestionBankWriter writer = new QuestionBankWriter();
-//        writer.writeNewQuestionBank(cretor.createCustomQuestions(),"testBank");
-        Console game = new Console();
-        game.runConsole();
+        QuestionBankCreator creator = new QuestionBankCreator();
+        //QuestionBankWriter writer = new QuestionBankWriter();
+        QuestionBankReader reader = new QuestionBankReader();
+
+        //writer.writeNewQuestionBank(creator.createCustomQuestions(),"testBank");
+        System.out.println(reader.readQuestionBank("src/test/resources/questionBankTest.json"));
+
+
+//        Console game = new Console();
+//        game.runConsole();
     }
 }

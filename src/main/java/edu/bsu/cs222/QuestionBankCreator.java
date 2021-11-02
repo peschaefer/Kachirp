@@ -2,7 +2,7 @@ package edu.bsu.cs222;
 
 import java.util.ArrayList;
 
-public class CustomQuestionCreator {
+public class QuestionBankCreator {
 
     UserInput userInput = new UserInput();
 

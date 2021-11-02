@@ -1,6 +1,7 @@
 package edu.bsu.cs222;
 
 import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.PathNotFoundException;
 
 import java.util.ArrayList;
 
@@ -8,7 +9,11 @@ public class TriviaParser {
     ArrayList<Question> questionArrayList = new ArrayList<>();
 
     public String parseForQuestionText(String triviaData,int questionIndex) {
-        return JsonPath.read(triviaData,"$.[" + questionIndex + "].question");
+        try {
+            return JsonPath.read(triviaData, "$.[" + questionIndex + "].question");
+        } catch(PathNotFoundException e){
+            return JsonPath.read(triviaData, "$.[" + questionIndex + "].questionText");
+        }
     }
 
     public String parseForCorrectAnswer(String triviaData, int questionIndex) {
