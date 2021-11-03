@@ -11,6 +11,8 @@ public class TriviaParserTest {
 
     InputStream testDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
     String triviaData = JsonPath.read(testDataStream,"$..*").toString();
+    InputStream testBankDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("questionBankTest.json");
+    String triviaBankData = JsonPath.read(testBankDataStream,"$..*").toString();
     TriviaParser parser = new TriviaParser();
 
     public TriviaParserTest() throws IOException {
@@ -62,5 +64,11 @@ public class TriviaParserTest {
     public void addQuestionsTest2(){
         parser.addQuestions(triviaData, 5);
         Assertions.assertEquals("What is the second largest bone in the foot?",parser.getQuestionArrayList().get(4).getQuestionText());
+    }
+
+    @Test
+    public void getAnswersTest1(){
+        String[] answers = parser.parseForAnswers(triviaBankData,0);
+        Assertions.assertEquals("19", answers[0]);
     }
 }
