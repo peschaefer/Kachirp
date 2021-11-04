@@ -43,8 +43,8 @@ public class Console {
             checkAnswer(userAnswer, questionArrayList.get(questionIndex).getCorrectAnswerIndex());
             questionIndex++;
         }
-
         displayPointTotal();
+
     }
     //remove from console
     private void checkForValidConnection (String triviaData){
@@ -86,4 +86,5 @@ public class Console {
         +----------------------------------------+
         """);
     }
+
 }

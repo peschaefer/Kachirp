@@ -1,13 +1,19 @@
 package edu.bsu.cs222;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class QuestionBankCreator {
 
     UserInput userInput = new UserInput();
+    QuestionBankWriter writer = new QuestionBankWriter();
 
-    public ArrayList<Question> createCustomQuestions(){
+
+    public void createCustomQuestions() throws IOException {
         ArrayList<Question> questions = new ArrayList<>();
+        System.out.println("What would you like to name this question bank?");
+        String questionBankName = userInput.getInput();
+
 
         while(true){
             System.out.println("Please enter your question or nothing to quit");
@@ -28,6 +34,6 @@ public class QuestionBankCreator {
             questions.add(question);
 
         }
-        return questions;
+        writer.writeNewQuestionBank(questions, questionBankName);
     }
 }
