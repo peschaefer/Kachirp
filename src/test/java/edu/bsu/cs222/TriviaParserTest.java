@@ -43,6 +43,12 @@ public class TriviaParserTest {
     }
 
     @Test
+    public void getQuestionTextTest3(){
+        String questionText = parser.parseForQuestionText(triviaBankData,0);
+        Assertions.assertEquals("whats 9 + 10", questionText);
+    }
+
+    @Test
     public void getQuestion1IncorrectAnswer1Test(){
         String[] incorrectAnswers = parser.parseForIncorrectAnswers(triviaData,0);
         Assertions.assertEquals("Isfahan",incorrectAnswers[0]);
@@ -70,5 +76,11 @@ public class TriviaParserTest {
     public void getAnswersTest1(){
         String[] answers = parser.parseForAnswers(triviaBankData,0);
         Assertions.assertEquals("19", answers[0]);
+    }
+
+    @Test
+    public void getCorrectAnswerIndexTest1(){
+        int correctAnswerIndex = parser.parseForCorrectAnswerIndex(triviaBankData,0);
+        Assertions.assertEquals(1, correctAnswerIndex);
     }
 }

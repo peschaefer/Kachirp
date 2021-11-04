@@ -28,6 +28,7 @@ public class TriviaParser {
         }
         return incorrectAnswers;
     }
+
     public String[] parseForAnswers(String triviaData, int questionIndex) {
         String[] answers = new String[4];
         for(int x = 0; x < 4; x++){
@@ -35,6 +36,10 @@ public class TriviaParser {
             answers[x] = answer;
         }
         return answers;
+    }
+
+    public int parseForCorrectAnswerIndex(String triviaData, int questionIndex) {
+        return JsonPath.read(triviaData,"$.[" + questionIndex + "].correctAnswerIndex");
     }
 
     public void addQuestions(String triviaData, int numberOfQuestions) {
