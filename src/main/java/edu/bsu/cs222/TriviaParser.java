@@ -52,6 +52,16 @@ public class TriviaParser {
         }
     }
 
+    public void addCustomQuestions(String triviaData, int numberOfQuestions) {
+        for(int questionIndex=0; questionIndex < numberOfQuestions; questionIndex++){
+            String questionText = parseForQuestionText(triviaData, questionIndex);
+            int correctAnswerIndex = parseForCorrectAnswerIndex(triviaData, questionIndex);
+            String[] answers = parseForAnswers(triviaData, questionIndex);
+            Question question = new Question(questionText,answers,correctAnswerIndex);
+            questionArrayList.add(question);
+        }
+    }
+
     public ArrayList<Question> getQuestionArrayList(){
         return questionArrayList;
     }
