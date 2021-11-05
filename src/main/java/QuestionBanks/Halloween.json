@@ -1,0 +1,37 @@
+[ {
+  "questionText" : "The term \"Pandemonium\" now means a great frenzy of activity. Originally, it referred to a gathering of reveling what?",
+  "answers" : [ "Children", "Werewolves", "Demons", "Ghosts" ],
+  "correctAnswerIndex" : 2
+}, {
+  "questionText" : "Where did the origin of dressing up on Halloween come from?",
+  "answers" : [ "To scare away bad spirits", "Boredom", "To frighten your neighbors", "A practical joke" ],
+  "correctAnswerIndex" : 0
+}, {
+  "questionText" : "Where is Count Dracula's castle?",
+  "answers" : [ "Transylvania", "Romania", "Croatia", "Ecuador" ],
+  "correctAnswerIndex" : 0
+}, {
+  "questionText" : "What was the name of the principal text once used as a guide by witch hunters?",
+  "answers" : [ "The Bible", "Wytches of Earthe", "Malleus Maleficarum", "Plasmacarion" ],
+  "correctAnswerIndex" : 2
+}, {
+  "questionText" : "What was the name of the very first werewolf movie?",
+  "answers" : [ "Silver Bullet", "Wolfman", "Werewolf of London", "Nosferatu" ],
+  "correctAnswerIndex" : 2
+}, {
+  "questionText" : "What were jack-o-lanterns originally made of?",
+  "answers" : [ "Watermelons", "Turnips", "Coconuts", "Pineapples" ],
+  "correctAnswerIndex" : 1
+}, {
+  "questionText" : "Who wrote Edward Scissorhands?",
+  "answers" : [ "Wes Craven", "Tim Burton", "George Romero", "Guillermo Del Toro" ],
+  "correctAnswerIndex" : 1
+}, {
+  "questionText" : "What was the other title of Mary Shelley's novel \"Frankenstein?\"",
+  "answers" : [ "The Modern Prometheus", "Victor", "The Geneva Experiment", "Frank N. Stein" ],
+  "correctAnswerIndex" : 0
+}, {
+  "questionText" : "When is the Mexican holiday \"The Day of the Dead\" celebrated?",
+  "answers" : [ "November 1-2", "October 30-31", "October 30", "November 5" ],
+  "correctAnswerIndex" : 0
+} ]
