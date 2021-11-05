@@ -1,5 +1,6 @@
 package edu.bsu.cs222;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -11,6 +12,7 @@ public class Console {
     //Timer timer = new Timer();
     URLBuilder urlBuilder = new URLBuilder();
     QuestionBankCreator creator = new QuestionBankCreator();
+    QuestionBankReader reader = new QuestionBankReader();
 
     public void runConsole() throws IOException {
 
@@ -98,10 +100,42 @@ public class Console {
         displayPointTotal();
     }
 
-    public void playCustomGame(){
+    public void playCustomGame() throws IOException {
         //First, it will print out a list of all the question banks.
+        System.out.println("Here are the existing question banks:");
+        printQuestionBanks();
         //Second, it will have the user select one question bank.
+        String questionBankChoice = userInput.getInput();
         //Third, it will build questions from the bank.
+        parser.addCustomQuestions(reader.readQuestionBank(questionBankChoice));
+        ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
         //Lastly, it will run the game with the user's questions.
+        int questionIndex = 0;
+        while (questionIndex < parser.getNumberOfQuestions()) {
+            int userAnswer;
+            displayQuestionInformation(questionArrayList.get(questionIndex));
+            try {
+                userAnswer = Integer.parseInt(userInput.getInput());
+            } catch (NumberFormatException e) {
+                System.out.println("\nThat is not a valid response.\n");
+                continue;
+            }
+            if(userAnswer > 4 || userAnswer < 1){
+                System.out.println("\nPlease enter a number between 1 and 4.\n");
+                continue;
+            }
+            checkAnswer(userAnswer, questionArrayList.get(questionIndex).getCorrectAnswerIndex());
+            questionIndex++;
+        }
+        displayPointTotal();
+    }
+
+    private void printQuestionBanks() {
+        File testFile = new File("src/main/java/QuestionBanks");
+        String[] pathNames = testFile.list();
+        assert pathNames != null;
+        for(String path : pathNames){
+            System.out.println(path.substring(0,path.length()-5));
+        }
     }
 }
