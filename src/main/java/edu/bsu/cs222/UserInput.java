@@ -6,6 +6,12 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class UserInput {
+    public String getInput(String message){
+        System.out.println(message);
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
+
     public String getInput(){
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();

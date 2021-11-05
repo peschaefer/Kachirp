@@ -70,8 +70,7 @@ public class Console {
     }
 
     private void playVanillaGame() throws IOException {
-        System.out.println("Start by entering the number of questions you would like:");
-        int numberOfQuestions = Integer.parseInt(userInput.getInput());
+        int numberOfQuestions = Integer.parseInt(userInput.getInput("Start by entering the number of questions you would like:"));
         String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
 
         String triviaData = connector.connectToApi(urlDestination);
@@ -105,7 +104,7 @@ public class Console {
         System.out.println("Here are the existing question banks:");
         printQuestionBanks();
         //Second, it will have the user select one question bank.
-        String questionBankChoice = userInput.getInput();
+        String questionBankChoice = userInput.getInput("Enter the name of the bank you would like to play with.");
         //Third, it will build questions from the bank.
         parser.addCustomQuestions(reader.readQuestionBank(questionBankChoice));
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();

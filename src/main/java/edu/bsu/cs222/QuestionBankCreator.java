@@ -11,22 +11,18 @@ public class QuestionBankCreator {
 
     public void createCustomQuestions() throws IOException {
         ArrayList<Question> questions = new ArrayList<>();
-        System.out.println("What would you like to name this question bank?");
-        String questionBankName = userInput.getInput();
+        String questionBankName = userInput.getInput("What would you like to name this question bank?");
 
 
         while(true){
-            System.out.println("Please enter your question or nothing to quit");
-            String questionText = userInput.getInput();
+            String questionText = userInput.getInput("Please enter your question or nothing to quit");
 
             if(questionText.isEmpty() || questionText.equalsIgnoreCase("nothing")){
                 break;
             }
 
-            System.out.println("Please enter the correct answer");
-            String correctAnswer = userInput.getInput();
-            System.out.println("Please enter three incorrect answers separated by commas");
-            String incorrectAnswersString = userInput.getInput();
+            String correctAnswer = userInput.getInput("Please enter the correct answer");
+            String incorrectAnswersString = userInput.getInput("Please enter three incorrect answers separated by commas");
             String[] incorrectAnswersArray = incorrectAnswersString.split(",");
 
             Question question = new Question(questionText,correctAnswer,incorrectAnswersArray);
