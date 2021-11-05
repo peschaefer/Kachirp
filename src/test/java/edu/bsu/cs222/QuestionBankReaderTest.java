@@ -10,9 +10,9 @@ public class QuestionBankReaderTest {
 
     @Test
     public void testForReadingQuestionBank() throws IOException {
-        String triviaData = reader.readQuestionBank("src/test/resources/questionBankTest.json");
+        String triviaData = reader.readQuestionBank("testBank");
         TriviaParser parser = new TriviaParser();
         String questionText = parser.parseForQuestionText(triviaData,0);
-        Assertions.assertEquals(questionText,"whats 9 + 10");
+        Assertions.assertEquals(questionText,"What color is the sky?");
     }
 }

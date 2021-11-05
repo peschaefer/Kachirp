@@ -43,6 +43,7 @@ public class TriviaParser {
     }
 
     public void addQuestions(String triviaData, int numberOfQuestions) {
+        questionArrayList.clear();
         for(int questionIndex=0; questionIndex < numberOfQuestions; questionIndex++){
             String questionText = parseForQuestionText(triviaData, questionIndex);
             String correctAnswer = parseForCorrectAnswer(triviaData, questionIndex);
@@ -52,18 +53,36 @@ public class TriviaParser {
         }
     }
 
-    public void addCustomQuestions(String triviaData, int numberOfQuestions) {
-        for(int questionIndex=0; questionIndex < numberOfQuestions; questionIndex++){
-            String questionText = parseForQuestionText(triviaData, questionIndex);
-            int correctAnswerIndex = parseForCorrectAnswerIndex(triviaData, questionIndex);
-            String[] answers = parseForAnswers(triviaData, questionIndex);
-            Question question = new Question(questionText,answers,correctAnswerIndex);
-            questionArrayList.add(question);
+    public void addCustomQuestions(String triviaData) {
+        questionArrayList.clear();
+//        for(int questionIndex=0; questionIndex < numberOfQuestions; questionIndex++){
+//            String questionText = parseForQuestionText(triviaData, questionIndex);
+//            int correctAnswerIndex = parseForCorrectAnswerIndex(triviaData, questionIndex);
+//            String[] answers = parseForAnswers(triviaData, questionIndex);
+//            Question question = new Question(questionText,answers,correctAnswerIndex);
+//            questionArrayList.add(question);
+//        }
+        int questionIndex = 0;
+        while(true){
+            try{
+                String questionText = parseForQuestionText(triviaData, questionIndex);
+                int correctAnswerIndex = parseForCorrectAnswerIndex(triviaData, questionIndex);
+                String[] answers = parseForAnswers(triviaData, questionIndex);
+                Question question = new Question(questionText,answers,correctAnswerIndex);
+                questionArrayList.add(question);
+                questionIndex++;
+            }catch(Exception e){
+                break;
+            }
         }
     }
 
     public ArrayList<Question> getQuestionArrayList(){
         return questionArrayList;
+    }
+
+    public int getNumberOfQuestions(){
+        return questionArrayList.size();
     }
 
 }
