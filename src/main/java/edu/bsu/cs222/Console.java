@@ -16,14 +16,20 @@ public class Console {
 
     public void runConsole() throws IOException {
 
-        displayMenu();
-        String modeSelection = userInput.getInput();
+        while(true){
+            displayMenu();
+            String modeSelection = userInput.getInput();
 
-        switch (modeSelection) {
-            case "1" -> playVanillaGame();
-            case "2" -> creator.createCustomQuestions();
-            case "3" -> playCustomGame();
-            default -> System.out.println("Nope");
+            switch (modeSelection) {
+                case "1" -> playVanillaGame();
+                case "2" -> creator.createCustomQuestions();
+                case "3" -> playCustomGame();
+                case "4" -> {
+                    System.out.println("Thanks for playing :D");
+                    System.exit(0);
+                }
+                default -> System.out.println("Nope");
+            }
         }
     }
     //remove from console
@@ -66,6 +72,7 @@ public class Console {
         1) Play vanilla game!
         2) Create your own question bank!
         3) Play with custom questions!
+        4) Exit the application.
         """);
     }
 
