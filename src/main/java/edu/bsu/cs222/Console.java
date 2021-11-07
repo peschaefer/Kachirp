@@ -32,13 +32,7 @@ public class Console {
             }
         }
     }
-    //remove from console
-    private void checkForValidConnection (String triviaData){
-        if (triviaData.isEmpty()) {
-            System.err.println("A network error has occurred");
-            System.exit(0);
-        }
-    }
+
 
     private void displayQuestionInformation (Question question){
         QuestionFormatter formatter = new QuestionFormatter();
@@ -81,7 +75,7 @@ public class Console {
         String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
 
         String triviaData = connector.connectToApi(urlDestination);
-        checkForValidConnection(triviaData);
+        connector.checkForValidConnection(triviaData);
         parser.addQuestions(triviaData, numberOfQuestions);
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 

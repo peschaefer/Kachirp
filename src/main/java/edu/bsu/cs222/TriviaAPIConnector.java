@@ -34,4 +34,11 @@ public class TriviaAPIConnector {
         in.close();
         return triviaData.toString();
     }
+
+    public void checkForValidConnection (String triviaData){
+        if (triviaData.isEmpty()) {
+            System.err.println("A network error has occurred");
+            System.exit(1);
+        }
+    }
 }
