@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Console {
+public class Controller {
     int correctResponses = 0;
     UserInput userInput = new UserInput();
     TriviaParser parser = new TriviaParser();
@@ -14,7 +14,7 @@ public class Console {
     QuestionBankCreator creator = new QuestionBankCreator();
     QuestionBankReader reader = new QuestionBankReader();
 
-    public void runConsole() throws IOException {
+    public void runApplication() throws IOException {
 
         while(true){
             displayMenu();
