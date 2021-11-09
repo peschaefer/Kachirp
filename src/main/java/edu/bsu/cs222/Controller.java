@@ -13,6 +13,7 @@ public class Controller {
     URLBuilder urlBuilder = new URLBuilder();
     QuestionBankCreator creator = new QuestionBankCreator();
     QuestionBankReader reader = new QuestionBankReader();
+    ConnectionErrorHandler errorHandler = new ConnectionErrorHandler();
 
     public void runApplication() throws IOException {
 
@@ -75,29 +76,11 @@ public class Controller {
         String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
 
         String triviaData = connector.connectToApi(urlDestination);
-        connector.checkForValidConnection(triviaData);
+        errorHandler.checkForValidConnection(triviaData);
         parser.addQuestions(triviaData, numberOfQuestions);
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 
-        //extrapolate into a method?
-        int questionIndex = 0;
-        while (questionIndex < numberOfQuestions) {
-            int userAnswer;
-            displayQuestionInformation(questionArrayList.get(questionIndex));
-            try {
-                userAnswer = Integer.parseInt(userInput.getInput());
-            } catch (NumberFormatException e) {
-                System.out.println("\nThat is not a valid response.\n");
-                continue;
-            }
-            if(userAnswer > 4 || userAnswer < 1){
-                System.out.println("\nPlease enter a number between 1 and 4.\n");
-                continue;
-            }
-            checkAnswer(userAnswer, questionArrayList.get(questionIndex).getCorrectAnswerIndex());
-            questionIndex++;
-        }
-        displayPointTotal();
+        askQuestions(numberOfQuestions,questionArrayList);
     }
 
     public void playCustomGame() throws IOException {
@@ -110,8 +93,12 @@ public class Controller {
         parser.addCustomQuestions(reader.readQuestionBank(questionBankChoice));
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
         //Lastly, it will run the game with the user's questions.
+        askQuestions(parser.getNumberOfQuestions(),questionArrayList);
+    }
+
+    private void askQuestions(int numberOfQuestions, ArrayList<Question> questionArrayList) {
         int questionIndex = 0;
-        while (questionIndex < parser.getNumberOfQuestions()) {
+        while (questionIndex < numberOfQuestions) {
             int userAnswer;
             displayQuestionInformation(questionArrayList.get(questionIndex));
             try {
