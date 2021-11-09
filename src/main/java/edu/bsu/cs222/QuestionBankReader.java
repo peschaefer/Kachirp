@@ -6,7 +6,11 @@ import java.nio.file.Paths;
 
 public class QuestionBankReader {
 
-    public String readQuestionBank(String questionBankName) throws IOException {
-        return new String(Files.readAllBytes(Paths.get("src/main/java/QuestionBanks/" + questionBankName + ".json")));
+    public String readQuestionBank(String filePath) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(filePath)));
+    }
+
+    public String buildFilePath(String questionBankName){
+        return "src/main/java/QuestionBanks/" + questionBankName + ".json";
     }
 }

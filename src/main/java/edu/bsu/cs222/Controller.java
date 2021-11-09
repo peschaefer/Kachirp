@@ -84,15 +84,16 @@ public class Controller {
     }
 
     public void playCustomGame() throws IOException {
-        //First, it will print out a list of all the question banks.
         System.out.println("Here are the existing question banks:");
         printQuestionBanks();
-        //Second, it will have the user select one question bank.
+
         String questionBankChoice = userInput.getInput("Enter the name of the bank you would like to play with.");
-        //Third, it will build questions from the bank.
-        parser.addCustomQuestions(reader.readQuestionBank(questionBankChoice));
+
+        String bankFilePath = reader.buildFilePath(questionBankChoice);
+
+        parser.addCustomQuestions(reader.readQuestionBank(bankFilePath));
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
-        //Lastly, it will run the game with the user's questions.
+
         askQuestions(parser.getNumberOfQuestions(),questionArrayList);
     }
 
