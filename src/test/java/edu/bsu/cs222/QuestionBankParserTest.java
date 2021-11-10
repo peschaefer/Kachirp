@@ -16,19 +16,19 @@ public class QuestionBankParserTest {
     }
 
     @Test
-    public void getAnswersTest1(){
+    public void getAnswersTest(){
         String[] answers = parser.parseForAnswers(triviaBankData,0);
         Assertions.assertEquals("19", answers[0]);
     }
 
     @Test
-    public void getCorrectAnswerIndexTest1(){
+    public void getCorrectAnswerIndexTest(){
         int correctAnswerIndex = parser.parseForCorrectAnswerIndex(triviaBankData,0);
         Assertions.assertEquals(1, correctAnswerIndex);
     }
 
     @Test
-    public void getQuestionTextTest3(){
+    public void getQuestionTextTest(){
         String questionText = parser.parseForQuestionText(triviaBankData,0);
         Assertions.assertEquals("whats 9 + 10", questionText);
     }

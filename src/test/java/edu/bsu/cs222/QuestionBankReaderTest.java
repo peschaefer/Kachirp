@@ -9,7 +9,7 @@ public class QuestionBankReaderTest {
     QuestionBankReader reader = new QuestionBankReader();
 
     @Test
-    public void testForReadingQuestionBank() throws IOException {
+    public void readQuestionBankTest() throws IOException {
         String triviaData = reader.readQuestionBank("src/test/resources/questionBankTest.json");
         QuestionBankParser parser = new QuestionBankParser();
         String questionText = parser.parseForQuestionText(triviaData,0);
@@ -17,7 +17,7 @@ public class QuestionBankReaderTest {
     }
 
     @Test
-    public void testForBuildingFilePath(){
+    public void buildFilePathTest(){
         Assertions.assertEquals("src/main/java/QuestionBanks/testFileName.json",reader.buildFilePath("testFileName"));
     }
 }
