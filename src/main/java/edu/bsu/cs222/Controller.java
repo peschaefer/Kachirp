@@ -5,13 +5,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Controller {
-    int correctResponses = 0;
-    UserInput userInput = new UserInput();
-    TriviaAPIConnector connector = new TriviaAPIConnector();
-    URLBuilder urlBuilder = new URLBuilder();
-    QuestionBankCreator creator = new QuestionBankCreator();
-    QuestionBankReader reader = new QuestionBankReader();
-    ConnectionErrorHandler errorHandler = new ConnectionErrorHandler();
+    private int correctResponses = 0;
+    private final UserInput userInput = new UserInput();
+    private final TriviaAPIConnector connector = new TriviaAPIConnector();
+    private final URLBuilder urlBuilder = new URLBuilder();
+    private final QuestionBankCreator creator = new QuestionBankCreator();
+    private final QuestionBankReader reader = new QuestionBankReader();
+    private final ConnectionErrorHandler errorHandler = new ConnectionErrorHandler();
 
     public void runApplication() throws IOException {
 

@@ -3,10 +3,10 @@ package edu.bsu.cs222;
 import java.util.Random;
 
 public class Question {
-    String questionText;
-    String[] answers = new String[4];
-    int correctAnswerIndex;
-    Random random = new Random();
+    private final String questionText;
+    private String[] answers = new String[4];
+    private final int correctAnswerIndex;
+    private final Random random = new Random();
 
     public Question(String questionText,String correctAnswer,String[] incorrectAnswers) {
         this.questionText = questionText;

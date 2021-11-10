@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class QuestionBankCreator {
 
-    UserInput userInput = new UserInput();
-    QuestionBankWriter writer = new QuestionBankWriter();
+    private final UserInput userInput = new UserInput();
+    private final QuestionBankWriter writer = new QuestionBankWriter();
 
 
     public void createCustomQuestions() throws IOException {
