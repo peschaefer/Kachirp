@@ -49,12 +49,13 @@ public class Controller {
 
         } else {
             System.out.println("\nYou are a failure, and you should feel bad.");
-            System.out.println("The answer was: " + currentQuestion.getCorrectAnswer()+"\n");
+            System.out.printf("The answer was: %s\n\n",currentQuestion.getCorrectAnswer());
         }
     }
 
     private void displayPointTotal(){
-        System.out.println("Point Total: " + correctResponses+"\n---------------------");
+
+        System.out.printf("Point Total: %d\n%s\n",correctResponses,"-".repeat(21));
     }
 
     private void displayMenu(){

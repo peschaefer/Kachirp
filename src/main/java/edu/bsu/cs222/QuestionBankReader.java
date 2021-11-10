@@ -11,6 +11,6 @@ public class QuestionBankReader {
     }
 
     public String buildFilePath(String questionBankName){
-        return "src/main/java/QuestionBanks/" + questionBankName + ".json";
+        return String.format("src/main/java/QuestionBanks/%s.json",questionBankName);
     }
 }

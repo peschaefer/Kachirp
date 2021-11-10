@@ -16,6 +16,6 @@ public class URLBuilder {
             categoryString = categoryString.substring(0, categoryString.length() - 1).replace(" ", "_");
         }
 
-        return "https://api.trivia.willfry.co.uk/questions?categories="+ categoryString +"&limit="+numberOfQuestions;
+        return String.format("https://api.trivia.willfry.co.uk/questions?categories=%s&limit=%d",categoryString,numberOfQuestions);
     }
 }
