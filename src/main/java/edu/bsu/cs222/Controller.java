@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public class Controller {
     int correctResponses = 0;
     UserInput userInput = new UserInput();
-    TriviaParser parser = new TriviaParser();
     TriviaAPIConnector connector = new TriviaAPIConnector();
     //Timer timer = new Timer();
     URLBuilder urlBuilder = new URLBuilder();
@@ -72,18 +71,20 @@ public class Controller {
     }
 
     private void playVanillaGame() throws IOException {
+        TriviaAPIParser parser = new TriviaAPIParser();
         int numberOfQuestions = Integer.parseInt(userInput.getInput("Start by entering the number of questions you would like:"));
         String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
 
         String triviaData = connector.connectToApi(urlDestination);
         errorHandler.checkForValidConnection(triviaData);
-        parser.addQuestions(triviaData, numberOfQuestions);
+        parser.addQuestions(triviaData);
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 
         askQuestions(numberOfQuestions,questionArrayList);
     }
 
     public void playCustomGame() throws IOException {
+        QuestionBankParser parser = new QuestionBankParser();
         System.out.println("Here are the existing question banks:");
         printQuestionBanks();
 
@@ -91,7 +92,7 @@ public class Controller {
 
         String bankFilePath = reader.buildFilePath(questionBankChoice);
 
-        parser.addCustomQuestions(reader.readQuestionBank(bankFilePath));
+        parser.addQuestions(reader.readQuestionBank(bankFilePath));
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 
         askQuestions(parser.getNumberOfQuestions(),questionArrayList);

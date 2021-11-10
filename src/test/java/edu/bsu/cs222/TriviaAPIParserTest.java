@@ -7,15 +7,15 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class TriviaParserTest {
+public class TriviaAPIParserTest {
 
     InputStream testDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
     String triviaData = JsonPath.read(testDataStream,"$..*").toString();
     InputStream testBankDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("questionBankTest.json");
     String triviaBankData = JsonPath.read(testBankDataStream,"$..*").toString();
-    TriviaParser parser = new TriviaParser();
+    TriviaAPIParser parser = new TriviaAPIParser();
 
-    public TriviaParserTest() throws IOException {
+    public TriviaAPIParserTest() throws IOException {
     }
 
     @Test
@@ -43,12 +43,6 @@ public class TriviaParserTest {
     }
 
     @Test
-    public void getQuestionTextTest3(){
-        String questionText = parser.parseForQuestionText(triviaBankData,0);
-        Assertions.assertEquals("whats 9 + 10", questionText);
-    }
-
-    @Test
     public void getQuestion1IncorrectAnswer1Test(){
         String[] incorrectAnswers = parser.parseForIncorrectAnswers(triviaData,0);
         Assertions.assertEquals("Isfahan",incorrectAnswers[0]);
@@ -62,25 +56,14 @@ public class TriviaParserTest {
 
     @Test
     public void addQuestionsTest1(){
-        parser.addQuestions(triviaData, 5);
+        parser.addQuestions(triviaData);
         Assertions.assertEquals("What is the capital of Iran?",parser.getQuestionArrayList().get(0).getQuestionText());
     }
 
     @Test
     public void addQuestionsTest2(){
-        parser.addQuestions(triviaData, 5);
+        parser.addQuestions(triviaData);
         Assertions.assertEquals("What is the second largest bone in the foot?",parser.getQuestionArrayList().get(4).getQuestionText());
     }
 
-    @Test
-    public void getAnswersTest1(){
-        String[] answers = parser.parseForAnswers(triviaBankData,0);
-        Assertions.assertEquals("19", answers[0]);
-    }
-
-    @Test
-    public void getCorrectAnswerIndexTest1(){
-        int correctAnswerIndex = parser.parseForCorrectAnswerIndex(triviaBankData,0);
-        Assertions.assertEquals(1, correctAnswerIndex);
-    }
 }
