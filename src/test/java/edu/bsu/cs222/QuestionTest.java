@@ -26,9 +26,4 @@ public class QuestionTest {
         Assertions.assertEquals("What is the color of the sky?",testQuestion.getQuestionText());
     }
 
-    @Test
-    public void overloadedConstructorTest(){
-        Question testQuestion = new  Question("What is my name", testAnswers, 0);
-        Assertions.assertEquals("Will",testQuestion.getAnswers()[testQuestion.getCorrectAnswerIndex()]);
-    }
 }
