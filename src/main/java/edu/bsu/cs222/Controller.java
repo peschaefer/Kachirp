@@ -8,7 +8,6 @@ public class Controller {
     int correctResponses = 0;
     UserInput userInput = new UserInput();
     TriviaAPIConnector connector = new TriviaAPIConnector();
-    //Timer timer = new Timer();
     URLBuilder urlBuilder = new URLBuilder();
     QuestionBankCreator creator = new QuestionBankCreator();
     QuestionBankReader reader = new QuestionBankReader();
