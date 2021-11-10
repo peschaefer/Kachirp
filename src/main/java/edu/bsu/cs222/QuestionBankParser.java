@@ -4,7 +4,6 @@ import com.jayway.jsonpath.JsonPath;
 
 public class QuestionBankParser extends Parser{
 
-    @Override
     public String parseForQuestionText(String triviaData, int questionIndex) {
         return JsonPath.read(triviaData, "$.[" + questionIndex + "].questionText");
     }

@@ -11,8 +11,6 @@ public class TriviaAPIParserTest {
 
     InputStream testDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
     String triviaData = JsonPath.read(testDataStream,"$..*").toString();
-    InputStream testBankDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("questionBankTest.json");
-    String triviaBankData = JsonPath.read(testBankDataStream,"$..*").toString();
     TriviaAPIParser parser = new TriviaAPIParser();
 
     public TriviaAPIParserTest() throws IOException {

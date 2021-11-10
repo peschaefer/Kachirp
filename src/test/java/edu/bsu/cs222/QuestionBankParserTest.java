@@ -8,8 +8,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class QuestionBankParserTest {
-    InputStream testDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
-    String triviaData = JsonPath.read(testDataStream,"$..*").toString();
     InputStream testBankDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("questionBankTest.json");
     String triviaBankData = JsonPath.read(testBankDataStream,"$..*").toString();
     QuestionBankParser parser = new QuestionBankParser();
