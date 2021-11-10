@@ -38,16 +38,16 @@ public class Controller {
         System.out.println(formatter.formatQuestion(question));
     }
 
-    //remove from console
-    private void checkAnswer ( int userAnswer, int correctAnswerIndex){
-        //Since the index is numbered 0-3 and the user input is 1-4, it must be decremented to check correctness
+    private void checkAnswer ( int userAnswer, Question currentQuestion){
         userAnswer -= 1;
+        int correctAnswerIndex = currentQuestion.getCorrectAnswerIndex();
         if (userAnswer == correctAnswerIndex) {
             System.out.println("\nGood Job! You got it right!\n");
             correctResponses+=1;
 
         } else {
-            System.out.println("\nYou are a failure, and you should feel bad.\n");
+            System.out.println("\nYou are a failure, and you should feel bad.");
+            System.out.println("The answer was: " + currentQuestion.getCorrectAnswer()+"\n");
         }
     }
 
@@ -112,7 +112,7 @@ public class Controller {
                 System.out.println("\nPlease enter a number between 1 and 4.\n");
                 continue;
             }
-            checkAnswer(userAnswer, questionArrayList.get(questionIndex).getCorrectAnswerIndex());
+            checkAnswer(userAnswer, questionArrayList.get(questionIndex));
             questionIndex++;
         }
         displayPointTotal();

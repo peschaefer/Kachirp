@@ -50,6 +50,10 @@ public class Question {
         return correctAnswerIndex;
     }
 
+    public String getCorrectAnswer(){
+        return answers[correctAnswerIndex];
+    }
+
     public String[] getAnswers() {
         return answers;
     }
