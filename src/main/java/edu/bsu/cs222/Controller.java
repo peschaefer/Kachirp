@@ -15,6 +15,8 @@ public class Controller {
 
     public void runApplication() throws IOException {
 
+        displayHeader();
+
         while(true){
             displayMenu();
             String modeSelection = userInput.getInput();
@@ -52,20 +54,26 @@ public class Controller {
     }
 
     private void displayPointTotal(){
-        System.out.println("Point Total: " + correctResponses);
+        System.out.println("Point Total: " + correctResponses+"\n---------------------");
     }
 
     private void displayMenu(){
         System.out.println(
         """
-        Welcome to Kachirp!
-        ---------------------
-        Select an option to begin.
+        Please select an option.
         
         1) Play vanilla game!
         2) Create your own question bank!
         3) Play with custom questions!
         4) Exit the application.
+        """);
+    }
+
+    private void displayHeader(){
+        System.out.println(
+        """
+        Welcome to Kachirp!
+        ---------------------
         """);
     }
 
