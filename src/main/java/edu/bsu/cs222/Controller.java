@@ -77,9 +77,27 @@ public class Controller {
         """);
     }
 
+    private void displayCategories(){
+        System.out.println("""
+        The following are categories that you can choose to receive questions from:
+        Food and Drink
+        Geography
+        General Knowledge
+        History
+        Art and Literature
+        Movies
+        Music
+        Science
+        Society and Culture
+        Sport and Leisure
+        (Selecting none will provide a random question bank)
+        """);
+    }
+
     private void playVanillaGame() throws IOException {
         TriviaAPIParser parser = new TriviaAPIParser();
         int numberOfQuestions = Integer.parseInt(userInput.getInput("Start by entering the number of questions you would like:"));
+        displayCategories();
         String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
 
         String triviaData = connector.connectToApi(urlDestination);
