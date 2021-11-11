@@ -3,6 +3,7 @@ package edu.bsu.cs222;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Controller {
     private int correctResponses = 0;
@@ -54,7 +55,6 @@ public class Controller {
     }
 
     private void displayPointTotal(){
-
         System.out.printf("Point Total: %d\n%s\n",correctResponses,"-".repeat(21));
     }
 
@@ -97,8 +97,9 @@ public class Controller {
 
     private void playVanillaGame() throws IOException {
         TriviaAPIParser parser = new TriviaAPIParser();
-        int numberOfQuestions = Integer.parseInt(userInput.getInput("Start by entering the number of questions you would like:"));
+        int numberOfQuestions = selectNumberOfQuestions();
         displayCategories();
+
         String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
 
         String triviaData = connector.connectToApi(urlDestination);
@@ -109,19 +110,44 @@ public class Controller {
         askQuestions(numberOfQuestions,questionArrayList);
     }
 
+    private int selectNumberOfQuestions(){
+        while(true) {
+            try {
+                return Integer.parseInt(userInput.getInput("Enter the number of questions you would like:"));
+            }catch(NumberFormatException e){
+                System.err.println("Does that look like a number?");
+            }
+        }
+    }
+
     public void playCustomGame() throws IOException {
         QuestionBankParser parser = new QuestionBankParser();
-        System.out.println("Here are the existing question banks:");
-        printQuestionBanks();
 
-        String questionBankChoice = userInput.getInput("Enter the name of the bank you would like to play with.");
-
-        String bankFilePath = reader.buildFilePath(questionBankChoice);
+        String bankFilePath = selectQuestionBank();
 
         parser.addQuestions(reader.readQuestionBank(bankFilePath));
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 
         askQuestions(parser.getNumberOfQuestions(),questionArrayList);
+    }
+
+    private String selectQuestionBank(){
+        System.out.println("Here are the existing question banks:");
+        printQuestionBanks();
+
+        File testFile = new File("src/main/java/QuestionBanks");
+        String[] pathNames = testFile.list();
+
+        assert pathNames != null;
+        String questionBankChoice = userInput.getInput("Enter the name of the bank you would like to play with.");
+        while(true) {
+            if (Arrays.asList(pathNames).contains(questionBankChoice)) {
+                return reader.buildFilePath(questionBankChoice);
+            } else {
+                System.err.println("Error 404: Question Bank Not Found! Did you even read the list?");
+                questionBankChoice = userInput.getInput("Try again.");
+            }
+        }
     }
 
     private void askQuestions(int numberOfQuestions, ArrayList<Question> questionArrayList) {
