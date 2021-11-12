@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class QuestionBankWriter {
     public void writeNewQuestionBank(ArrayList<Question> questions, String questionBankName) throws IOException {
 
-        File outputFile = new File(String.format("src/main/java/QuestionBanks/%s.json",questionBankName));
+        File outputFile = new File(String.format("src/main/java/QuestionBanks/%s",questionBankName));
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(questions);
 
