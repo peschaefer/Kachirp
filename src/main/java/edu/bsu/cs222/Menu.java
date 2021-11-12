@@ -59,5 +59,6 @@ public class Menu {
         Random random = new Random();
         System.out.println(incorrectAnswerResponses[random.nextInt(incorrectAnswerResponses.length)]);
         System.out.printf("The answer was: %s\n\n",currentQuestion.getCorrectAnswer());
+
     }
 }

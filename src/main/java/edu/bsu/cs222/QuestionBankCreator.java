@@ -32,7 +32,6 @@ public class QuestionBankCreator {
             Question question = new Question(questionText,correctAnswer,incorrectAnswersArray);
 
             questions.add(question);
-
         }
         writer.writeNewQuestionBank(questions, questionBankName);
     }
