@@ -107,7 +107,7 @@ public class Controller {
                 return reader.buildFilePath(questionBankChoice);
             } else {
                 System.err.println("Error 404: Question Bank Not Found! Did you even read the list?");
-                questionBankChoice = userInput.getInput("Try again.");
+                questionBankChoice = userInput.getInput("Try again.") + ".json";
             }
         }
     }
