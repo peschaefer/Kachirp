@@ -13,13 +13,14 @@ public class Controller {
     private final QuestionBankCreator creator = new QuestionBankCreator();
     private final QuestionBankReader reader = new QuestionBankReader();
     private final ConnectionErrorHandler errorHandler = new ConnectionErrorHandler();
+    private final Menu menu = new Menu();
 
     public void runApplication() throws IOException {
 
-        displayHeader();
+        menu.displayHeader();
 
         while(true){
-            displayMenu();
+            menu.displayMainMenu();
             String modeSelection = userInput.getInput();
 
             switch (modeSelection) {
@@ -30,7 +31,7 @@ public class Controller {
                     System.out.println("Thanks for playing :D");
                     System.exit(0);
                 }
-                default -> System.out.println("Nope");
+                default -> System.err.println("You are on thin ice. Read the menu next time.");
             }
         }
     }
@@ -49,8 +50,7 @@ public class Controller {
             correctResponses+=1;
 
         } else {
-            System.out.println("\nYou are a failure, and you should feel bad.");
-            System.out.printf("The answer was: %s\n\n",currentQuestion.getCorrectAnswer());
+            menu.displayIncorrectAnswerMessage(currentQuestion);
         }
     }
 
@@ -58,47 +58,10 @@ public class Controller {
         System.out.printf("Point Total: %d\n%s\n",correctResponses,"-".repeat(21));
     }
 
-    private void displayMenu(){
-        System.out.println(
-        """
-        Please select an option.
-        
-        1) Play vanilla game!
-        2) Create your own question bank!
-        3) Play with custom questions!
-        4) Exit the application.
-        """);
-    }
-
-    private void displayHeader(){
-        System.out.println(
-        """
-        Welcome to Kachirp!
-        ---------------------
-        """);
-    }
-
-    private void displayCategories(){
-        System.out.println("""
-        The following are categories that you can choose to receive questions from:
-        Food and Drink
-        Geography
-        General Knowledge
-        History
-        Art and Literature
-        Movies
-        Music
-        Science
-        Society and Culture
-        Sport and Leisure
-        (Selecting none will provide a random question bank)
-        """);
-    }
-
     private void playVanillaGame() throws IOException {
         TriviaAPIParser parser = new TriviaAPIParser();
         int numberOfQuestions = selectNumberOfQuestions();
-        displayCategories();
+        menu.displayCategoriesMenu();
 
         String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
 
@@ -133,16 +96,16 @@ public class Controller {
 
     private String selectQuestionBank(){
         System.out.println("Here are the existing question banks:");
-        printQuestionBanks();
+        menu.printQuestionBanks();
 
-        File testFile = new File("src/main/java/QuestionBanks");
-        String[] pathNames = testFile.list();
+        String[] pathNames = new File("src/main/java/QuestionBanks").list();
 
         assert pathNames != null;
-        String questionBankChoice = userInput.getInput("Enter the name of the bank you would like to play with.");
+        String questionBankChoice = userInput.getInput("Enter the name of the bank you would like to play with.") + ".json";
         while(true) {
+            System.out.println(questionBankChoice.substring(0,questionBankChoice.length()-5));
             if (Arrays.asList(pathNames).contains(questionBankChoice)) {
-                return reader.buildFilePath(questionBankChoice);
+                return reader.buildFilePath(questionBankChoice.substring(0,questionBankChoice.length()-5));
             } else {
                 System.err.println("Error 404: Question Bank Not Found! Did you even read the list?");
                 questionBankChoice = userInput.getInput("Try again.");
@@ -169,14 +132,5 @@ public class Controller {
             questionIndex++;
         }
         displayPointTotal();
-    }
-
-    private void printQuestionBanks() {
-        File testFile = new File("src/main/java/QuestionBanks");
-        String[] pathNames = testFile.list();
-        assert pathNames != null;
-        for(String path : pathNames){
-            System.out.println(path.substring(0,path.length()-5));
-        }
     }
 }
