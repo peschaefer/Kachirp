@@ -9,8 +9,8 @@ public class Menu {
         Please select an option.
                 
         1) Play vanilla game!
-        2) Create your own question bank!
-        3) Play with custom questions!
+        2) Play with custom questions!
+        3) Create your own question bank!
         4) Exit the application.
         """);
     }

@@ -1,8 +1,5 @@
 package edu.bsu.cs222;
 
-import com.jayway.jsonpath.PathNotFoundException;
-import com.jayway.jsonpath.JsonPath;
-
 import java.util.ArrayList;
 
 abstract class Parser {

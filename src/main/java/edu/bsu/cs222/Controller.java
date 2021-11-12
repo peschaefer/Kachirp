@@ -25,8 +25,8 @@ public class Controller {
 
             switch (modeSelection) {
                 case "1" -> playVanillaGame();
-                case "2" -> creator.createCustomQuestions();
-                case "3" -> playCustomGame();
+                case "2" -> playCustomGame();
+                case "3" -> creator.createCustomQuestions();
                 case "4" -> {
                     System.out.println("Thanks for playing :D");
                     System.exit(0);
@@ -91,17 +91,19 @@ public class Controller {
         parser.addQuestions(reader.readQuestionBank(bankFilePath));
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 
+        System.out.println();
+
         askQuestions(parser.getNumberOfQuestions(),questionArrayList);
     }
 
     private String selectQuestionBank(){
-        System.out.println("Here are the existing question banks:");
+        System.out.println("Here are the existing question banks:\n");
         menu.printQuestionBanks();
 
         String[] pathNames = new File("src/main/java/QuestionBanks").list();
 
         assert pathNames != null;
-        String questionBankChoice = userInput.getInput("Enter the name of the bank you would like to play with.") + ".json";
+        String questionBankChoice = userInput.getInput("\nEnter the name of the bank you would like to play with.\n") + ".json";
         while(true) {
             if (Arrays.asList(pathNames).contains(questionBankChoice)) {
                 return reader.buildFilePath(questionBankChoice);
