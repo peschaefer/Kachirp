@@ -35,7 +35,7 @@ public class Menu {
         Science
         Society and Culture
         Sport and Leisure
-        (Selecting none will provide a random question bank)
+        (Selecting no categories will provide a random question bank)
         """);
     }
     public void printQuestionBanks() {

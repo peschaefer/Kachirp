@@ -18,6 +18,6 @@ public class QuestionBankReaderTest {
 
     @Test
     public void buildFilePathTest(){
-        Assertions.assertEquals("src/main/java/QuestionBanks/testFileName.json",reader.buildFilePath("testFileName"));
+        Assertions.assertEquals("src/main/java/QuestionBanks/testFileName.json",reader.buildFilePath("testFileName.json"));
     }
 }

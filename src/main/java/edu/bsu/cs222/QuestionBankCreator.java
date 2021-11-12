@@ -39,9 +39,11 @@ public class QuestionBankCreator {
     private String checkQuestionBank(String questionBankChoice) {
         String[] pathNames = new File("src/main/java/QuestionBanks").list();
 
+        questionBankChoice = questionBankChoice + ".json";
+
         assert pathNames != null;
 
-            if (Arrays.asList(pathNames).contains(questionBankChoice+".json")) {
+            if (Arrays.asList(pathNames).contains(questionBankChoice)) {
                 if(overwriteBank()){
                     return questionBankChoice;
                 }

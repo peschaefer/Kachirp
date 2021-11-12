@@ -103,9 +103,8 @@ public class Controller {
         assert pathNames != null;
         String questionBankChoice = userInput.getInput("Enter the name of the bank you would like to play with.") + ".json";
         while(true) {
-            System.out.println(questionBankChoice.substring(0,questionBankChoice.length()-5));
             if (Arrays.asList(pathNames).contains(questionBankChoice)) {
-                return reader.buildFilePath(questionBankChoice.substring(0,questionBankChoice.length()-5));
+                return reader.buildFilePath(questionBankChoice);
             } else {
                 System.err.println("Error 404: Question Bank Not Found! Did you even read the list?");
                 questionBankChoice = userInput.getInput("Try again.");
