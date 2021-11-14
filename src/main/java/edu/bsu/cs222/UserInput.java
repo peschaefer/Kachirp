@@ -29,7 +29,7 @@ public class UserInput {
             if(categoryChoice.equals("") && userCategoryChoices.isEmpty()){
                 break;
             }
-            else if(categoryChoice.equals("")){
+            else if(categoryChoice.equals("") || categoryChoice.equalsIgnoreCase("nothing")){
                 break;
             }
             else if(categoryArrayList.contains(categoryChoice)){
