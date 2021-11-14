@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Controller {
+public class Console {
     private int correctResponses = 0;
     private final UserInput userInput = new UserInput();
     private final TriviaAPIConnector connector = new TriviaAPIConnector();
