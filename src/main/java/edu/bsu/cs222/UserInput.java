@@ -23,7 +23,6 @@ public class UserInput {
         ArrayList<String> categoryArrayList = new ArrayList<>(Arrays.asList(categoryArray));
         ArrayList<String> userCategoryChoices = new ArrayList<>();
 
-        
         while(true) {
             System.out.println("Please choose a category or nothing to quit");
             String categoryChoice = getInput().toLowerCase(Locale.ROOT);
