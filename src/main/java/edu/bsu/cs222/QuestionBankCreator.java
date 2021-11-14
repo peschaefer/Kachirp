@@ -26,12 +26,24 @@ public class QuestionBankCreator {
             }
 
             String correctAnswer = userInput.getInput("Please enter the correct answer");
-            String incorrectAnswersString = userInput.getInput("Please enter three incorrect answers separated by commas");
-            String[] incorrectAnswersArray = incorrectAnswersString.split(",");
 
-            Question question = new Question(questionText,correctAnswer,incorrectAnswersArray);
+            System.out.println("Please enter three incorrect answers separated by commas");
 
-            questions.add(question);
+            while(true) {
+                try {
+
+                    String incorrectAnswersString = userInput.getInput();
+                    String[] incorrectAnswersArray = incorrectAnswersString.split(",");
+
+                    Question question = new Question(questionText, correctAnswer, incorrectAnswersArray);
+
+                    questions.add(question);
+
+                    break;
+                } catch (ArrayIndexOutOfBoundsException ignored){
+                    System.err.println("THREE. Incorrect. Answers. Separated. By. COMMAS.");
+                }
+            }
         }
         writer.writeNewQuestionBank(questions, questionBankName);
     }

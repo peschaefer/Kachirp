@@ -16,7 +16,8 @@ public class Menu {
     }
 
     public void displayHeader(){
-        System.out.println("""
+        System.out.println(
+        """
         Welcome to Kachirp!
         ---------------------
         """);
