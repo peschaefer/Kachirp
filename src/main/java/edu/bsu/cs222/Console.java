@@ -132,6 +132,7 @@ public class Console {
             questionIndex++;
         }
         consoleDisplay.displayPointTotal(correctResponses);
+        correctResponses = 0;
     }
 
 }
