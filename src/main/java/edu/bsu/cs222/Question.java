@@ -1,5 +1,8 @@
 package edu.bsu.cs222;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 public class Question {
@@ -16,7 +19,7 @@ public class Question {
     public Question(String questionText,String[] answers, int correctAnswerIndex){
         this.questionText = questionText;
         this.answers = answers;
-        this.correctAnswerIndex = correctAnswerIndex;
+        this.correctAnswerIndex = randomizeAnswerChoices(answers,correctAnswerIndex);
     }
 
     private int randomizeAnswerChoices(String correctAnswer, String incorrect1,String incorrect2,String incorrect3) {
@@ -45,6 +48,16 @@ public class Question {
             }
         }
         return answerNumber;
+    }
+
+    private int randomizeAnswerChoices(String[] answers, int correctAnswerIndex){
+        String correctAnswer = answers[correctAnswerIndex];
+        ArrayList<String> answersArrayList = new ArrayList<>(Arrays.asList(answers));
+        Collections.shuffle(answersArrayList);
+        correctAnswerIndex = answersArrayList.indexOf(correctAnswer);
+        answersArrayList.toArray(answers);
+
+        return correctAnswerIndex;
     }
 
     public int getCorrectAnswerIndex(){
