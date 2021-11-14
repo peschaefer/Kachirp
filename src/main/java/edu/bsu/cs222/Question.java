@@ -19,9 +19,9 @@ public class Question {
         this.correctAnswerIndex = correctAnswerIndex;
     }
 
-    private int randomizeAnswerChoices(String correct, String incorrect1,String incorrect2,String incorrect3) {
+    private int randomizeAnswerChoices(String correctAnswer, String incorrect1,String incorrect2,String incorrect3) {
         int answerNumber = random.nextInt(4);
-        answers[answerNumber] = correct;
+        answers[answerNumber] = correctAnswer;
         switch (answerNumber) {
             case 0 -> {
                 answers[1] = incorrect1;
@@ -46,6 +46,7 @@ public class Question {
         }
         return answerNumber;
     }
+
     public int getCorrectAnswerIndex(){
         return correctAnswerIndex;
     }

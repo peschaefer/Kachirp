@@ -62,7 +62,10 @@ public class Console {
         String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
 
         String triviaData = connector.connectToApi(urlDestination);
-        errorHandler.checkForValidConnection(triviaData);
+        if(errorHandler.checkForConnectionError(triviaData)){
+            System.err.println("Have you tried connecting to the internet?");
+            return;
+        }
         parser.addQuestions(triviaData);
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 

@@ -1,10 +1,8 @@
 package edu.bsu.cs222;
 
 public class ConnectionErrorHandler {
-    public void checkForValidConnection (String triviaData){
-        if (triviaData.isEmpty()) {
-            System.err.println("A network error has occurred");
-            System.exit(1);
-        }
+    //Check for ERR_NO_INTERNET CODE instead
+    public Boolean checkForConnectionError(String triviaData){
+        return triviaData.isEmpty();
     }
 }
