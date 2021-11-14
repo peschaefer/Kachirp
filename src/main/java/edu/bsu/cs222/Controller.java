@@ -54,10 +54,6 @@ public class Controller {
         }
     }
 
-    private void displayPointTotal(){
-        System.out.printf("Point Total: %d\n%s\n",correctResponses,"-".repeat(21));
-    }
-
     private void playVanillaGame() throws IOException {
         TriviaAPIParser parser = new TriviaAPIParser();
         int numberOfQuestions = selectNumberOfQuestions();
@@ -132,6 +128,7 @@ public class Controller {
             checkAnswer(userAnswer, questionArrayList.get(questionIndex));
             questionIndex++;
         }
-        displayPointTotal();
+        menu.displayPointTotal(correctResponses);
     }
+
 }

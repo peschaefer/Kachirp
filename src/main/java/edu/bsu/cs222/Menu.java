@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Random;
 
 public class Menu {
+
     public void displayMainMenu(){
         System.out.println("""
         Please select an option.
@@ -61,5 +62,9 @@ public class Menu {
         System.out.println(incorrectAnswerResponses[random.nextInt(incorrectAnswerResponses.length)]);
         System.out.printf("The answer was: %s\n\n",currentQuestion.getCorrectAnswer());
 
+    }
+
+    public void displayPointTotal(int correctResponses){
+        System.out.printf("Point Total: %d\n%s\n",correctResponses,"-".repeat(21));
     }
 }
