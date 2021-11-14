@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class Console {
     private int correctResponses = 0;
+    private int incorrectResponses = 0;
     private final UserInput userInput = new UserInput();
     private final TriviaAPIConnector connector = new TriviaAPIConnector();
     private final URLBuilder urlBuilder = new URLBuilder();
@@ -51,6 +52,7 @@ public class Console {
 
         } else {
             consoleDisplay.displayIncorrectAnswerMessage(currentQuestion);
+            incorrectResponses+=1;
         }
     }
 
@@ -131,8 +133,9 @@ public class Console {
             checkAnswer(userAnswer, questionArrayList.get(questionIndex));
             questionIndex++;
         }
-        consoleDisplay.displayPointTotal(correctResponses);
+        consoleDisplay.displayPointTotal(correctResponses, incorrectResponses);
         correctResponses = 0;
+        incorrectResponses = 0;
     }
 
 }

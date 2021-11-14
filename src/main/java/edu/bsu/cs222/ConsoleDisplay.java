@@ -64,7 +64,8 @@ public class ConsoleDisplay {
 
     }
 
-    public void displayPointTotal(int correctResponses){
+    public void displayPointTotal(int correctResponses, int incorrectResponses){
         System.out.printf("Point Total: %d\n%s\n",correctResponses,"-".repeat(21));
+        System.out.printf("Points Missed: %d\n%s\n", incorrectResponses,"-".repeat(21));
     }
 }
