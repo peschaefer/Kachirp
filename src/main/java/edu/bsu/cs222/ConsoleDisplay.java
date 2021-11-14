@@ -26,6 +26,7 @@ public class ConsoleDisplay {
 
     public void displayCategoriesMenu(){
         System.out.println("""
+        
         The following are categories that you can choose to receive questions from:
         Food and Drink
         Geography
@@ -59,13 +60,13 @@ public class ConsoleDisplay {
         "Disappointing.",
         "Maybe think next time before choosing an answer.",};
         Random random = new Random();
-        System.err.println(incorrectAnswerResponses[random.nextInt(incorrectAnswerResponses.length)]);
+        System.err.println("\n" + incorrectAnswerResponses[random.nextInt(incorrectAnswerResponses.length)]);
         System.out.printf("The answer was: %s\n\n",currentQuestion.getCorrectAnswer());
 
     }
 
     public void displayPointTotal(int correctResponses, int incorrectResponses){
         System.out.printf("Point Total: %d\n%s\n",correctResponses,"-".repeat(21));
-        System.out.printf("Points Missed: %d\n%s\n", incorrectResponses,"-".repeat(21));
+        System.out.printf("Points Missed: %d\n%s\n\n", incorrectResponses,"-".repeat(21));
     }
 }

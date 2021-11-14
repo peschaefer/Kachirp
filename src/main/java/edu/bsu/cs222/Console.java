@@ -29,7 +29,7 @@ public class Console {
                 case "2" -> playCustomGame();
                 case "3" -> creator.createCustomQuestions();
                 case "4" -> {
-                    System.out.println("Thanks for playing :D");
+                    System.out.println("Chickening out? Whatever.");
                     System.exit(0);
                 }
                 default -> System.err.println("You are on thin ice. Read the menu next time.");
@@ -70,7 +70,7 @@ public class Console {
         String triviaData = connector.connectToApi(urlDestination);
 
         if(errorHandler.checkForConnectionError(triviaData)){
-            System.err.println("You seem to have lost connection since choosing this category. Nice job.");
+            System.err.println("You seem to have lost connection since choosing the vanilla game. Nice job.");
             return;
         }
 
@@ -83,7 +83,7 @@ public class Console {
     private int selectNumberOfQuestions(){
         while(true) {
             try {
-                return Integer.parseInt(userInput.getInput("Enter the number of questions you would like:"));
+                return Integer.parseInt(userInput.getInput("\nEnter the number of questions you would like:"));
             }catch(NumberFormatException e){
                 System.err.println("Does that look like a number?");
             }
@@ -115,8 +115,8 @@ public class Console {
             if (Arrays.asList(pathNames).contains(questionBankChoice)) {
                 return reader.buildFilePath(questionBankChoice);
             } else {
-                System.err.println("Error 404: Question Bank Not Found! Did you even read the list?");
-                questionBankChoice = userInput.getInput("Try again.") + ".json";
+                System.err.println("Did you even read the list? Do better.");
+                questionBankChoice = userInput.getInput() + ".json";
             }
         }
     }
