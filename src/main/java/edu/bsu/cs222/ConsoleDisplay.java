@@ -59,7 +59,7 @@ public class ConsoleDisplay {
         "Disappointing.",
         "Maybe think next time before choosing an answer.",};
         Random random = new Random();
-        System.out.println(incorrectAnswerResponses[random.nextInt(incorrectAnswerResponses.length)]);
+        System.err.println(incorrectAnswerResponses[random.nextInt(incorrectAnswerResponses.length)]);
         System.out.printf("The answer was: %s\n\n",currentQuestion.getCorrectAnswer());
 
     }
