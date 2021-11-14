@@ -3,7 +3,7 @@ package edu.bsu.cs222;
 import java.io.File;
 import java.util.Random;
 
-public class Menu {
+public class ConsoleDisplay {
 
     public void displayMainMenu(){
         System.out.println("""

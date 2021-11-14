@@ -13,14 +13,14 @@ public class Controller {
     private final QuestionBankCreator creator = new QuestionBankCreator();
     private final QuestionBankReader reader = new QuestionBankReader();
     private final ConnectionErrorHandler errorHandler = new ConnectionErrorHandler();
-    private final Menu menu = new Menu();
+    private final ConsoleDisplay consoleDisplay = new ConsoleDisplay();
 
     public void runApplication() throws IOException {
 
-        menu.displayHeader();
+        consoleDisplay.displayHeader();
 
         while(true){
-            menu.displayMainMenu();
+            consoleDisplay.displayMainMenu();
             String modeSelection = userInput.getInput();
 
             switch (modeSelection) {
@@ -50,14 +50,14 @@ public class Controller {
             correctResponses+=1;
 
         } else {
-            menu.displayIncorrectAnswerMessage(currentQuestion);
+            consoleDisplay.displayIncorrectAnswerMessage(currentQuestion);
         }
     }
 
     private void playVanillaGame() throws IOException {
         TriviaAPIParser parser = new TriviaAPIParser();
         int numberOfQuestions = selectNumberOfQuestions();
-        menu.displayCategoriesMenu();
+        consoleDisplay.displayCategoriesMenu();
 
         String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
 
@@ -94,7 +94,7 @@ public class Controller {
 
     private String selectQuestionBank(){
         System.out.println("Here are the existing question banks:\n");
-        menu.printQuestionBanks();
+        consoleDisplay.printQuestionBanks();
 
         String[] pathNames = new File("src/main/java/QuestionBanks").list();
 
@@ -128,7 +128,7 @@ public class Controller {
             checkAnswer(userAnswer, questionArrayList.get(questionIndex));
             questionIndex++;
         }
-        menu.displayPointTotal(correctResponses);
+        consoleDisplay.displayPointTotal(correctResponses);
     }
 
 }
