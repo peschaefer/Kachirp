@@ -13,6 +13,7 @@ public class Question {
 
     public Question(String questionText,String correctAnswer,String[] incorrectAnswers) {
         this.questionText = questionText;
+        correctAnswer = correctAnswer.replaceAll( "([ ])", "");
         correctAnswerIndex = randomizeAnswerChoices(correctAnswer,incorrectAnswers[0],incorrectAnswers[1],incorrectAnswers[2]);
     }
 
