@@ -129,11 +129,11 @@ public class Console {
             try {
                 userAnswer = Integer.parseInt(userInput.getInput());
             } catch (NumberFormatException e) {
-                System.out.println("\nThat is not a valid response.\n");
+                System.err.println("\nThat is not a number. Do you know the difference?\n");
                 continue;
             }
             if(userAnswer > 4 || userAnswer < 1){
-                System.out.println("\nPlease enter a number between 1 and 4.\n");
+                System.err.println("\nThat IS a number congratulations! Now try again with a number 1-4.\n");
                 continue;
             }
             checkAnswer(userAnswer, questionArrayList.get(questionIndex));
