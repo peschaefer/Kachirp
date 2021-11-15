@@ -139,7 +139,7 @@ public class Console {
             checkAnswer(userAnswer, questionArrayList.get(questionIndex));
             questionIndex++;
         }
-        consoleDisplay.displayPointTotal(correctResponses, incorrectResponses);
+        consoleDisplay.displayPointTotal(correctResponses, numberOfQuestions);
         correctResponses = 0;
         incorrectResponses = 0;
     }

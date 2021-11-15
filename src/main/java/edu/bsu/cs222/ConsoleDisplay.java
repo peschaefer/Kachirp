@@ -65,8 +65,9 @@ public class ConsoleDisplay {
 
     }
 
-    public void displayPointTotal(int correctResponses, int incorrectResponses){
+    public void displayPointTotal(int correctResponses, int numberOfQuestions){
+        double score = (double)correctResponses/(double)numberOfQuestions*100;
         System.out.printf("Point Total: %d\n%s\n",correctResponses,"-".repeat(21));
-        System.out.printf("Points Missed: %d\n%s\n\n", incorrectResponses,"-".repeat(21));
+        System.out.printf("Percentage: %.0f%%\n%s\n\n",score,"-".repeat(21));
     }
 }
