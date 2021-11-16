@@ -7,7 +7,6 @@ import java.util.Arrays;
 
 public class Console {
     private int correctResponses = 0;
-    private int incorrectResponses = 0;
     private final UserInput userInput = new UserInput();
     private final TriviaAPIConnector connector = new TriviaAPIConnector();
     private final URLBuilder urlBuilder = new URLBuilder();
@@ -37,12 +36,6 @@ public class Console {
         }
     }
 
-
-    private void displayQuestionInformation (Question question){
-        QuestionFormatter formatter = new QuestionFormatter();
-        System.out.println(formatter.formatQuestion(question));
-    }
-
     private void checkAnswer ( int userAnswer, Question currentQuestion){
         userAnswer -= 1;
         int correctAnswerIndex = currentQuestion.getCorrectAnswerIndex();
@@ -52,12 +45,11 @@ public class Console {
 
         } else {
             consoleDisplay.displayIncorrectAnswerMessage(currentQuestion);
-            incorrectResponses+=1;
         }
     }
 
     private void playVanillaGame() throws IOException {
-        if(errorHandler.checkForConnectError()){
+        if(errorHandler.checkForConnectionError()){
             System.err.println("The vanilla game relies on an internet connection, bozo.");
             return;
         }
@@ -125,7 +117,7 @@ public class Console {
         int questionIndex = 0;
         while (questionIndex < numberOfQuestions) {
             int userAnswer;
-            displayQuestionInformation(questionArrayList.get(questionIndex));
+            consoleDisplay.displayQuestionInformation(questionArrayList.get(questionIndex));
             try {
                 userAnswer = Integer.parseInt(userInput.getInput());
             } catch (NumberFormatException e) {
@@ -141,7 +133,6 @@ public class Console {
         }
         consoleDisplay.displayPointTotal(correctResponses, numberOfQuestions);
         correctResponses = 0;
-        incorrectResponses = 0;
     }
 
 }

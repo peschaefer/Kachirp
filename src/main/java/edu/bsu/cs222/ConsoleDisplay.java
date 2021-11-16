@@ -70,4 +70,9 @@ public class ConsoleDisplay {
         System.out.printf("Point Total: %d\n%s\n",correctResponses,"-".repeat(21));
         System.out.printf("Percentage: %.0f%%\n%s\n\n",score,"-".repeat(21));
     }
+
+    public void displayQuestionInformation (Question question){
+        QuestionFormatter formatter = new QuestionFormatter();
+        System.out.println(formatter.formatQuestion(question));
+    }
 }

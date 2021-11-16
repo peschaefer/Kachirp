@@ -7,7 +7,7 @@ public class ConnectionErrorHandler {
     public Boolean checkForConnectionError(String triviaData){
         return triviaData.isEmpty();
     }
-    public Boolean checkForConnectError(){
+    public Boolean checkForConnectionError(){
         try {
             URL url = new URL("http://www.google.com");
             URLConnection connection = url.openConnection();
