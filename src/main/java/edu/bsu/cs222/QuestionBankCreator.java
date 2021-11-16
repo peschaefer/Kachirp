@@ -10,13 +10,22 @@ public class QuestionBankCreator {
     private final UserInput userInput = new UserInput();
     private final QuestionBankWriter writer = new QuestionBankWriter();
 
-
     public void createCustomQuestions() throws IOException {
         ArrayList<Question> questions = new ArrayList<>();
         String questionBankName = userInput.getInput("What would you like to name this question bank?");
 
-        questionBankName = checkQuestionBank(questionBankName);
+        //Was primarily going to check and deny atypical ASCII for each part, but shortened to questionBankName
+        String regex = "^[a-zA-Z0-9]*$";
+        while (true){
+            if (!questionBankName.matches(regex) || questionBankName.isEmpty()) {
+                System.err.println("Bank name must be within alphanumerical bounds mate.");
+                questionBankName = userInput.getInput("Try again");
+            } else {
+                break;
+            }
+        }
 
+        questionBankName = checkQuestionBank(questionBankName);
 
         while(true){
             String questionText = userInput.getInput("Please enter your question or nothing to quit");
