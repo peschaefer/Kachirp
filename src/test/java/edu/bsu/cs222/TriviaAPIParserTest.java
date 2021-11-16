@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class TriviaAPIParserTest {
 
@@ -55,13 +56,32 @@ public class TriviaAPIParserTest {
     @Test
     public void addQuestionsTest1(){
         parser.addQuestions(triviaData);
-        Assertions.assertEquals("What is the capital of Iran?",parser.getQuestionArrayList().get(0).getQuestionText());
+        ArrayList<Question> questionsArrayList;
+        questionsArrayList = parser.getQuestionArrayList();
+        for(int x = 0; x<5;x++){
+            if("What is the capital of Iran?".equals(questionsArrayList.get(x).getQuestionText())){
+                Assertions.assertTrue(true);
+                return;
+            }
+        }
+        Assertions.fail();
     }
 
     @Test
     public void addQuestionsTest2(){
         parser.addQuestions(triviaData);
-        Assertions.assertEquals("What is the second largest bone in the foot?",parser.getQuestionArrayList().get(4).getQuestionText());
+        ArrayList<Question> questionsArrayList;
+        questionsArrayList = parser.getQuestionArrayList();
+        for(int x = 0; x<5;x++){
+            if("What is the second largest bone in the foot?".equals(questionsArrayList.get(x).getQuestionText())){
+                Assertions.assertTrue(true);
+                return;
+            }
+        }
+        Assertions.fail();
     }
+
+    //addQuestionsTest1 and addQuestionTest2 are written this way because the order of the questions is randomized.
+    //This means, all places need to be checked before we can determine if it failed
 
 }

@@ -7,7 +7,6 @@ import java.util.Arrays;
 
 public class Console {
     private int correctResponses = 0;
-    private int incorrectResponses = 0;
     private final UserInput userInput = new UserInput();
     private final TriviaAPIConnector connector = new TriviaAPIConnector();
     private final URLBuilder urlBuilder = new URLBuilder();
@@ -29,18 +28,12 @@ public class Console {
                 case "2" -> playCustomGame();
                 case "3" -> creator.createCustomQuestions();
                 case "4" -> {
-                    System.out.println("Thanks for playing :D");
+                    System.out.println("Chickening out? Whatever.");
                     System.exit(0);
                 }
                 default -> System.err.println("You are on thin ice. Read the menu next time.");
             }
         }
-    }
-
-
-    private void displayQuestionInformation (Question question){
-        QuestionFormatter formatter = new QuestionFormatter();
-        System.out.println(formatter.formatQuestion(question));
     }
 
     private void checkAnswer ( int userAnswer, Question currentQuestion){
@@ -52,22 +45,27 @@ public class Console {
 
         } else {
             consoleDisplay.displayIncorrectAnswerMessage(currentQuestion);
-            incorrectResponses+=1;
         }
     }
 
     private void playVanillaGame() throws IOException {
+        if(errorHandler.checkForConnectionError()){
+            System.err.println("The vanilla game relies on an internet connection, bozo.");
+            return;
+        }
+
         TriviaAPIParser parser = new TriviaAPIParser();
         int numberOfQuestions = selectNumberOfQuestions();
         consoleDisplay.displayCategoriesMenu();
 
         String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
-
         String triviaData = connector.connectToApi(urlDestination);
+
         if(errorHandler.checkForConnectionError(triviaData)){
-            System.err.println("Have you tried connecting to the internet?");
+            System.err.println("You seem to have lost connection since choosing the vanilla game. Nice job.");
             return;
         }
+
         parser.addQuestions(triviaData);
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
 
@@ -77,7 +75,7 @@ public class Console {
     private int selectNumberOfQuestions(){
         while(true) {
             try {
-                return Integer.parseInt(userInput.getInput("Enter the number of questions you would like:"));
+                return Integer.parseInt(userInput.getInput("\nEnter the number of questions you would like:"));
             }catch(NumberFormatException e){
                 System.err.println("Does that look like a number?");
             }
@@ -109,8 +107,8 @@ public class Console {
             if (Arrays.asList(pathNames).contains(questionBankChoice)) {
                 return reader.buildFilePath(questionBankChoice);
             } else {
-                System.err.println("Error 404: Question Bank Not Found! Did you even read the list?");
-                questionBankChoice = userInput.getInput("Try again.") + ".json";
+                System.err.println("Did you even read the list? Do better.");
+                questionBankChoice = userInput.getInput() + ".json";
             }
         }
     }
@@ -119,23 +117,22 @@ public class Console {
         int questionIndex = 0;
         while (questionIndex < numberOfQuestions) {
             int userAnswer;
-            displayQuestionInformation(questionArrayList.get(questionIndex));
+            consoleDisplay.displayQuestionInformation(questionArrayList.get(questionIndex));
             try {
                 userAnswer = Integer.parseInt(userInput.getInput());
             } catch (NumberFormatException e) {
-                System.out.println("\nThat is not a valid response.\n");
+                System.err.println("\nThat is not a number. Do you know the difference?\n");
                 continue;
             }
             if(userAnswer > 4 || userAnswer < 1){
-                System.out.println("\nPlease enter a number between 1 and 4.\n");
+                System.err.println("\nThat IS a number congratulations! Now try again with a number 1-4.\n");
                 continue;
             }
             checkAnswer(userAnswer, questionArrayList.get(questionIndex));
             questionIndex++;
         }
-        consoleDisplay.displayPointTotal(correctResponses, incorrectResponses);
+        consoleDisplay.displayPointTotal(correctResponses, numberOfQuestions);
         correctResponses = 0;
-        incorrectResponses = 0;
     }
 
 }

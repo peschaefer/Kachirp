@@ -24,7 +24,7 @@ public class UserInput {
         ArrayList<String> userCategoryChoices = new ArrayList<>();
 
         while(true) {
-            System.out.println("Please choose a category or nothing to quit");
+            System.out.println("Please choose a category or hit enter to quit");
             String categoryChoice = getInput().toLowerCase(Locale.ROOT);
             if(categoryChoice.equals("") && userCategoryChoices.isEmpty()){
                 break;
