@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class TriviaAPIParserTest {
 
@@ -55,8 +56,10 @@ public class TriviaAPIParserTest {
     @Test
     public void addQuestionsTest1(){
         parser.addQuestions(triviaData);
+        ArrayList<Question> questionsArrayList;
+        questionsArrayList = parser.getQuestionArrayList();
         for(int x = 0; x<5;x++){
-            if("What is the capital of Iran?".equals(parser.getQuestionArrayList().get(x).getQuestionText())){
+            if("What is the capital of Iran?".equals(questionsArrayList.get(x).getQuestionText())){
                 Assertions.assertTrue(true);
                 return;
             }
@@ -67,8 +70,10 @@ public class TriviaAPIParserTest {
     @Test
     public void addQuestionsTest2(){
         parser.addQuestions(triviaData);
+        ArrayList<Question> questionsArrayList;
+        questionsArrayList = parser.getQuestionArrayList();
         for(int x = 0; x<5;x++){
-            if("What is the second largest bone in the foot?".equals(parser.getQuestionArrayList().get(x).getQuestionText())){
+            if("What is the second largest bone in the foot?".equals(questionsArrayList.get(x).getQuestionText())){
                 Assertions.assertTrue(true);
                 return;
             }
