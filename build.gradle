@@ -31,4 +31,4 @@ javafx {
     version = '13.0.2'
 
 }
-mainClassName = "edu.bsu.cs222"
+mainClassName = "edu.bsu.cs222.SceneController"
