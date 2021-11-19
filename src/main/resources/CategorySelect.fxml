@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.SceneController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="59.0" layoutY="14.0" prefHeight="135.0" prefWidth="476.0">
+         <children>
+            <Label text="Select Your Categories!">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Button layoutX="425.0" layoutY="220.0" mnemonicParsing="false" text="Play With All Categories" />
+      <Button fx:id="categorySubmitButton" layoutX="460.0" layoutY="145.0" mnemonicParsing="false" text="Play!" />
+      <CheckBox layoutX="65.0" layoutY="145.0" mnemonicParsing="false" text="Food and Drink" />
+      <CheckBox layoutX="65.0" layoutY="170.0" mnemonicParsing="false" text="Geography" />
+      <CheckBox layoutX="65.0" layoutY="195.0" mnemonicParsing="false" text="General Knoweldge" />
+      <CheckBox layoutX="65.0" layoutY="220.0" mnemonicParsing="false" text="History" />
+      <CheckBox layoutX="65.0" layoutY="245.0" mnemonicParsing="false" text="Art and Literature" />
+      <CheckBox layoutX="270.0" layoutY="170.0" mnemonicParsing="false" text="Science" />
+      <CheckBox layoutX="270.0" layoutY="195.0" mnemonicParsing="false" text="Society and Culture" />
+      <CheckBox layoutX="270.0" layoutY="220.0" mnemonicParsing="false" text="Sports and Leisure" />
+      <CheckBox layoutX="270.0" layoutY="245.0" mnemonicParsing="false" text="Music" />
+      <CheckBox layoutX="270.0" layoutY="145.0" mnemonicParsing="false" text="Movies" />
+   </children>
+</AnchorPane>

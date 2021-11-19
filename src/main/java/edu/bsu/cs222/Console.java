@@ -58,7 +58,7 @@ public class Console {
         int numberOfQuestions = selectNumberOfQuestions();
         consoleDisplay.displayCategoriesMenu();
 
-        String urlDestination = urlBuilder.buildURL(userInput.getCategories(), numberOfQuestions);
+        String urlDestination = urlBuilder.buildURL(userInput.getUserCategoryChoices(), numberOfQuestions);
         String triviaData = connector.connectToApi(urlDestination);
 
         if(errorHandler.checkForConnectionError(triviaData)){
