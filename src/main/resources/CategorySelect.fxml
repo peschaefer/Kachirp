@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.SceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.CategoryController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="59.0" layoutY="14.0" prefHeight="135.0" prefWidth="476.0">
          <children>
@@ -15,17 +15,18 @@
             </Label>
          </children>
       </VBox>
-      <Button layoutX="425.0" layoutY="220.0" mnemonicParsing="false" text="Play With All Categories" />
-      <Button fx:id="categorySubmitButton" layoutX="460.0" layoutY="145.0" mnemonicParsing="false" text="Play!" />
-      <CheckBox layoutX="65.0" layoutY="145.0" mnemonicParsing="false" text="Food and Drink" />
-      <CheckBox layoutX="65.0" layoutY="170.0" mnemonicParsing="false" text="Geography" />
-      <CheckBox layoutX="65.0" layoutY="195.0" mnemonicParsing="false" text="General Knoweldge" />
-      <CheckBox layoutX="65.0" layoutY="220.0" mnemonicParsing="false" text="History" />
-      <CheckBox layoutX="65.0" layoutY="245.0" mnemonicParsing="false" text="Art and Literature" />
-      <CheckBox layoutX="270.0" layoutY="170.0" mnemonicParsing="false" text="Science" />
-      <CheckBox layoutX="270.0" layoutY="195.0" mnemonicParsing="false" text="Society and Culture" />
-      <CheckBox layoutX="270.0" layoutY="220.0" mnemonicParsing="false" text="Sports and Leisure" />
-      <CheckBox layoutX="270.0" layoutY="245.0" mnemonicParsing="false" text="Music" />
-      <CheckBox layoutX="270.0" layoutY="145.0" mnemonicParsing="false" text="Movies" />
+      <Button layoutX="252.0" layoutY="301.0" mnemonicParsing="false" text="Play With All Categories" />
+      <Button fx:id="categorySubmitButton" layoutX="107.0" layoutY="301.0" mnemonicParsing="false" onAction="#populateCategoryArrayList" text="Play!" />
+      <CheckBox fx:id="foodAndDrinkBox" layoutX="65.0" layoutY="145.0" mnemonicParsing="false" text="Food and Drink" />
+      <CheckBox fx:id="geographyBox" layoutX="65.0" layoutY="170.0" mnemonicParsing="false" text="Geography" />
+      <CheckBox fx:id="generalKnowledgeBox" layoutX="65.0" layoutY="195.0" mnemonicParsing="false" text="General Knoweldge" />
+      <CheckBox fx:id="historyBox" layoutX="65.0" layoutY="220.0" mnemonicParsing="false" text="History" />
+      <CheckBox fx:id="artAndLiteratureBox" layoutX="65.0" layoutY="245.0" mnemonicParsing="false" text="Art and Literature" />
+      <CheckBox fx:id="scienceBox" layoutX="270.0" layoutY="170.0" mnemonicParsing="false" text="Science" />
+      <CheckBox fx:id="societyAndCultureBox" layoutX="270.0" layoutY="195.0" mnemonicParsing="false" text="Society and Culture" />
+      <CheckBox fx:id="sportsAndLeisureBox" layoutX="270.0" layoutY="220.0" mnemonicParsing="false" text="Sports and Leisure" />
+      <CheckBox fx:id="musicBox" layoutX="270.0" layoutY="245.0" mnemonicParsing="false" text="Music" />
+      <CheckBox fx:id="moviesBox" layoutX="270.0" layoutY="145.0" mnemonicParsing="false" text="Movies" />
+      <TextArea fx:id="tempTextArea" layoutX="395.0" layoutY="112.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
