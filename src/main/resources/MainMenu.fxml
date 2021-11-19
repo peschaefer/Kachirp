@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.SceneController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="177.0" layoutY="14.0" prefHeight="284.0" prefWidth="246.0">
+         <children>
+            <Label alignment="TOP_CENTER" layoutX="18.0" layoutY="10.0" text="KACHIRP" textAlignment="CENTER">
+               <font>
+                  <Font name="Droid Serif" size="35.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#switchToVanillaGame" prefHeight="25.0" prefWidth="151.0" text="Vanillia Game" />
+            <Button mnemonicParsing="false" onAction="#switchToCustomGame" prefWidth="149.0" text="Custom Game" />
+            <Button mnemonicParsing="false" onAction="#switchToQuestionCreator" text="Create Custom Questions" textAlignment="CENTER" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
