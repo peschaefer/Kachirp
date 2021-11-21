@@ -14,8 +14,8 @@ public class GameController {
     public int answerChoice;
     public Question question;
 
-    public void setQuestionText(String text){
-        questionTextLabel.setText(text);
+    public void setQuestionText(){
+        questionTextLabel.setText(question.getQuestionText());
     }
 
     public void setQuestion(Question question){

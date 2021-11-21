@@ -39,7 +39,7 @@ public class SceneController extends Application {
     }
 
     //VanillaGame and CustomGame should be one scene
-    public void switchToCustomGame(javafx.event.ActionEvent event) throws IOException {
+    public void switchToCustomGame(javafx.event.ActionEvent event){
         try {
             FXMLLoader loader  = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("CustomGame.fxml")));
 
@@ -49,7 +49,7 @@ public class SceneController extends Application {
 
             gameController.setQuestion(question);
 
-            gameController.setQuestionText(question.getQuestionText());
+            gameController.setQuestionText();
             gameController.setAnswerChoices(question.getAnswers());
         }
         catch (IOException ioException) {
