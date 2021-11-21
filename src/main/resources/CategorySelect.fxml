@@ -19,7 +19,7 @@
       <Button fx:id="categorySubmitButton" layoutX="107.0" layoutY="301.0" mnemonicParsing="false" onAction="#populateCategoryArrayList" text="Play!" />
       <CheckBox fx:id="foodAndDrinkBox" layoutX="65.0" layoutY="145.0" mnemonicParsing="false" text="Food and Drink" />
       <CheckBox fx:id="geographyBox" layoutX="65.0" layoutY="170.0" mnemonicParsing="false" text="Geography" />
-      <CheckBox fx:id="generalKnowledgeBox" layoutX="65.0" layoutY="195.0" mnemonicParsing="false" text="General Knoweldge" />
+      <CheckBox fx:id="generalKnowledgeBox" layoutX="65.0" layoutY="195.0" mnemonicParsing="false" text="General Knowledge" />
       <CheckBox fx:id="historyBox" layoutX="65.0" layoutY="220.0" mnemonicParsing="false" text="History" />
       <CheckBox fx:id="artAndLiteratureBox" layoutX="65.0" layoutY="245.0" mnemonicParsing="false" text="Art and Literature" />
       <CheckBox fx:id="scienceBox" layoutX="270.0" layoutY="170.0" mnemonicParsing="false" text="Science" />
