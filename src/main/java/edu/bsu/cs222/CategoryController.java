@@ -82,6 +82,4 @@ public class CategoryController {
         ArrayList<String> categoryChoices = populateCategoryArrayList();
         tempTextArea.setText(builder.buildURL(categoryChoices,numberOfQuestions));
     }
-
-
 }

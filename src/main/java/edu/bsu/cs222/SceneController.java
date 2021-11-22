@@ -1,5 +1,6 @@
 package edu.bsu.cs222;
 
+import edu.bsu.cs222.Question;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

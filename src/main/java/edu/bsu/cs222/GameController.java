@@ -35,6 +35,9 @@ public class GameController {
     public void titleWIP(){
         checkAnswer();
         currentQuestionIndex++;
+        if(currentQuestionIndex == questionArrayList.size()){
+            currentQuestionIndex = 0;
+        }
         setQuestionProperties();
     }
 
