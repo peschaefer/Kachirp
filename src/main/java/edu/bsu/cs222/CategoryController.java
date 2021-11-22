@@ -2,7 +2,10 @@ package edu.bsu.cs222;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 
@@ -11,6 +14,10 @@ public class CategoryController {
 
     ArrayList<CheckBox> checkBoxes = new ArrayList<>();
 
+    @FXML
+    private Slider questionNumberSlider;
+    @FXML
+    private Label questionNumberLabel;
     @FXML
     private TextArea tempTextArea;
     @FXML
@@ -58,5 +65,9 @@ public class CategoryController {
         }
         tempTextArea.setText(guiCategorySelections.toString());
         return guiCategorySelections;
+    }
+
+    public void setNumberLabel(MouseEvent mouseEvent) {
+        questionNumberLabel.setText(String.valueOf(Math.ceil(questionNumberSlider.getValue())));
     }
 }
