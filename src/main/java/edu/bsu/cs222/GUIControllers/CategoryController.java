@@ -1,5 +1,6 @@
-package edu.bsu.cs222;
+package edu.bsu.cs222.GUIControllers;
 
+import edu.bsu.cs222.URLBuilder;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;

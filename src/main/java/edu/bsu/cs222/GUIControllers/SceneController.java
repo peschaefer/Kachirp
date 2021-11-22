@@ -1,18 +1,15 @@
-package edu.bsu.cs222;
+package edu.bsu.cs222.GUIControllers;
 
+import edu.bsu.cs222.GUIControllers.GameController;
+import edu.bsu.cs222.Question;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
-import javax.imageio.IIOParam;
-import javax.swing.*;
 import java.io.IOException;
 import java.util.Objects;
 
