@@ -5,14 +5,16 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CategoryController {
     ArrayList<String> guiCategorySelections = new ArrayList<>();
 
     ArrayList<CheckBox> checkBoxes = new ArrayList<>();
+
+    URLBuilder builder = new URLBuilder();
 
     @FXML
     private Slider questionNumberSlider;
@@ -57,17 +59,28 @@ public class CategoryController {
 
 
     public ArrayList<String> populateCategoryArrayList(){
-        populateCheckboxArrayList();
+        guiCategorySelections.clear();
         for (CheckBox box:checkBoxes) {
             if(box.isSelected()){
-                guiCategorySelections.add(box.getText());
+                guiCategorySelections.add(box.getText().toLowerCase(Locale.ROOT));
             }
         }
-        tempTextArea.setText(guiCategorySelections.toString());
+        checkBoxes.clear();
+        //tempTextArea.setText(guiCategorySelections.toString());
         return guiCategorySelections;
     }
 
-    public void setNumberLabel(MouseEvent mouseEvent) {
-        questionNumberLabel.setText(String.valueOf(Math.ceil(questionNumberSlider.getValue())));
+    public void setNumberLabel() {
+        int numberOfQuestions = (int)Math.ceil(questionNumberSlider.getValue());
+        questionNumberLabel.setText(String.valueOf(numberOfQuestions));
     }
+
+    public void setUpURL(){
+        populateCheckboxArrayList();
+        int numberOfQuestions = (int)Math.ceil(questionNumberSlider.getValue());
+        ArrayList<String> categoryChoices = populateCategoryArrayList();
+        tempTextArea.setText(builder.buildURL(categoryChoices,numberOfQuestions));
+    }
+
+
 }
