@@ -4,6 +4,8 @@ import edu.bsu.cs222.Question;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.util.ArrayList;
+
 public class GameController {
 
     public Label questionTextLabel;
@@ -13,29 +15,31 @@ public class GameController {
     public Button option4;
     public Label answerResponse;
     public int answerChoice;
+    public int currentQuestionIndex = 0;
     public Question question;
+    public ArrayList<Question> questionArrayList = new ArrayList<>();
 
-    public void setQuestionText(){
-        questionTextLabel.setText(question.getQuestionText());
+    public void setQuestionArrayList(ArrayList<Question> questionArrayList){
+        this.questionArrayList = questionArrayList;
+        setQuestionProperties();
     }
 
-    public void setQuestion(Question question){
-        this.question = question;
-    }
-
-    public void setAnswerChoices(String[] answers){
-        option1.setText(answers[0]);
-        option2.setText(answers[1]);
-        option3.setText(answers[2]);
-        option4.setText(answers[3]);
+    public void setQuestionProperties(){
+        questionTextLabel.setText(questionArrayList.get(currentQuestionIndex).getQuestionText());
+        option1.setText(questionArrayList.get(currentQuestionIndex).getAnswers()[0]);
+        option2.setText(questionArrayList.get(currentQuestionIndex).getAnswers()[1]);
+        option3.setText(questionArrayList.get(currentQuestionIndex).getAnswers()[2]);
+        option4.setText(questionArrayList.get(currentQuestionIndex).getAnswers()[3]);
     }
 
     public void titleWIP(){
         checkAnswer();
+        currentQuestionIndex++;
+        setQuestionProperties();
     }
 
     public void checkAnswer(){
-        if(question.getCorrectAnswerIndex()+1 == answerChoice){
+        if(questionArrayList.get(currentQuestionIndex).getCorrectAnswerIndex()+1 == answerChoice){
             answerResponse.setText("Correct!");
         }
         else{

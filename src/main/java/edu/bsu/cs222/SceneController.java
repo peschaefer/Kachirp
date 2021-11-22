@@ -9,11 +9,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class SceneController extends Application {
 
-    Question question = new Question("What is my middle name?","Edward",new String[]{"Richard","James","Niall"});
+    public ArrayList<Question> questionArrayList =  new ArrayList<>();
     private Scene scene;
     private Parent root;
 
@@ -40,12 +41,16 @@ public class SceneController extends Application {
 
             root = loader.load();
 
+            questionArrayList.add(new Question("What is my middle name?","Edward",new String[]{"Richard","James","Niall"}));
+            questionArrayList.add(new Question("What is my last name?","Schaefer",new String[]{"Richard","James","Niall"}));
+
             GameController gameController = loader.getController();
 
-            gameController.setQuestion(question);
+            gameController.setQuestionArrayList(questionArrayList);
 
-            gameController.setQuestionText();
-            gameController.setAnswerChoices(question.getAnswers());
+            //gameController.setQuestionProperties();
+
+            //System.out.println(questionArrayList.get(0).getQuestionText());
         }
         catch (IOException ioException) {
             throw new RuntimeException(ioException);
