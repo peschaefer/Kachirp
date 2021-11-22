@@ -1,7 +1,5 @@
-package edu.bsu.cs222.GUIControllers;
+package edu.bsu.cs222;
 
-import edu.bsu.cs222.GUIControllers.GameController;
-import edu.bsu.cs222.Question;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -38,7 +36,7 @@ public class SceneController extends Application {
     //VanillaGame and CustomGame should be one scene
     public void switchToCustomGame(javafx.event.ActionEvent event){
         try {
-            FXMLLoader loader  = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("CustomGame.fxml")));
+            FXMLLoader loader  = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("QuestionPrompt.fxml")));
 
             root = loader.load();
 

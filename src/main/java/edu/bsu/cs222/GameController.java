@@ -1,4 +1,4 @@
-package edu.bsu.cs222.GUIControllers;
+package edu.bsu.cs222;
 
 import edu.bsu.cs222.Question;
 import javafx.scene.control.Button;
@@ -30,7 +30,11 @@ public class GameController {
         option4.setText(answers[3]);
     }
 
-    public void checkAnswer(int answerChoice){
+    public void titleWIP(){
+        checkAnswer();
+    }
+
+    public void checkAnswer(){
         if(question.getCorrectAnswerIndex()+1 == answerChoice){
             answerResponse.setText("Correct!");
         }
@@ -41,18 +45,18 @@ public class GameController {
 
     public void setAnswerChoice1() {
         answerChoice = 1;
-        checkAnswer(1);
+        titleWIP();
     }
     public void setAnswerChoice2() {
-        answerChoice = 1;
-        checkAnswer(2);
+        answerChoice = 2;
+        titleWIP();
     }
     public void setAnswerChoice3() {
-        answerChoice = 1;
-        checkAnswer(3);
+        answerChoice = 3;
+        titleWIP();
     }
     public void setAnswerChoice4() {
-        answerChoice = 1;
-        checkAnswer(4);
+        answerChoice = 4;
+        titleWIP();
     }
 }

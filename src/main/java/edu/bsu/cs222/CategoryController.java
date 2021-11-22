@@ -1,4 +1,4 @@
-package edu.bsu.cs222.GUIControllers;
+package edu.bsu.cs222;
 
 import edu.bsu.cs222.URLBuilder;
 import javafx.fxml.FXML;
