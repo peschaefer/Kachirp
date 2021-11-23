@@ -21,7 +21,6 @@ import java.util.Objects;
 
 public class Main extends Application {
 
-    public ArrayList<Question> questionArrayList =  new ArrayList<>();
     private Scene scene;
     private Parent root;
 
@@ -58,14 +57,11 @@ public class Main extends Application {
     }
 
     //VanillaGame and CustomGame should be one scene
-    public void switchToCustomGame(javafx.event.ActionEvent event){
+    public void switchToQuestionPrompt(javafx.event.ActionEvent event,ArrayList<Question> questionArrayList){
         try {
             FXMLLoader loader  = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("QuestionPrompt.fxml")));
 
             root = loader.load();
-
-            questionArrayList.add(new Question("What is my middle name?","Edward",new String[]{"Richard","James","Niall"}));
-            questionArrayList.add(new Question("What is my last name?","Schaefer",new String[]{"Richard","James","Niall"}));
 
             GameController gameController = loader.getController();
 
@@ -120,31 +116,6 @@ public class Main extends Application {
         }
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void switchToABunchAButtons(){
-        //Creating a Button
-        ArrayList<Button> buttons = new ArrayList<>();
-        Button button = new Button();
-        button.setText("Wambo");
-        buttons.add(button);
-        Button button2 = new Button();
-        button2.setText("Wimbo");
-        button2.setTranslateX(0);
-        button2.setTranslateY(60);
-        buttons.add(button2);
-        System.out.println(buttons);
-        VBox vbox = new VBox();
-        for(Button button1 : buttons){
-            vbox.getChildren().add(button1);
-        }
-        //Setting the stage
-        Group root = new Group(vbox);
-        Scene scene = new Scene(root, 595, 150, Color.CORNFLOWERBLUE);
-        Stage stage = new Stage();
-        stage.setTitle("Button Example");
         stage.setScene(scene);
         stage.show();
     }

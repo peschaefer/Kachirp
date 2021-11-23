@@ -14,9 +14,8 @@
                </font>
             </Label>
             <Button mnemonicParsing="false" onAction="#switchToCategorySelection" prefHeight="25.0" prefWidth="151.0" text="Vanillia Game" />
-            <Button mnemonicParsing="false" onAction="#switchToCustomGame" prefWidth="149.0" text="Custom Game" />
+            <Button mnemonicParsing="false" onAction="#switchToMainMenu" prefWidth="149.0" text="Custom Game" />
             <Button mnemonicParsing="false" onAction="#switchToQuestionCreator" text="Create Custom Questions" textAlignment="CENTER" />
-            <Button mnemonicParsing="false" onAction="#switchToABunchAButtons" text="Button" />
          </children>
       </VBox>
    </children>

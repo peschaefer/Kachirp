@@ -16,7 +16,7 @@
          </children>
       </VBox>
       <Button layoutX="252.0" layoutY="301.0" mnemonicParsing="false" text="Play With All Categories" />
-      <Button fx:id="categorySubmitButton" layoutX="107.0" layoutY="301.0" mnemonicParsing="false" onAction="#setUpURL" text="Play!" />
+      <Button fx:id="categorySubmitButton" layoutX="107.0" layoutY="301.0" mnemonicParsing="false" onAction="#startGame" text="Play!" />
       <CheckBox fx:id="foodAndDrinkBox" layoutX="65.0" layoutY="145.0" mnemonicParsing="false" text="Food and Drink" />
       <CheckBox fx:id="geographyBox" layoutX="65.0" layoutY="170.0" mnemonicParsing="false" text="Geography" />
       <CheckBox fx:id="generalKnowledgeBox" layoutX="65.0" layoutY="195.0" mnemonicParsing="false" text="General Knowledge" />

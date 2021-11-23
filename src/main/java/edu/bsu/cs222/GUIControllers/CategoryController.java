@@ -1,14 +1,20 @@
 package edu.bsu.cs222.GUIControllers;
 
+import edu.bsu.cs222.Question;
+import edu.bsu.cs222.TriviaAPIConnector;
+import edu.bsu.cs222.TriviaAPIParser;
 import edu.bsu.cs222.URLBuilder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 
 public class CategoryController {
+    TriviaAPIParser parser = new TriviaAPIParser();
+    TriviaAPIConnector connector = new TriviaAPIConnector();
     ArrayList<String> guiCategorySelections = new ArrayList<>();
 
     ArrayList<CheckBox> checkBoxes = new ArrayList<>();
@@ -16,6 +22,8 @@ public class CategoryController {
     URLBuilder builder = new URLBuilder();
 
     Main main;
+
+    private int numberOfQuestions;
 
     @FXML
     private Slider questionNumberSlider;
@@ -68,7 +76,7 @@ public class CategoryController {
     }
 
     public void setNumberLabel() {
-        int numberOfQuestions = (int)Math.ceil(questionNumberSlider.getValue());
+        numberOfQuestions = (int)Math.ceil(questionNumberSlider.getValue());
         questionNumberLabel.setText(String.valueOf(numberOfQuestions));
     }
 
@@ -81,5 +89,17 @@ public class CategoryController {
 
     public void returnToMain(ActionEvent event) {
             main.switchToMainMenu(event);
+    }
+
+    public void startGame(ActionEvent event) throws IOException {
+        populateCheckboxArrayList();
+        ArrayList<String> categoryChoices = populateCategoryArrayList();
+        //System.out.println(categoryChoices.toString());
+        String url = builder.buildURL(populateCategoryArrayList(),numberOfQuestions);
+        //System.out.println(url);
+        String apiData = connector.connectToApi(url);
+        parser.addQuestions(apiData);
+        ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
+        main.switchToQuestionPrompt(event,questionArrayList);
     }
 }
