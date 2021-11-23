@@ -1,4 +1,4 @@
-package edu.bsu.cs222;
+package edu.bsu.cs222.GUIControllers;
 
 import edu.bsu.cs222.Question;
 import javafx.scene.control.Button;

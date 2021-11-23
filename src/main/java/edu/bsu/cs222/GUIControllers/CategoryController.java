@@ -1,6 +1,7 @@
-package edu.bsu.cs222;
+package edu.bsu.cs222.GUIControllers;
 
 import edu.bsu.cs222.URLBuilder;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -16,6 +17,8 @@ public class CategoryController {
     ArrayList<CheckBox> checkBoxes = new ArrayList<>();
 
     URLBuilder builder = new URLBuilder();
+
+    Main main;
 
     @FXML
     private Slider questionNumberSlider;
@@ -34,15 +37,11 @@ public class CategoryController {
     @FXML
     private CheckBox artAndLiteratureBox;
     @FXML
-    private CheckBox scienceBox;
-    @FXML
-    private CheckBox societyAndCultureBox;
-    @FXML
-    private CheckBox sportsAndLeisureBox;
-    @FXML
-    private CheckBox musicBox;
-    @FXML
-    private CheckBox moviesBox;
+    private CheckBox musicBox,moviesBox,sportsAndLeisureBox,societyAndCultureBox,scienceBox;
+
+    public void setMain(Main main){
+        this.main = main;
+    }
 
     private void populateCheckboxArrayList(){
         //Send a GET request to the FXML document for all fxid's (later)
@@ -81,5 +80,9 @@ public class CategoryController {
         int numberOfQuestions = (int)Math.ceil(questionNumberSlider.getValue());
         ArrayList<String> categoryChoices = populateCategoryArrayList();
         tempTextArea.setText(builder.buildURL(categoryChoices,numberOfQuestions));
+    }
+
+    public void returnToMain(ActionEvent event) {
+            main.switchToMainMenu(event);
     }
 }

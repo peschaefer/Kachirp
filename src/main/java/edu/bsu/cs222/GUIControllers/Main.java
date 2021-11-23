@@ -1,5 +1,6 @@
-package edu.bsu.cs222;
+package edu.bsu.cs222.GUIControllers;
 
+import edu.bsu.cs222.GUIControllers.GameController;
 import edu.bsu.cs222.Question;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -13,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class SceneController extends Application {
+public class Main extends Application {
 
     public ArrayList<Question> questionArrayList =  new ArrayList<>();
     private Scene scene;
@@ -29,6 +30,22 @@ public class SceneController extends Application {
         scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    public void switchToMainMenu(ActionEvent event){
+        try {
+            FXMLLoader loader  = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("MainMenu.fxml")));
+
+            root = loader.load();
+
+        }
+        catch (IOException ioException) {
+            throw new RuntimeException(ioException);
+        }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {
@@ -84,6 +101,21 @@ public class SceneController extends Application {
     }
 
     public void switchToCategorySelection(javafx.event.ActionEvent event) {
-        switchScene(event,"CategorySelect.fxml");
+        try {
+            FXMLLoader loader  = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("CategorySelect.fxml")));
+
+            root = loader.load();
+
+            CategoryController categoryController = loader.getController();
+
+            categoryController.setMain(this);
+        }
+        catch (IOException ioException) {
+            throw new RuntimeException(ioException);
+        }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
