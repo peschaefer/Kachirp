@@ -95,7 +95,8 @@ public class CategoryController {
         populateCheckboxArrayList();
         ArrayList<String> categoryChoices = populateCategoryArrayList();
         //System.out.println(categoryChoices.toString());
-        String url = builder.buildURL(populateCategoryArrayList(),numberOfQuestions);
+        String url = builder.buildURL(categoryChoices,numberOfQuestions);
+        System.out.println(url);
         //System.out.println(url);
         String apiData = connector.connectToApi(url);
         parser.addQuestions(apiData);
