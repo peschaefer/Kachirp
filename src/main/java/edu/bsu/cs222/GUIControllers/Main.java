@@ -5,12 +5,17 @@ import edu.bsu.cs222.Question;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -115,6 +120,31 @@ public class Main extends Application {
         }
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToABunchAButtons(){
+        //Creating a Button
+        ArrayList<Button> buttons = new ArrayList<>();
+        Button button = new Button();
+        button.setText("Wambo");
+        buttons.add(button);
+        Button button2 = new Button();
+        button2.setText("Wimbo");
+        button2.setTranslateX(0);
+        button2.setTranslateY(60);
+        buttons.add(button2);
+        System.out.println(buttons);
+        VBox vbox = new VBox();
+        for(Button button1 : buttons){
+            vbox.getChildren().add(button1);
+        }
+        //Setting the stage
+        Group root = new Group(vbox);
+        Scene scene = new Scene(root, 595, 150, Color.CORNFLOWERBLUE);
+        Stage stage = new Stage();
+        stage.setTitle("Button Example");
         stage.setScene(scene);
         stage.show();
     }

@@ -3,10 +3,7 @@ package edu.bsu.cs222.GUIControllers;
 import edu.bsu.cs222.URLBuilder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 
 import java.util.ArrayList;
 import java.util.Locale;
