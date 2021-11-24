@@ -4,11 +4,17 @@
 <!--<?import java.util.*?>-->
 <!--<?import javafx.scene.*?>-->
 <!--<?import javafx.scene.control.*?>-->
+
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="edu.bsu.cs222.GUIControllers.Main"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.QuestionCreatorController">
+   <children>
+      <VBox layoutX="97.0" layoutY="40.0" prefHeight="200.0" prefWidth="369.0">
+         <children>
+            <TextField fx:id="questionBankName" promptText="Question Bank Name" />
+            <Button mnemonicParsing="false" onAction="#checkForOverwrite" text="Button" />
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

@@ -82,7 +82,22 @@ public class Main extends Application {
 
     }
     public void switchToQuestionCreator(javafx.event.ActionEvent event) {
-        switchScene(event,"QuestionCreator.fxml");
+        try {
+            FXMLLoader loader  = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("QuestionCreator.fxml")));
+
+            root = loader.load();
+
+            QuestionCreatorController controller = loader.getController();
+
+            controller.setMain(this);
+        }
+        catch (IOException ioException) {
+            throw new RuntimeException(ioException);
+        }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     //VanillaGame and CustomGame should be one scene
     public void switchToVanillaGame(javafx.event.ActionEvent event) {
@@ -139,4 +154,5 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
 }

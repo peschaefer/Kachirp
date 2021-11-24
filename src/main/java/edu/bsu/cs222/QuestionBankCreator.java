@@ -82,4 +82,11 @@ public class QuestionBankCreator {
             }
         }
     }
+
+    public void overWriteBank2(String questionBankChoice){
+        String[] pathNames = new File("src/main/java/QuestionBanks").list();
+
+        assert pathNames != null;
+        System.out.println((Arrays.asList(pathNames).contains(questionBankChoice)));
+    }
 }
