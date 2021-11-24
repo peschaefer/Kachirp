@@ -119,4 +119,24 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void switchToBankSelection(javafx.event.ActionEvent event) {
+        try {
+            FXMLLoader loader  = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("BankSelect.fxml")));
+
+            root = loader.load();
+
+            BankSelectController bankSelectController = loader.getController();
+
+            bankSelectController.setMain(this);
+            bankSelectController.setBankComboBox();
+        }
+        catch (IOException ioException) {
+            throw new RuntimeException(ioException);
+        }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
