@@ -49,13 +49,9 @@ public class QuestionBankCreator {
     }
 
     private String checkQuestionBank(String questionBankChoice) {
-        String[] pathNames = new File("src/main/java/QuestionBanks").list();
-
         questionBankChoice = questionBankChoice + ".json";
 
-        assert pathNames != null;
-
-            if (Arrays.asList(pathNames).contains(questionBankChoice)) {
+            if (bankPresent(questionBankChoice)) {
                 if(overwriteBank()){
                     return questionBankChoice;
                 }
@@ -83,10 +79,10 @@ public class QuestionBankCreator {
         }
     }
 
-    public void overWriteBank2(String questionBankChoice){
+    public Boolean bankPresent(String questionBankChoice){
         String[] pathNames = new File("src/main/java/QuestionBanks").list();
 
         assert pathNames != null;
-        System.out.println((Arrays.asList(pathNames).contains(questionBankChoice)));
+        return (Arrays.asList(pathNames).contains(questionBankChoice));
     }
 }

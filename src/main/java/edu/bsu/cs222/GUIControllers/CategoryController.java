@@ -30,8 +30,6 @@ public class CategoryController {
     @FXML
     private Label questionNumberLabel;
     @FXML
-    private TextArea tempTextArea;
-    @FXML
     private CheckBox foodAndDrinkBox;
     @FXML
     private CheckBox geographyBox;
@@ -78,13 +76,6 @@ public class CategoryController {
     public void setNumberLabel() {
         numberOfQuestions = (int)Math.ceil(questionNumberSlider.getValue());
         questionNumberLabel.setText(String.valueOf(numberOfQuestions));
-    }
-
-    public void setUpURL(){
-        populateCheckboxArrayList();
-        int numberOfQuestions = (int)Math.ceil(questionNumberSlider.getValue());
-        ArrayList<String> categoryChoices = populateCategoryArrayList();
-        tempTextArea.setText(builder.buildURL(categoryChoices,numberOfQuestions));
     }
 
     public void returnToMain(ActionEvent event) {
