@@ -4,6 +4,7 @@ import edu.bsu.cs222.Question;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 public class GameController {
@@ -18,6 +19,11 @@ public class GameController {
     public int currentQuestionIndex = 0;
     public Question question;
     public ArrayList<Question> questionArrayList = new ArrayList<>();
+    Main main;
+
+    public void setMain(Main main){
+        this.main = main;
+    }
 
     public void setQuestionArrayList(ArrayList<Question> questionArrayList){
         this.questionArrayList = questionArrayList;
@@ -32,13 +38,15 @@ public class GameController {
         option4.setText(questionArrayList.get(currentQuestionIndex).getAnswers()[3]);
     }
 
-    public void titleWIP(){
+    public void titleWIP(javafx.event.ActionEvent event){
         checkAnswer();
         currentQuestionIndex++;
         if(currentQuestionIndex == questionArrayList.size()){
-            currentQuestionIndex = 0;
+            main.switchToMainMenu(event);
         }
-        setQuestionProperties();
+        else{
+            setQuestionProperties();
+        }
     }
 
     public void checkAnswer(){
@@ -50,20 +58,20 @@ public class GameController {
         }
     }
 
-    public void setAnswerChoice1() {
+    public void setAnswerChoice1(javafx.event.ActionEvent event) {
         answerChoice = 1;
-        titleWIP();
+        titleWIP(event);
     }
-    public void setAnswerChoice2() {
+    public void setAnswerChoice2(javafx.event.ActionEvent event) {
         answerChoice = 2;
-        titleWIP();
+        titleWIP(event);
     }
-    public void setAnswerChoice3() {
+    public void setAnswerChoice3(javafx.event.ActionEvent event) {
         answerChoice = 3;
-        titleWIP();
+        titleWIP(event);
     }
-    public void setAnswerChoice4() {
+    public void setAnswerChoice4(javafx.event.ActionEvent event) {
         answerChoice = 4;
-        titleWIP();
+        titleWIP(event);
     }
 }

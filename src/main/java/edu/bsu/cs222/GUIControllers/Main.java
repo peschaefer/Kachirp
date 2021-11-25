@@ -65,11 +65,9 @@ public class Main extends Application {
 
             GameController gameController = loader.getController();
 
+            gameController.setMain(this);
             gameController.setQuestionArrayList(questionArrayList);
 
-            //gameController.setQuestionProperties();
-
-            //System.out.println(questionArrayList.get(0).getQuestionText());
         }
         catch (IOException ioException) {
             throw new RuntimeException(ioException);
