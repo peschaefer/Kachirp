@@ -82,16 +82,17 @@ public class CategoryController {
             main.switchToMainMenu(event);
     }
 
-    public void startGame(ActionEvent event) throws IOException {
+    public void startGame(ActionEvent event){
         populateCheckboxArrayList();
         ArrayList<String> categoryChoices = populateCategoryArrayList();
         //System.out.println(categoryChoices.toString());
-        String url = builder.buildURL(categoryChoices,numberOfQuestions);
-        System.out.println(url);
-        //System.out.println(url);
-        String apiData = connector.connectToApi(url);
-        parser.addQuestions(apiData);
-        ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
-        main.switchToQuestionPrompt(event,questionArrayList);
+        try {
+            String url = builder.buildURL(categoryChoices, numberOfQuestions);
+            //System.out.println(url);
+            String apiData = connector.connectToApi(url);
+            parser.addQuestions(apiData);
+            ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
+            main.switchToQuestionPrompt(event, questionArrayList);
+        } catch (Exception ignored){}
     }
 }
