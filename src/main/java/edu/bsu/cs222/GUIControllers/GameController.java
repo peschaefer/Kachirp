@@ -4,7 +4,6 @@ import edu.bsu.cs222.Question;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 public class GameController {
@@ -17,6 +16,7 @@ public class GameController {
     public Label answerResponse;
     public int answerChoice;
     public int currentQuestionIndex = 0;
+    public int score = 0;
     public Question question;
     public ArrayList<Question> questionArrayList = new ArrayList<>();
     Main main;
@@ -42,7 +42,7 @@ public class GameController {
         checkAnswer();
         currentQuestionIndex++;
         if(currentQuestionIndex == questionArrayList.size()){
-            main.switchToMainMenu(event);
+            main.switchToEndScreen(event,score);
         }
         else{
             setQuestionProperties();
@@ -52,6 +52,7 @@ public class GameController {
     public void checkAnswer(){
         if(questionArrayList.get(currentQuestionIndex).getCorrectAnswerIndex()+1 == answerChoice){
             answerResponse.setText("Correct!");
+            score++;
         }
         else{
             answerResponse.setText("Wrong!");

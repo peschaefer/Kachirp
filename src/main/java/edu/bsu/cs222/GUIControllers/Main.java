@@ -1,21 +1,14 @@
 package edu.bsu.cs222.GUIControllers;
 
-import edu.bsu.cs222.GUIControllers.GameController;
 import edu.bsu.cs222.Question;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -97,22 +90,6 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    //VanillaGame and CustomGame should be one scene
-    public void switchToVanillaGame(javafx.event.ActionEvent event) {
-        switchScene(event,"VanillaGame.fxml");
-    }
-
-    public void switchScene(ActionEvent event, String sceneName){
-        try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(sceneName)));
-        } catch (IOException ioException) {
-            throw new RuntimeException(ioException);
-        }
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
     public void switchToCategorySelection(javafx.event.ActionEvent event) {
         try {
@@ -153,4 +130,23 @@ public class Main extends Application {
         stage.show();
     }
 
+    public void switchToEndScreen(ActionEvent event,int score) {
+        try {
+            FXMLLoader loader  = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("EndScreen.fxml")));
+
+            root = loader.load();
+
+            EndScreenController endScreenController = loader.getController();
+
+            endScreenController.setMain(this);
+            endScreenController.setScoreLabel(score);
+        }
+        catch (IOException ioException) {
+            throw new RuntimeException(ioException);
+        }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
