@@ -30,11 +30,13 @@ public class BankSelectController {
         this.main = main;
     }
 
-    public void chooseBank(ActionEvent event) throws IOException {
-        String filePath = reader.buildFilePath(bankComboBox.getValue());
-        String bankData = reader.readQuestionBank(filePath);
-        parser.addQuestions(bankData);
-        ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
-        main.switchToQuestionPrompt(event,questionArrayList);
+    public void chooseBank(ActionEvent event){
+        try {
+            String filePath = reader.buildFilePath(bankComboBox.getValue());
+            String bankData = reader.readQuestionBank(filePath);
+            parser.addQuestions(bankData);
+            ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
+            main.switchToQuestionPrompt(event, questionArrayList);
+        } catch (Exception ignored){}
     }
 }
