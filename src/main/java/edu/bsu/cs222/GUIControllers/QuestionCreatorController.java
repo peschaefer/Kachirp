@@ -3,7 +3,9 @@ package edu.bsu.cs222.GUIControllers;
 import edu.bsu.cs222.Question;
 import edu.bsu.cs222.QuestionBankWriter;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +18,8 @@ public class QuestionCreatorController {
     public TextField incorrectField1;
     public TextField incorrectField2;
     public TextField incorrectField3;
+    public Button submitQuestionButton;
+    public Button saveBankButton;
 
     QuestionBankWriter writer = new QuestionBankWriter();
 
@@ -39,6 +43,8 @@ public class QuestionCreatorController {
         Question question = new Question(questionText,correctAnswer,incorrectAnswers);
         currentQuestionList.add(question);
         clearTextFields();
+        enableSubmitQuestionButton();
+        enableSaveBankButton();
     }
 
     public void submitBank(ActionEvent event) throws IOException {
@@ -52,5 +58,25 @@ public class QuestionCreatorController {
         incorrectField1.clear();
         incorrectField2.clear();
         incorrectField3.clear();
+    }
+
+    public void enableSubmitQuestionButton() {
+        String[] textFieldText = new String[]{questionTextField.getText(), correctAnswerField.getText(),
+                incorrectField1.getText(),incorrectField2.getText(),incorrectField3.getText()};
+        for(String text : textFieldText){
+            if(text.isEmpty()){
+                submitQuestionButton.setDisable(true);
+                return;
+            }
+        }
+        submitQuestionButton.setDisable(false);
+    }
+
+    public void enableSaveBankButton() {
+        if(questionBankName.getText().isEmpty() || currentQuestionList.isEmpty()){
+            saveBankButton.setDisable(true);
+            return;
+        }
+        saveBankButton.setDisable(false);
     }
 }

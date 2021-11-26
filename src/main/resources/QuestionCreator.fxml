@@ -12,14 +12,14 @@
    <children>
       <VBox layoutX="97.0" layoutY="40.0" prefHeight="200.0" prefWidth="369.0">
          <children>
-            <TextField fx:id="questionBankName" promptText="Question Bank Name" />
-            <TextField fx:id="questionTextField" promptText="Current Question" />
-            <TextField fx:id="correctAnswerField" promptText="Correct Answer" />
-            <TextField fx:id="incorrectField1" promptText="Incorrect Answer" />
-            <TextField fx:id="incorrectField2" promptText="Incorrect Answer" />
-            <TextField fx:id="incorrectField3" layoutX="10.0" layoutY="111.0" promptText="Incorrect Answer" />
-            <Button mnemonicParsing="false" onAction="#addQuestion" text="Submit Question" />
-            <Button layoutX="10.0" layoutY="162.0" mnemonicParsing="false" onAction="#submitBank" text="Save Question Bank" />
+            <TextField fx:id="questionBankName" onKeyPressed="#enableSaveBankButton" onKeyReleased="#enableSaveBankButton" promptText="Question Bank Name" />
+            <TextField fx:id="questionTextField" onKeyPressed="#enableSubmitQuestionButton" promptText="Current Question" />
+            <TextField fx:id="correctAnswerField" onKeyPressed="#enableSubmitQuestionButton" promptText="Correct Answer" />
+            <TextField fx:id="incorrectField1" onKeyPressed="#enableSubmitQuestionButton" promptText="Incorrect Answer" />
+            <TextField fx:id="incorrectField2" onKeyPressed="#enableSubmitQuestionButton" promptText="Incorrect Answer" />
+            <TextField fx:id="incorrectField3" layoutX="10.0" layoutY="111.0" onKeyPressed="#enableSubmitQuestionButton" promptText="Incorrect Answer" />
+            <Button fx:id="submitQuestionButton" disable="true" mnemonicParsing="false" onAction="#addQuestion" text="Submit Question" />
+            <Button fx:id="saveBankButton" disable="true" layoutX="10.0" layoutY="162.0" mnemonicParsing="false" onAction="#submitBank" text="Save Question Bank" />
          </children>
       </VBox>
    </children>
