@@ -4,12 +4,8 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.BankSelectController">
-   <children>
       <VBox alignment="TOP_CENTER" layoutX="158.0" layoutY="94.0" prefHeight="200.0" prefWidth="335.0">
-         <children>
             <ComboBox fx:id="bankComboBox" prefHeight="25.0" prefWidth="251.0" promptText="-Please Select Your Question Bank-" />
             <Button mnemonicParsing="false" onAction="#chooseBank" text="Submit Bank" />
-         </children>
       </VBox>
-   </children>
 </AnchorPane>

@@ -5,18 +5,15 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
-   <children>
       <VBox alignment="TOP_CENTER" layoutX="59.0" layoutY="14.0" prefHeight="135.0" prefWidth="476.0">
-         <children>
             <Label text="Select Your Categories!">
                <font>
                   <Font size="40.0" />
                </font>
             </Label>
-         </children>
       </VBox>
       <Button layoutX="252.0" layoutY="301.0" mnemonicParsing="false" text="Play With All Categories" />
-      <Button fx:id="categorySubmitButton" layoutX="107.0" layoutY="301.0" mnemonicParsing="false" onAction="#startGame" text="Play!" />
+      <Button layoutX="107.0" layoutY="301.0" mnemonicParsing="false" onAction="#startGame" text="Play!" />
       <CheckBox fx:id="foodAndDrinkBox" layoutX="65.0" layoutY="145.0" mnemonicParsing="false" text="Food and Drink" />
       <CheckBox fx:id="geographyBox" layoutX="65.0" layoutY="170.0" mnemonicParsing="false" text="Geography" />
       <CheckBox fx:id="generalKnowledgeBox" layoutX="65.0" layoutY="195.0" mnemonicParsing="false" text="General Knowledge" />
@@ -30,5 +27,4 @@
       <Slider fx:id="questionNumberSlider" blockIncrement="1.0" layoutX="148.0" layoutY="339.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onMouseReleased="#setNumberLabel" snapToTicks="true" value="10.0" />
       <Label fx:id="questionNumberLabel" layoutX="204.0" layoutY="372.0" text="10" />
       <Button layoutX="425.0" layoutY="341.0" mnemonicParsing="false" onAction="#returnToMain" text="Return" />
-   </children>
 </AnchorPane>

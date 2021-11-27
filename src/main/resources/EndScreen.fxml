@@ -4,8 +4,6 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.EndScreenController">
-   <children>
       <Label fx:id="percentCorrectLabel" layoutX="286.0" layoutY="133.0" text="Label" />
-      <Button fx:id="returnButton" layoutX="250.0" layoutY="230.0" mnemonicParsing="false" onAction="#returnToMainMenu" text="Return to menu" />
-   </children>
+      <Button layoutX="250.0" layoutY="230.0" mnemonicParsing="false" onAction="#returnToMainMenu" text="Return to menu" />
 </AnchorPane>
