@@ -4,15 +4,22 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.Main">
-      <VBox alignment="TOP_CENTER" layoutX="177.0" layoutY="14.0" prefHeight="284.0" prefWidth="246.0">
-            <Label alignment="TOP_CENTER" layoutX="18.0" layoutY="10.0" text="KACHIRP" textAlignment="CENTER">
-               <font>
-                  <Font name="Droid Serif" size="35.0" />
-               </font>
-            </Label>
-            <Button mnemonicParsing="false" onAction="#switchToCategorySelection" prefHeight="25.0" prefWidth="151.0" text="Vanillia Game" />
-            <Button mnemonicParsing="false" onAction="#switchToBankSelection" prefWidth="149.0" text="Custom Game" />
-            <Button mnemonicParsing="false" onAction="#switchToQuestionCreator" text="Create Custom Questions" textAlignment="CENTER" />
-      </VBox>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.Main">
+   <Label layoutX="172.0" layoutY="14.0" text="KACHIRP!" textAlignment="CENTER" underline="true">
+      <font>
+         <Font size="60.0" />
+      </font>
+   </Label>
+         <Button layoutX="150.0" layoutY="102.0" mnemonicParsing="false" onAction="#switchToCategorySelection" prefHeight="88.0" prefWidth="300.0" style="-fx-background-color: #A9C7AC;" text="Vanilla Game">
+      <font>
+         <Font size="22.0" />
+      </font></Button>
+         <Button layoutX="150.0" layoutY="200.0" mnemonicParsing="false" onAction="#switchToQuestionCreator" prefHeight="88.0" prefWidth="300.0" style="-fx-background-color: #A9C7AC;" text="Create Custom Questions" textAlignment="CENTER">
+      <font>
+         <Font size="22.0" />
+      </font></Button>
+         <Button layoutX="150.0" layoutY="298.0" mnemonicParsing="false" onAction="#switchToBankSelection" prefHeight="88.0" prefWidth="300.0" style="-fx-background-color: #A9C7AC;" text="Custom Game">
+      <font>
+         <Font size="22.0" />
+      </font></Button>
 </AnchorPane>
