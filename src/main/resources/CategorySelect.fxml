@@ -4,27 +4,61 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
-      <VBox alignment="TOP_CENTER" layoutX="59.0" layoutY="14.0" prefHeight="135.0" prefWidth="476.0">
-            <Label text="Select Your Categories!">
-               <font>
-                  <Font size="40.0" />
-               </font>
-            </Label>
-      </VBox>
-      <Button layoutX="252.0" layoutY="301.0" mnemonicParsing="false" text="Play With All Categories" />
-      <Button layoutX="107.0" layoutY="301.0" mnemonicParsing="false" onAction="#startGame" text="Play!" />
-      <CheckBox fx:id="foodAndDrinkBox" layoutX="65.0" layoutY="145.0" mnemonicParsing="false" text="Food and Drink" />
-      <CheckBox fx:id="geographyBox" layoutX="65.0" layoutY="170.0" mnemonicParsing="false" text="Geography" />
-      <CheckBox fx:id="generalKnowledgeBox" layoutX="65.0" layoutY="195.0" mnemonicParsing="false" text="General Knowledge" />
-      <CheckBox fx:id="historyBox" layoutX="65.0" layoutY="220.0" mnemonicParsing="false" text="History" />
-      <CheckBox fx:id="artAndLiteratureBox" layoutX="65.0" layoutY="245.0" mnemonicParsing="false" text="Art and Literature" />
-      <CheckBox fx:id="scienceBox" layoutX="270.0" layoutY="170.0" mnemonicParsing="false" text="Science" />
-      <CheckBox fx:id="societyAndCultureBox" layoutX="270.0" layoutY="195.0" mnemonicParsing="false" text="Society and Culture" />
-      <CheckBox fx:id="sportsAndLeisureBox" layoutX="270.0" layoutY="220.0" mnemonicParsing="false" text="Sports and Leisure" />
-      <CheckBox fx:id="musicBox" layoutX="270.0" layoutY="245.0" mnemonicParsing="false" text="Music" />
-      <CheckBox fx:id="moviesBox" layoutX="270.0" layoutY="145.0" mnemonicParsing="false" text="Movies" />
-      <Slider fx:id="questionNumberSlider" blockIncrement="1.0" layoutX="148.0" layoutY="339.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onMouseReleased="#setNumberLabel" snapToTicks="true" value="10.0" />
-      <Label fx:id="questionNumberLabel" layoutX="204.0" layoutY="372.0" text="10" />
-      <Button layoutX="425.0" layoutY="341.0" mnemonicParsing="false" onAction="#returnToMain" text="Return" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
+      <Button layoutX="98.0" layoutY="340.0" mnemonicParsing="false" onAction="#startGame" style="-fx-background-color: #A9C7AC;" text="Play!">
+      <font>
+         <Font size="20.0" />
+      </font></Button>
+      <CheckBox fx:id="foodAndDrinkBox" layoutX="98.0" layoutY="72.0" mnemonicParsing="false" style="-fx-background-color: #E2CFC9;" text="Food and Drink">
+      <font>
+         <Font size="20.0" />
+      </font></CheckBox>
+      <CheckBox fx:id="geographyBox" layoutX="98.0" layoutY="117.0" mnemonicParsing="false" style="-fx-background-color: #E2CFC9;" text="Geography">
+      <font>
+         <Font size="20.0" />
+      </font></CheckBox>
+      <CheckBox fx:id="generalKnowledgeBox" layoutX="98.0" layoutY="162.0" mnemonicParsing="false" style="-fx-background-color: #E2CFC9;" text="General Knowledge">
+      <font>
+         <Font size="20.0" />
+      </font></CheckBox>
+      <CheckBox fx:id="historyBox" layoutX="98.0" layoutY="207.0" mnemonicParsing="false" style="-fx-background-color: #E2CFC9;" text="History">
+      <font>
+         <Font size="20.0" />
+      </font></CheckBox>
+      <CheckBox fx:id="artAndLiteratureBox" layoutX="98.0" layoutY="252.0" mnemonicParsing="false" style="-fx-background-color: #E2CFC9;" text="Art and Literature">
+      <font>
+         <Font size="20.0" />
+      </font></CheckBox>
+      <CheckBox fx:id="scienceBox" layoutX="363.0" layoutY="117.0" mnemonicParsing="false" style="-fx-background-color: #E2CFC9;" text="Science">
+      <font>
+         <Font size="20.0" />
+      </font></CheckBox>
+      <CheckBox fx:id="societyAndCultureBox" layoutX="363.0" layoutY="162.0" mnemonicParsing="false" style="-fx-background-color: #E2CFC9;" text="Society and Culture">
+      <font>
+         <Font size="20.0" />
+      </font></CheckBox>
+      <CheckBox fx:id="sportsAndLeisureBox" layoutX="363.0" layoutY="207.0" mnemonicParsing="false" style="-fx-background-color: #E2CFC9;" text="Sports and Leisure">
+      <font>
+         <Font size="20.0" />
+      </font></CheckBox>
+      <CheckBox fx:id="musicBox" layoutX="363.0" layoutY="252.0" mnemonicParsing="false" style="-fx-background-color: #E2CFC9;" text="Music">
+      <font>
+         <Font size="20.0" />
+      </font></CheckBox>
+      <CheckBox fx:id="moviesBox" layoutX="363.0" layoutY="72.0" mnemonicParsing="false" style="-fx-background-color: #E2CFC9;" text="Movies">
+      <font>
+         <Font size="20.0" />
+      </font></CheckBox>
+      <Slider fx:id="questionNumberSlider" blockIncrement="1.0" layoutX="102.0" layoutY="312.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onMouseReleased="#setNumberLabel" snapToTicks="true" style="-fx-background-color: #A9C7AC;" />
+      <Label fx:id="questionNumberLabel" layoutX="186.0" layoutY="292.0" text="0" />
+      <Button layoutX="363.0" layoutY="340.0" mnemonicParsing="false" onAction="#returnToMain" style="-fx-background-color: #A9C7AC;" text="Return To Main Menu">
+      <font>
+         <Font size="20.0" />
+      </font></Button>
+         <Label layoutX="95.0" layoutY="13.0" text="Select Your Categories!">
+            <font>
+               <Font size="40.0" />
+            </font>
+         </Label>
+   <Label layoutX="100.0" layoutY="291.0" text="# Of Questions:" />
 </AnchorPane>
