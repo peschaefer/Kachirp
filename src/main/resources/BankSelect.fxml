@@ -2,10 +2,17 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.BankSelectController">
-      <VBox alignment="TOP_CENTER" layoutX="158.0" layoutY="94.0" prefHeight="200.0" prefWidth="335.0">
-            <ComboBox fx:id="bankComboBox" prefHeight="25.0" prefWidth="251.0" promptText="-Please Select Your Question Bank-" />
-            <Button mnemonicParsing="false" onAction="#chooseBank" text="Submit Bank" />
-      </VBox>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.BankSelectController">
+         <ComboBox fx:id="bankComboBox" layoutX="99.0" layoutY="93.0" prefHeight="38.0" prefWidth="251.0" promptText="-Please Select Your Question Bank-" style="-fx-background-color: #A9C7AC;" />
+         <Button layoutX="99.0" layoutY="148.0" mnemonicParsing="false" onAction="#chooseBank" style="-fx-background-color: #A9C7AC;" text="Submit Bank">
+      <font>
+         <Font size="15.0" />
+      </font></Button>
+   <Label layoutX="99.0" layoutY="28.0" text="Question Bank Selector">
+      <font>
+         <Font size="45.0" />
+      </font>
+   </Label>
 </AnchorPane>
