@@ -9,12 +9,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.QuestionCreatorController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.QuestionCreatorController">
     <Group layoutX="230.0" layoutY="316.0">
-        <Button fx:id="submitQuestionButton" layoutY="-14.0" mnemonicParsing="false" onAction="#addQuestion"
-                prefWidth="140.0" style="-fx-background-color: #A9C7AC;" text="Submit Question"/>
-        <Button fx:id="saveBankButton" layoutY="25.0" mnemonicParsing="false" onAction="#submitBank" prefWidth="140.0"
-                style="-fx-background-color: #A9C7AC;" text="Save Question Bank"/>
+        <Button fx:id="submitQuestionButton" disable="true" layoutY="-14.0" mnemonicParsing="false" onAction="#addQuestion" prefWidth="140.0" style="-fx-background-color: #A9C7AC;" text="Submit Question" />
+        <Button fx:id="saveBankButton" disable="true" layoutY="25.0" mnemonicParsing="false" onAction="#submitBank" prefWidth="140.0" style="-fx-background-color: #A9C7AC;" text="Save Question Bank" />
     </Group>
          <TextField fx:id="questionBankName" layoutX="100.0" layoutY="35.0" onKeyPressed="#enableSaveBankButton" onKeyReleased="#enableSaveBankButton" prefHeight="25.0" prefWidth="400.0" promptText="Question Bank Name" />
          <TextField fx:id="incorrectField3" layoutX="100.0" layoutY="165.0" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" promptText="Incorrect Answer" />
