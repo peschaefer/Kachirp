@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
       <Button layoutX="98.0" layoutY="340.0" mnemonicParsing="false" onAction="#startGame" style="-fx-background-color: #A9C7AC;" text="Play!">
       <font>
          <Font size="20.0" />
-      </font></Button>
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
       <CheckBox fx:id="foodAndDrinkBox" layoutX="98.0" layoutY="72.0" mnemonicParsing="false" style="-fx-background-color: #E2CFC9;" text="Food and Drink">
       <font>
          <Font size="20.0" />
@@ -54,7 +58,10 @@
       <Button layoutX="363.0" layoutY="340.0" mnemonicParsing="false" onAction="#returnToMain" style="-fx-background-color: #A9C7AC;" text="Return To Main Menu">
       <font>
          <Font size="20.0" />
-      </font></Button>
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
          <Label layoutX="95.0" layoutY="13.0" text="Select Your Categories!">
             <font>
                <Font size="40.0" />

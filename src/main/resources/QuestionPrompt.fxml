@@ -5,15 +5,19 @@
 <!--<?import javafx.scene.*?>-->
 <!--<?import javafx.scene.control.*?>-->
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.GameController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.GameController">
             <Button fx:id="option1" layoutX="53.0" layoutY="271.0" mnemonicParsing="false" onAction="#setAnswerChoice1" prefHeight="25.0" prefWidth="493.0" style="-fx-background-color: #A9C7AC;" text="Button">
       <font>
          <Font size="20.0" />
-      </font></Button>
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
          <Label fx:id="questionTextLabel" alignment="TOP_CENTER" layoutX="80.0" layoutY="41.0" text="This is where the question will go?" wrapText="true">
             <font>
                <Font size="30.0" />
@@ -26,15 +30,24 @@
             <Button fx:id="option4" layoutX="53.0" layoutY="214.0" mnemonicParsing="false" onAction="#setAnswerChoice4" prefHeight="25.0" prefWidth="493.0" style="-fx-background-color: #A9C7AC;" text="Button">
       <font>
          <Font size="20.0" />
-      </font></Button>
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
             <Button fx:id="option3" layoutX="54.0" layoutY="155.0" mnemonicParsing="false" onAction="#setAnswerChoice3" prefHeight="25.0" prefWidth="493.0" style="-fx-background-color: #A9C7AC;" text="Button">
       <font>
          <Font size="20.0" />
-      </font></Button>
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
             <Button fx:id="option2" layoutX="54.0" layoutY="96.0" mnemonicParsing="false" onAction="#setAnswerChoice2" prefHeight="25.0" prefWidth="493.0" style="-fx-background-color: #A9C7AC;" text="Button">
       <font>
          <Font size="20.0" />
-      </font></Button>
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="243.0" layoutY="333.0" prefHeight="17.0" prefWidth="127.0" text="You Were..." textAlignment="CENTER">
       <font>
          <Font size="18.0" />
