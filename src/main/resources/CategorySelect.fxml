@@ -53,8 +53,11 @@
       <font>
          <Font size="20.0" />
       </font></CheckBox>
-      <Slider fx:id="questionNumberSlider" blockIncrement="1.0" layoutX="102.0" layoutY="312.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onMouseReleased="#setNumberLabel" snapToTicks="true" style="-fx-background-color: #A9C7AC;" />
-      <Label fx:id="questionNumberLabel" layoutX="186.0" layoutY="292.0" text="0" />
+      <Slider fx:id="questionNumberSlider" blockIncrement="1.0" layoutX="102.0" layoutY="312.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onMouseDragged="#changeToClosedHandCursor" onMouseExited="#changeToOpenHandCursor" onMousePressed="#changeToClosedHandCursor" onMouseReleased="#releaseMouseOnSlider" snapToTicks="true" style="-fx-background-color: #A9C7AC;">
+      <cursor>
+         <Cursor fx:constant="OPEN_HAND" />
+      </cursor></Slider>
+      <Label fx:id="questionNumberLabel" layoutX="186.0" layoutY="292.0" text="1" />
       <Button layoutX="363.0" layoutY="340.0" mnemonicParsing="false" onAction="#returnToMain" style="-fx-background-color: #A9C7AC;" text="Return To Main Menu">
       <font>
          <Font size="20.0" />

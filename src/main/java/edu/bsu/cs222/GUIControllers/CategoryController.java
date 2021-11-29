@@ -6,6 +6,8 @@ import edu.bsu.cs222.TriviaAPIParser;
 import edu.bsu.cs222.URLBuilder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 import java.util.ArrayList;
@@ -15,15 +17,11 @@ public class CategoryController {
     TriviaAPIParser parser = new TriviaAPIParser();
     TriviaAPIConnector connector = new TriviaAPIConnector();
     ArrayList<String> guiCategorySelections = new ArrayList<>();
-
     ArrayList<CheckBox> checkBoxes = new ArrayList<>();
-
     URLBuilder builder = new URLBuilder();
-
     Main main;
-
+    Scene scene;
     private int numberOfQuestions;
-
     @FXML
     private Slider questionNumberSlider;
     @FXML
@@ -43,6 +41,10 @@ public class CategoryController {
 
     public void setMain(Main main){
         this.main = main;
+    }
+
+    public void setScene(Scene scene){
+        this.scene = scene;
     }
 
     private void populateCheckboxArrayList(){
@@ -72,6 +74,11 @@ public class CategoryController {
         return guiCategorySelections;
     }
 
+    public void releaseMouseOnSlider(){
+        setNumberLabel();
+        changeToOpenHandCursor();
+    }
+
     public void setNumberLabel() {
         numberOfQuestions = (int)Math.ceil(questionNumberSlider.getValue());
         questionNumberLabel.setText(String.valueOf(numberOfQuestions));
@@ -93,5 +100,13 @@ public class CategoryController {
             ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
             main.switchToQuestionPrompt(event, questionArrayList);
         } catch (Exception ignored){}
+    }
+
+    public void changeToClosedHandCursor() {
+        questionNumberSlider.setCursor(Cursor.CLOSED_HAND);
+    }
+
+    public void changeToOpenHandCursor() {
+        questionNumberSlider.setCursor(Cursor.OPEN_HAND);
     }
 }

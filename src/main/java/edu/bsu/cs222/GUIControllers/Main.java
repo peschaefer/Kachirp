@@ -100,14 +100,15 @@ public class Main extends Application {
             CategoryController categoryController = loader.getController();
 
             categoryController.setMain(this);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            categoryController.setScene(scene);
+            stage.setScene(scene);
+            stage.show();
         }
         catch (IOException ioException) {
             throw new RuntimeException(ioException);
         }
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
     }
 
     public void switchToBankSelection(javafx.event.ActionEvent event) {
