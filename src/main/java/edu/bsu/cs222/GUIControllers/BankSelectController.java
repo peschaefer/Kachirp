@@ -6,12 +6,14 @@ import edu.bsu.cs222.QuestionBankReader;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
 import java.util.ArrayList;
 
 public class BankSelectController {
 
+    public Button submitButton;
     @FXML
     private ComboBox<String> bankComboBox;
 
@@ -37,5 +39,13 @@ public class BankSelectController {
             ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
             main.switchToQuestionPrompt(event, questionArrayList);
         } catch (Exception ignored){}
+    }
+
+    public void enableSubmitButton(ActionEvent event) {
+        if(bankComboBox.getValue() == null){
+            submitButton.setDisable(true);
+            return;
+        }
+        submitButton.setDisable(false);
     }
 }
