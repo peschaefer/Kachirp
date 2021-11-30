@@ -49,7 +49,6 @@ public class Main extends Application {
         launch(args);
     }
 
-    //VanillaGame and CustomGame should be one scene
     public void switchToQuestionPrompt(javafx.event.ActionEvent event,ArrayList<Question> questionArrayList){
         try {
             FXMLLoader loader  = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("QuestionPrompt.fxml")));
