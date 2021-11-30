@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.EndScreenController">
+      <Label fx:id="percentCorrectLabel" layoutX="316.0" layoutY="118.0">
+      <font>
+         <Font size="40.0" />
+      </font></Label>
+      <Button layoutX="223.0" layoutY="226.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="58.0" prefWidth="187.0" style="-fx-background-color: #A9C7AC;" text="Return to menu">
+      <font>
+         <Font size="22.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
+   <Label layoutX="166.0" layoutY="42.0" text="Your Total Points">
+      <font>
+         <Font size="40.0" />
+      </font>
+   </Label>
+</AnchorPane>

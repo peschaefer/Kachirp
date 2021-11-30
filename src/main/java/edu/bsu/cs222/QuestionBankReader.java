@@ -1,5 +1,6 @@
 package edu.bsu.cs222;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -11,6 +12,10 @@ public class QuestionBankReader {
     }
 
     public String buildFilePath(String questionBankName){
-        return String.format("src/main/java/QuestionBanks/%s",questionBankName);
+        return String.format("src/main/java/questionBanks/%s",questionBankName);
+    }
+
+    public String[] getQuestionBankList(){
+        return new File("src/main/java/questionBanks").list();
     }
 }

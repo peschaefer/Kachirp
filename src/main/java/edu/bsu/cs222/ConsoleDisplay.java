@@ -42,7 +42,7 @@ public class ConsoleDisplay {
         """);
     }
     public void printQuestionBanks() {
-        File testFile = new File("src/main/java/QuestionBanks");
+        File testFile = new File("src/main/java/questionBanks");
         String[] pathNames = testFile.list();
         assert pathNames != null;
         for(String path : pathNames){

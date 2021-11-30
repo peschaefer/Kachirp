@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.BankSelectController">
+         <ComboBox fx:id="bankComboBox" layoutX="99.0" layoutY="93.0" onAction="#enableSubmitButton" prefHeight="38.0" prefWidth="251.0" promptText="-Please Select Your Question Bank-" style="-fx-background-color: #A9C7AC;" />
+         <Button fx:id="submitButton" disable="true" layoutX="99.0" layoutY="148.0" mnemonicParsing="false" onAction="#chooseBank" style="-fx-background-color: #A9C7AC;" text="Submit Bank">
+      <font>
+         <Font size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
+   <Label layoutX="99.0" layoutY="28.0" text="Question Bank Selector">
+      <font>
+         <Font size="45.0" />
+      </font>
+   </Label>
+</AnchorPane>

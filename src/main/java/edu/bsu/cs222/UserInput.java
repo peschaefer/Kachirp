@@ -6,6 +6,10 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class UserInput {
+
+    private final String[] categoryArray = new String[]{"food and drink","geography","general knowledge","history",
+            "art and literature","movies","music","science","society and culture","sport and leisure"};
+
     public String getInput(String message){
         System.out.println(message);
         Scanner scanner = new Scanner(System.in);
@@ -17,9 +21,7 @@ public class UserInput {
         return scanner.nextLine();
     }
 
-    public ArrayList<String> getCategories(){
-        String[] categoryArray = new String[]{"food and drink","geography","general knowledge","history",
-                "art and literature","movies","music","science","society and culture","sport and leisure"};
+    public ArrayList<String> getUserCategoryChoices(){
         ArrayList<String> categoryArrayList = new ArrayList<>(Arrays.asList(categoryArray));
         ArrayList<String> userCategoryChoices = new ArrayList<>();
 
@@ -48,5 +50,9 @@ public class UserInput {
             }
         }
         return userCategoryChoices;
+    }
+
+    public String[] getCategoryArray() {
+        return categoryArray;
     }
 }

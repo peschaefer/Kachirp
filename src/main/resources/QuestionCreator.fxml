@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--<?import java.lang.*?>-->
-<!--<?import java.util.*?>-->
-<!--<?import javafx.scene.*?>-->
-<!--<?import javafx.scene.control.*?>-->
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="edu.bsu.cs222.SceneController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E2CFC9;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.QuestionCreatorController">
+    <Group layoutX="230.0" layoutY="316.0">
+        <Button fx:id="submitQuestionButton" disable="true" layoutY="-14.0" mnemonicParsing="false" onAction="#addQuestion" prefWidth="140.0" style="-fx-background-color: #A9C7AC;" text="Submit Question" />
+        <Button fx:id="saveBankButton" disable="true" layoutY="25.0" mnemonicParsing="false" onAction="#submitBank" prefWidth="140.0" style="-fx-background-color: #A9C7AC;" text="Save Question Bank" />
+    </Group>
+         <TextField fx:id="questionBankName" layoutX="180.0" layoutY="35.0" onKeyPressed="#enableSaveBankButton" onKeyReleased="#enableSaveBankButton" prefHeight="25.0" prefWidth="400.0" />
+         <TextField fx:id="incorrectField3" layoutX="180.0" layoutY="165.0" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
+         <TextField fx:id="questionTextField" layoutX="180.0" layoutY="76.0" onKeyPressed="#enableSubmitQuestionButton" prefHeight="25.0" prefWidth="400.0" />
+         <TextField fx:id="correctAnswerField" layoutX="180.0" layoutY="120.0" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
+         <TextField fx:id="incorrectField1" layoutX="180.0" layoutY="255.0" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
+         <TextField fx:id="incorrectField2" layoutX="180.0" layoutY="209.0" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
+   <Label layoutX="57.0" layoutY="39.0" text="Question Bank Name:" />
+   <Label layoutX="76.0" layoutY="80.0" text="Current Question:" />
+   <Label layoutX="87.0" layoutY="124.0" text="Correct Answer:" />
+   <Label layoutX="80.0" layoutY="169.0" text="Incorrect Answer:" />
+   <Label layoutX="79.0" layoutY="213.0" text="Incorrect Answer:" />
+   <Label layoutX="79.0" layoutY="259.0" text="Incorrect Answer:" />
 </AnchorPane>

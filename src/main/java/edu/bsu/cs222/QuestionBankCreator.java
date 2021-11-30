@@ -58,13 +58,9 @@ public class QuestionBankCreator {
     }
 
     private String checkQuestionBank(String questionBankChoice) {
-        String[] pathNames = new File("src/main/java/QuestionBanks").list();
-
         questionBankChoice = questionBankChoice + ".json";
 
-        assert pathNames != null;
-
-            if (Arrays.asList(pathNames).contains(questionBankChoice)) {
+            if (bankPresent(questionBankChoice)) {
                 if(overwriteBank()){
                     return questionBankChoice;
                 }
@@ -90,5 +86,12 @@ public class QuestionBankCreator {
                 choice = userInput.getInput();
             }
         }
+    }
+
+    public Boolean bankPresent(String questionBankChoice){
+        String[] pathNames = new File("src/main/java/questionBanks").list();
+
+        assert pathNames != null;
+        return (Arrays.asList(pathNames).contains(questionBankChoice));
     }
 }
