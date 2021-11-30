@@ -80,7 +80,7 @@ public class QuestionBankCreator {
     }
 
     public Boolean bankPresent(String questionBankChoice){
-        String[] pathNames = new File("src/main/java/QuestionBanks").list();
+        String[] pathNames = new File("src/main/java/questionBanks").list();
 
         assert pathNames != null;
         return (Arrays.asList(pathNames).contains(questionBankChoice));

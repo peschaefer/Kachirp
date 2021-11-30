@@ -23,7 +23,6 @@ public class QuestionCreatorController {
     QuestionBankWriter writer = new QuestionBankWriter();
 
     Main main;
-    //QuestionBankCreator creator = new QuestionBankCreator();
     ArrayList<Question> currentQuestionList= new ArrayList<>();
 
     public void setMain(Main main) {

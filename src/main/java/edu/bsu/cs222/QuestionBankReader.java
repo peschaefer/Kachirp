@@ -12,10 +12,10 @@ public class QuestionBankReader {
     }
 
     public String buildFilePath(String questionBankName){
-        return String.format("src/main/java/QuestionBanks/%s",questionBankName);
+        return String.format("src/main/java/questionBanks/%s",questionBankName);
     }
 
     public String[] getQuestionBankList(){
-        return new File("src/main/java/QuestionBanks").list();
+        return new File("src/main/java/questionBanks").list();
     }
 }

@@ -99,7 +99,7 @@ public class Console {
         System.out.println("Here are the existing question banks:\n");
         consoleDisplay.printQuestionBanks();
 
-        String[] pathNames = new File("src/main/java/QuestionBanks").list();
+        String[] pathNames = new File("src/main/java/questionBanks").list();
 
         assert pathNames != null;
         String questionBankChoice = userInput.getInput("\nEnter the name of the bank you would like to play with.\n") + ".json";
