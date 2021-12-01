@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.EndScreenController">
-      <Label fx:id="percentCorrectLabel" layoutX="316.0" layoutY="118.0">
-      <font>
-         <Font size="40.0" />
-      </font></Label>
-      <Button layoutX="223.0" layoutY="226.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="58.0" prefWidth="187.0" text="Return to menu">
-      <font>
-         <Font size="22.0" />
-      </font>
-      <cursor>
-         <Cursor fx:constant="HAND" />
-      </cursor></Button>
-   <Label layoutX="166.0" layoutY="42.0" text="Your Total Points">
-      <font>
-         <Font size="40.0" />
-      </font>
-   </Label>
+    <VBox alignment="CENTER" layoutX="35.0" layoutY="42.0" prefHeight="259.0" prefWidth="549.0">
+        <Label text="Your Total Points">
+           <font>
+               <Font size="40.0"/>
+           </font>
+        </Label>
+        <Label fx:id="percentCorrectLabel">
+        <font>
+            <Font size="40.0"/>
+        </font>
+        </Label>
+        <Button mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="58.0" prefWidth="187.0"
+                text="Return to menu">
+        <font>
+            <Font size="22.0"/>
+        </font>
+        <cursor>
+            <Cursor fx:constant="HAND"/>
+        </cursor>
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        </Button>
+    </VBox>
 </AnchorPane>

@@ -6,22 +6,25 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.BankSelectController">
-         <ComboBox fx:id="bankComboBox" layoutX="99.0" layoutY="143.0" onAction="#enableSubmitButton" prefHeight="38.0" prefWidth="251.0" />
-         <Button fx:id="submitButton" disable="true" layoutX="99.0" layoutY="198.0" mnemonicParsing="false" onAction="#chooseBank" text="Submit Bank">
-      <font>
-         <Font size="15.0" />
-      </font>
-      <cursor>
-         <Cursor fx:constant="HAND" />
-      </cursor></Button>
-   <Label layoutX="99.0" layoutY="28.0" text="Question Bank Selector">
-      <font>
-         <Font size="45.0" />
-      </font>
-   </Label>
-   <Label layoutX="99.0" layoutY="105.0" text="Please Select Your Question Bank!">
-      <font>
-         <Font size="22.0" />
-      </font>
-   </Label>
+   <VBox layoutX="69.0" layoutY="22.0" prefHeight="356.0" prefWidth="462.0">
+      <Label text="Question Bank Selector">
+         <font>
+            <Font size="45.0"/>
+         </font>
+      </Label>
+      <Label text="Please Select Your Question Bank!">
+         <font>
+            <Font size="22.0"/>
+         </font>
+      </Label>
+      <ComboBox fx:id="bankComboBox" onAction="#enableSubmitButton" prefHeight="38.0" prefWidth="251.0"/>
+      <Button fx:id="submitButton" disable="true" mnemonicParsing="false" onAction="#chooseBank" text="Submit Bank">
+         <font>
+            <Font size="15.0"/>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND"/>
+         </cursor>
+      </Button>
+   </VBox>
 </AnchorPane>

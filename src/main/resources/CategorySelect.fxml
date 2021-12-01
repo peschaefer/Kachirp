@@ -1,74 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
-      <Button layoutX="98.0" layoutY="340.0" mnemonicParsing="false" onAction="#startGame" text="Play!">
-      <font>
-         <Font size="20.0" />
-      </font>
-      <cursor>
-         <Cursor fx:constant="HAND" />
-      </cursor></Button>
-      <CheckBox fx:id="foodAndDrinkBox" layoutX="98.0" layoutY="72.0" mnemonicParsing="false" text="Food and Drink">
-      <font>
-         <Font size="20.0" />
-      </font></CheckBox>
-      <CheckBox fx:id="geographyBox" layoutX="98.0" layoutY="117.0" mnemonicParsing="false" text="Geography">
-      <font>
-         <Font size="20.0" />
-      </font></CheckBox>
-      <CheckBox fx:id="generalKnowledgeBox" layoutX="98.0" layoutY="162.0" mnemonicParsing="false" text="General Knowledge">
-      <font>
-         <Font size="20.0" />
-      </font></CheckBox>
-      <CheckBox fx:id="historyBox" layoutX="98.0" layoutY="207.0" mnemonicParsing="false" text="History">
-      <font>
-         <Font size="20.0" />
-      </font></CheckBox>
-      <CheckBox fx:id="artAndLiteratureBox" layoutX="98.0" layoutY="252.0" mnemonicParsing="false" text="Art and Literature">
-      <font>
-         <Font size="20.0" />
-      </font></CheckBox>
-      <CheckBox fx:id="scienceBox" layoutX="363.0" layoutY="117.0" mnemonicParsing="false" text="Science">
-      <font>
-         <Font size="20.0" />
-      </font></CheckBox>
-      <CheckBox fx:id="societyAndCultureBox" layoutX="363.0" layoutY="162.0" mnemonicParsing="false" text="Society and Culture">
-      <font>
-         <Font size="20.0" />
-      </font></CheckBox>
-      <CheckBox fx:id="sportsAndLeisureBox" layoutX="363.0" layoutY="207.0" mnemonicParsing="false" text="Sports and Leisure">
-      <font>
-         <Font size="20.0" />
-      </font></CheckBox>
-      <CheckBox fx:id="musicBox" layoutX="363.0" layoutY="252.0" mnemonicParsing="false" text="Music">
-      <font>
-         <Font size="20.0" />
-      </font></CheckBox>
-      <CheckBox fx:id="moviesBox" layoutX="363.0" layoutY="72.0" mnemonicParsing="false" text="Movies">
-      <font>
-         <Font size="20.0" />
-      </font></CheckBox>
-      <Slider fx:id="questionNumberSlider" blockIncrement="1.0" layoutX="102.0" layoutY="312.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onMouseDragged="#changeToClosedHandCursor" onMouseExited="#changeToOpenHandCursor" onMousePressed="#changeToClosedHandCursor" onMouseReleased="#releaseMouseOnSlider" snapToTicks="true">
-      <cursor>
-         <Cursor fx:constant="OPEN_HAND" />
-      </cursor></Slider>
-      <Label fx:id="questionNumberLabel" layoutX="186.0" layoutY="292.0" text="1" />
-      <Button layoutX="363.0" layoutY="340.0" mnemonicParsing="false" onAction="#returnToMain" text="Return To Main Menu">
-      <font>
-         <Font size="20.0" />
-      </font>
-      <cursor>
-         <Cursor fx:constant="HAND" />
-      </cursor></Button>
-         <Label layoutX="95.0" layoutY="13.0" text="Select Your Categories!">
+    <VBox layoutX="95.0" layoutY="12.0">
+        <Label prefHeight="132.0" prefWidth="476.0" text="Select Your Categories!">
             <font>
-               <Font size="40.0" />
+                <Font size="40.0"/>
             </font>
-         </Label>
-   <Label layoutX="100.0" layoutY="291.0" text="# Of Questions:" />
+        </Label>
+        <HBox>
+            <VBox>
+                <CheckBox fx:id="foodAndDrinkBox" mnemonicParsing="false" text="Food and Drink">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="geographyBox" mnemonicParsing="false" text="Geography">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="generalKnowledgeBox" mnemonicParsing="false" text="General Knowledge">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="historyBox" mnemonicParsing="false" text="History">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="artAndLiteratureBox" mnemonicParsing="false" text="Art and Literature">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </CheckBox>
+                <Slider fx:id="questionNumberSlider" blockIncrement="1.0" majorTickUnit="1.0" max="20.0"
+                        min="1.0" minorTickCount="1" onMouseDragged="#changeToClosedHandCursor"
+                        onMouseExited="#changeToOpenHandCursor" onMousePressed="#changeToClosedHandCursor"
+                        onMouseReleased="#releaseMouseOnSlider" snapToTicks="true">
+                    <cursor>
+                        <Cursor fx:constant="OPEN_HAND"/>
+                    </cursor>
+                </Slider>
+                <Label fx:id="questionNumberLabel" text="# Of Questions:"/>
+            </VBox>
+            <VBox>
+                <CheckBox fx:id="scienceBox" mnemonicParsing="false" text="Science">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="societyAndCultureBox" mnemonicParsing="false" text="Society and Culture">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="sportsAndLeisureBox" mnemonicParsing="false" text="Sports and Leisure">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="musicBox" mnemonicParsing="false" text="Music">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="moviesBox" mnemonicParsing="false" text="Movies">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </CheckBox>
+            </VBox>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <Button mnemonicParsing="false" onAction="#startGame" text="Play!">
+                <font>
+                    <Font size="20.0"/>
+                </font>
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#returnToMain" text="Return To Main Menu">
+                <font>
+                    <Font size="20.0"/>
+                </font>
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+                <HBox.margin>
+                    <Insets left="140.0"/>
+                </HBox.margin>
+            </Button>
+        </HBox>
+    </VBox>
 </AnchorPane>

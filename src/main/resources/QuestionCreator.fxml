@@ -5,20 +5,36 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.QuestionCreatorController">
-    <Group layoutX="230.0" layoutY="316.0">
-        <Button fx:id="submitQuestionButton" disable="true" layoutY="-14.0" mnemonicParsing="false" onAction="#addQuestion" prefWidth="140.0" text="Submit Question" />
-        <Button fx:id="saveBankButton" disable="true" layoutY="25.0" mnemonicParsing="false" onAction="#submitBank" prefWidth="140.0" text="Save Question Bank" />
-    </Group>
-         <TextField fx:id="questionBankName" layoutX="180.0" layoutY="35.0" onKeyPressed="#enableSaveBankButton" onKeyReleased="#enableSaveBankButton" prefHeight="25.0" prefWidth="400.0" />
-         <TextField fx:id="incorrectField3" layoutX="180.0" layoutY="165.0" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
-         <TextField fx:id="questionTextField" layoutX="180.0" layoutY="76.0" onKeyPressed="#enableSubmitQuestionButton" prefHeight="25.0" prefWidth="400.0" />
-         <TextField fx:id="correctAnswerField" layoutX="180.0" layoutY="120.0" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
-         <TextField fx:id="incorrectField1" layoutX="180.0" layoutY="255.0" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
-         <TextField fx:id="incorrectField2" layoutX="180.0" layoutY="209.0" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
-   <Label layoutX="57.0" layoutY="39.0" text="Question Bank Name:" />
-   <Label layoutX="76.0" layoutY="80.0" text="Current Question:" />
-   <Label layoutX="87.0" layoutY="124.0" text="Correct Answer:" />
-   <Label layoutX="80.0" layoutY="169.0" text="Incorrect Answer:" />
-   <Label layoutX="79.0" layoutY="213.0" text="Incorrect Answer:" />
-   <Label layoutX="79.0" layoutY="259.0" text="Incorrect Answer:" />
+    <VBox alignment="CENTER" layoutX="38.0" layoutY="33.0" prefHeight="220.0" prefWidth="525.0">
+        <HBox>
+            <VBox prefWidth="125.0">
+                <Label prefHeight="25.0" text="Question Bank Name:"/>
+                <Label prefHeight="25.0" text="Current Question:"/>
+                <Label prefHeight="25.0" text="Correct Answer:"/>
+                <Label prefHeight="25.0" text="Incorrect Answer:"/>
+                <Label prefHeight="25.0" text="Incorrect Answer:"/>
+                <Label prefHeight="25.0" text="Incorrect Answer:"/>
+            </VBox>
+            <VBox>
+                <TextField fx:id="questionBankName" onKeyPressed="#enableSaveBankButton"
+                           onKeyReleased="#enableSaveBankButton" prefHeight="25.0" prefWidth="400.0"/>
+                <TextField fx:id="questionTextField" onKeyPressed="#enableSubmitQuestionButton"
+                           prefHeight="25.0" prefWidth="400.0"/>
+                <TextField fx:id="correctAnswerField" onKeyPressed="#enableSubmitQuestionButton"
+                           prefWidth="400.0"/>
+                <TextField fx:id="incorrectField3" onKeyPressed="#enableSubmitQuestionButton"
+                           prefWidth="400.0"/>
+                <TextField fx:id="incorrectField2" onKeyPressed="#enableSubmitQuestionButton"
+                           prefWidth="400.0"/>
+                <TextField fx:id="incorrectField1" onKeyPressed="#enableSubmitQuestionButton"
+                           prefWidth="400.0"/>
+            </VBox>
+        </HBox>
+        <Group>
+            <Button fx:id="submitQuestionButton" disable="true" layoutY="-14.0" mnemonicParsing="false"
+                    onAction="#addQuestion" prefWidth="140.0" text="Submit Question"/>
+            <Button fx:id="saveBankButton" disable="true" layoutY="25.0" mnemonicParsing="false" onAction="#submitBank"
+                    prefWidth="140.0" text="Save Question Bank"/>
+        </Group>
+    </VBox>
 </AnchorPane>

@@ -13,16 +13,14 @@ public class QuestionBankCreator {
     public void createCustomQuestions() throws IOException {
         ArrayList<Question> questions = new ArrayList<>();
         String questionBankName = userInput.getInput("What would you like to name this question bank?");
-
-        //Was primarily going to check and deny atypical ASCII for each part, but shortened to questionBankName
+        //Was primarily going to check and deny atypical ASCII for each user input
+        //but was shortened to string questionBankName due to console input allows accented lettering
         String regex = "^[a-zA-Z0-9]*$";
         while (true){
             if (!questionBankName.matches(regex) || questionBankName.isEmpty()) {
-                System.err.println("Bank name must be within alphanumerical bounds mate.");
+                System.err.println("The bank's name must be within alphanumerical bounds mate.");
                 questionBankName = userInput.getInput("Try again");
-            } else {
-                break;
-            }
+            } else { break; }
         }
 
         questionBankName = checkQuestionBank(questionBankName);

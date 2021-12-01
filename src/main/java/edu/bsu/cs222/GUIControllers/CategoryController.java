@@ -80,7 +80,7 @@ public class CategoryController {
 
     public void setNumberLabel() {
         numberOfQuestions = (int)Math.ceil(questionNumberSlider.getValue());
-        questionNumberLabel.setText(String.valueOf(numberOfQuestions));
+        questionNumberLabel.setText("# Of Questions: " + numberOfQuestions);
     }
 
     public void returnToMain(ActionEvent event) {
