@@ -40,7 +40,7 @@
                         <Font size="20.0" />
                     </font>
                 </CheckBox>
-                <Slider fx:id="questionNumberSlider" blockIncrement="1.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onMouseDragged="#changeToClosedHandCursor" onMouseExited="#changeToOpenHandCursor" onMousePressed="#changeToClosedHandCursor" onMouseReleased="#releaseMouseOnSlider" snapToTicks="true">
+                <Slider fx:id="questionNumberSlider" blockIncrement="1.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onMouseDragged="#changeToClosedHandCursor" onMouseExited="#changeToOpenHandCursor" onMousePressed="#changeToClosedHandCursor" onMouseReleased="#onMouseRelease" snapToTicks="true">
                     <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                     </cursor>

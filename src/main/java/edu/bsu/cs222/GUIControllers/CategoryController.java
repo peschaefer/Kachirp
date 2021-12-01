@@ -73,7 +73,7 @@ public class CategoryController {
         return guiCategorySelections;
     }
 
-    public void releaseMouseOnSlider(){
+    public void onMouseRelease(){
         setNumberLabel();
         changeToOpenHandCursor();
     }
