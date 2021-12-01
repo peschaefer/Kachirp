@@ -1,0 +1,30 @@
+.root {
+    -fx-background-color: #ffffff;
+}
+
+.button {
+    -fx-background-color: #ba0c2f;
+    -fx-text-fill: #ffffff;
+}
+
+.label {
+    -fx-text-fill: #54585A;
+}
+
+.combo-box-base {
+    -fx-background: #ba0c2f;
+    -fx-background-color: #ba0c2f;
+}
+
+.combo-box .list-view .list-cell {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #c43350;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #ffffff
+}
+
+.check-box {
+    -fx-text-fill: #ba0c2f;
+}
