@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
     <VBox layoutX="162.0" layoutY="60.0">
         <Label prefHeight="132.0" prefWidth="476.0" text="Select Your Categories!">
             <font>
@@ -15,7 +15,7 @@
         </Label>
         <HBox>
             <VBox>
-                <CheckBox fx:id="foodAndDrinkBox" mnemonicParsing="false" text="Food and Drink">
+                <CheckBox fx:id="foodAndDrinkBox" accessibleText="food and drink" mnemonicParsing="false" text="Food and Drink">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -23,7 +23,7 @@
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
                 </CheckBox>
-                <CheckBox fx:id="geographyBox" mnemonicParsing="false" text="Geography">
+                <CheckBox fx:id="geographyBox" accessibleText="geography" mnemonicParsing="false" text="Geography">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -31,7 +31,7 @@
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
                 </CheckBox>
-                <CheckBox fx:id="generalKnowledgeBox" mnemonicParsing="false" text="General Knowledge">
+                <CheckBox fx:id="generalKnowledgeBox" accessibleText="general knowledge" mnemonicParsing="false" text="General Knowledge">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -39,7 +39,7 @@
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
                 </CheckBox>
-                <CheckBox fx:id="historyBox" mnemonicParsing="false" text="History">
+                <CheckBox fx:id="historyBox" accessibleText="history" mnemonicParsing="false" text="History">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -47,7 +47,7 @@
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
                 </CheckBox>
-                <CheckBox fx:id="artAndLiteratureBox" mnemonicParsing="false" text="Art and Literature">
+                <CheckBox fx:id="artAndLiteratureBox" accessibleText="literature" mnemonicParsing="false" text="Art and Literature">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -65,7 +65,7 @@
                 </Slider>
             </VBox>
             <VBox>
-                <CheckBox fx:id="scienceBox" mnemonicParsing="false" text="Science">
+                <CheckBox fx:id="scienceBox" accessibleText="science" mnemonicParsing="false" text="Science">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -73,7 +73,7 @@
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
                 </CheckBox>
-                <CheckBox fx:id="societyAndCultureBox" mnemonicParsing="false" text="Society and Culture">
+                <CheckBox fx:id="societyAndCultureBox" accessibleText="society and culture" mnemonicParsing="false" text="Society and Culture">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -81,7 +81,7 @@
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
                 </CheckBox>
-                <CheckBox fx:id="sportsAndLeisureBox" mnemonicParsing="false" text="Sports and Leisure">
+                <CheckBox fx:id="sportsAndLeisureBox" accessibleText="sports and leisure" mnemonicParsing="false" text="Sports and Leisure">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -89,7 +89,7 @@
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
                 </CheckBox>
-                <CheckBox fx:id="musicBox" mnemonicParsing="false" text="Music">
+                <CheckBox fx:id="musicBox" accessibleText="music" mnemonicParsing="false" text="Music">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -97,7 +97,7 @@
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
                 </CheckBox>
-                <CheckBox fx:id="moviesBox" mnemonicParsing="false" text="Movies">
+                <CheckBox fx:id="moviesBox" accessibleText="movies" mnemonicParsing="false" text="Movies">
                     <font>
                         <Font size="20.0" />
                     </font>

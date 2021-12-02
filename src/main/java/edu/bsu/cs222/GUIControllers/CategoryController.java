@@ -66,7 +66,7 @@ public class CategoryController {
         guiCategorySelections.clear();
         for (CheckBox box:checkBoxes) {
             if(box.isSelected()){
-                guiCategorySelections.add(box.getText().toLowerCase(Locale.ROOT));
+                guiCategorySelections.add(box.getAccessibleText());
             }
         }
         checkBoxes.clear();
