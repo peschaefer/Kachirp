@@ -1,5 +1,5 @@
 .root {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #F2F2F2;
 }
 
 .button {
@@ -28,6 +28,14 @@
 
 .check-box {
     -fx-text-fill: #ba0c2f;
+}
+
+.slider .track{
+    -fx-background-color: #ba0c2f;
+}
+
+.slider .thumb{
+    -fx-background-color: #000000;
 }
 
 /*change color of slider*/
