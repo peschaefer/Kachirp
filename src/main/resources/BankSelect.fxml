@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -11,13 +12,22 @@
          <font>
             <Font size="45.0" />
          </font>
+         <VBox.margin>
+            <Insets bottom="15.0" top="15.0" />
+         </VBox.margin>
       </Label>
       <Label text="Please Select Your Question Bank!">
          <font>
             <Font size="22.0" />
          </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
       </Label>
-      <ComboBox fx:id="bankComboBox" onAction="#enableSubmitButton" prefHeight="38.0" prefWidth="251.0" />
+      <ComboBox fx:id="bankComboBox" onAction="#enableSubmitButton" prefHeight="38.0" prefWidth="251.0">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin></ComboBox>
       <Button fx:id="submitButton" disable="true" mnemonicParsing="false" onAction="#chooseBank" text="Submit Bank">
          <font>
             <Font size="15.0" />
@@ -25,6 +35,9 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
       </Button>
    </VBox>
 </AnchorPane>

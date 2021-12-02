@@ -12,6 +12,9 @@
             <font>
                 <Font size="30.0" />
             </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
         </Label>
         <Button fx:id="option2" mnemonicParsing="false" onAction="#setAnswerChoice2" prefHeight="25.0" prefWidth="493.0" text="Button">
   <font>

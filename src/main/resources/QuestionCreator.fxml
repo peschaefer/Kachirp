@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -8,25 +9,67 @@
     <VBox alignment="CENTER" layoutX="88.0" layoutY="96.0" prefHeight="342.0" prefWidth="624.0">
         <HBox>
             <VBox prefWidth="125.0">
-                <Label prefHeight="25.0" text="Question Bank Name:" />
-                <Label prefHeight="25.0" text="Current Question:" />
-                <Label prefHeight="25.0" text="Correct Answer:" />
-                <Label prefHeight="25.0" text="Incorrect Answer:" />
-                <Label prefHeight="25.0" text="Incorrect Answer:" />
-                <Label prefHeight="25.0" text="Incorrect Answer:" />
+                <Label prefHeight="25.0" text="Question Bank Name:">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" top="5.0" />
+               </VBox.margin></Label>
+                <Label prefHeight="25.0" text="Current Question:">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" top="5.0" />
+               </VBox.margin></Label>
+                <Label prefHeight="25.0" text="Correct Answer:">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" top="5.0" />
+               </VBox.margin></Label>
+                <Label prefHeight="25.0" text="Incorrect Answer:">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" top="5.0" />
+               </VBox.margin></Label>
+                <Label prefHeight="25.0" text="Incorrect Answer:">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" top="5.0" />
+               </VBox.margin></Label>
+                <Label prefHeight="25.0" text="Incorrect Answer:">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" top="5.0" />
+               </VBox.margin></Label>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
             </VBox>
             <VBox>
-                <TextField fx:id="questionBankName" onKeyPressed="#enableSaveBankButton" onKeyReleased="#enableSaveBankButton" prefHeight="25.0" prefWidth="400.0" />
-                <TextField fx:id="questionTextField" onKeyPressed="#enableSubmitQuestionButton" prefHeight="25.0" prefWidth="400.0" />
-                <TextField fx:id="correctAnswerField" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
-                <TextField fx:id="incorrectField3" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
-                <TextField fx:id="incorrectField2" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
-                <TextField fx:id="incorrectField1" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0" />
+                <TextField fx:id="questionBankName" onKeyPressed="#enableSaveBankButton" onKeyReleased="#enableSaveBankButton" prefHeight="25.0" prefWidth="400.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="3.0" top="5.0" />
+               </VBox.margin></TextField>
+                <TextField fx:id="questionTextField" onKeyPressed="#enableSubmitQuestionButton" prefHeight="25.0" prefWidth="400.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="3.0" top="5.0" />
+               </VBox.margin></TextField>
+                <TextField fx:id="correctAnswerField" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="3.0" top="5.0" />
+               </VBox.margin></TextField>
+                <TextField fx:id="incorrectField3" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="3.0" top="5.0" />
+               </VBox.margin></TextField>
+                <TextField fx:id="incorrectField2" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="3.0" top="5.0" />
+               </VBox.margin></TextField>
+                <TextField fx:id="incorrectField1" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="3.0" top="5.0" />
+               </VBox.margin></TextField>
             </VBox>
         </HBox>
         <Group>
             <Button fx:id="submitQuestionButton" disable="true" layoutY="-14.0" mnemonicParsing="false" onAction="#addQuestion" prefWidth="140.0" text="Submit Question" />
             <Button fx:id="saveBankButton" disable="true" layoutY="25.0" mnemonicParsing="false" onAction="#submitBank" prefWidth="140.0" text="Save Question Bank" />
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
         </Group>
     </VBox>
 </AnchorPane>
