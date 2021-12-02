@@ -11,6 +11,8 @@ import java.util.ArrayList;
 
 public class CategoryController {
     public DialogPane errorDialogPane;
+    public Button menuButton;
+    public Button playButton;
     TriviaAPIParser parser = new TriviaAPIParser();
     TriviaAPIConnector connector = new TriviaAPIConnector();
     ArrayList<String> guiCategorySelections = new ArrayList<>();
@@ -101,7 +103,21 @@ public class CategoryController {
         ConnectionErrorHandler handler = new ConnectionErrorHandler();
         if(handler.checkForConnectionError()){
             errorDialogPane.setVisible(true);
+            disableButtons();
         }
+    }
+
+    private void disableButtons() {
+        menuButton.setDisable(true);
+        playButton.setDisable(true);
+        questionNumberSlider.setDisable(true);
+        historyBox.setDisable(true);
+        foodAndDrinkBox.setDisable(true);
+        artAndLiteratureBox.setDisable(true);
+        generalKnowledgeBox.setDisable(true);
+        geographyBox.setDisable(true);
+        societyAndCultureBox.setDisable(true);
+        moviesBox.setDisable(true);
     }
 
     public void changeToClosedHandCursor() {

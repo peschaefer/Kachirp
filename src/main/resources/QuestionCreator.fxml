@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.QuestionCreatorController">
+<AnchorPane prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.QuestionCreatorController">
     <VBox alignment="CENTER" layoutX="88.0" layoutY="96.0" prefHeight="342.0" prefWidth="624.0">
         <HBox>
             <VBox prefWidth="125.0">
@@ -65,8 +65,14 @@
             </VBox>
         </HBox>
         <Group>
-            <Button fx:id="submitQuestionButton" disable="true" layoutY="-14.0" mnemonicParsing="false" onAction="#addQuestion" prefWidth="140.0" text="Submit Question" />
-            <Button fx:id="saveBankButton" disable="true" layoutY="25.0" mnemonicParsing="false" onAction="#submitBank" prefWidth="140.0" text="Save Question Bank" />
+            <Button fx:id="submitQuestionButton" disable="true" layoutY="-14.0" mnemonicParsing="false" onAction="#addQuestion" prefWidth="140.0" text="Submit Question">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
+            <Button fx:id="saveBankButton" disable="true" layoutY="25.0" mnemonicParsing="false" onAction="#submitBank" prefWidth="140.0" text="Save Question Bank">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>
