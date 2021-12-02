@@ -3,9 +3,7 @@ package edu.bsu.cs222.GUIControllers;
 import edu.bsu.cs222.Question;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class GameController{
 
@@ -18,6 +16,7 @@ public class GameController{
     public int answerChoice;
     public int currentQuestionIndex = 0;
     public int score = 0;
+    public boolean pointsAllowed;
     public Question question;
     public ArrayList<Question> questionArrayList = new ArrayList<>();
     Main main;
@@ -39,71 +38,77 @@ public class GameController{
         option4.setText(questionArrayList.get(currentQuestionIndex).getAnswers()[3]);
     }
 
-    public void onButtonPress(javafx.event.ActionEvent event) throws InterruptedException {
-        checkAnswer();
-        currentQuestionIndex++;
-        if(currentQuestionIndex == questionArrayList.size()){
-            main.switchToEndScreen(event,score);
-        }
-        else{
-            setQuestionProperties();
+    public void onButtonPress(javafx.event.ActionEvent event){
+        if(checkAnswer()) {
+            currentQuestionIndex++;
+            if (currentQuestionIndex == questionArrayList.size()) {
+                main.switchToEndScreen(event, score);
+            } else {
+                setQuestionProperties();
+            }
         }
     }
 
-    public void checkAnswer() throws InterruptedException {
+    public Boolean checkAnswer(){
         int correctAnswerIndex = questionArrayList.get(currentQuestionIndex).getCorrectAnswerIndex()+1;
         if( correctAnswerIndex == answerChoice){
             answerResponse.setText("Correct!");
+            incrementScore();
+            setCorrectAnswerColorToDefault(correctAnswerIndex);
+            pointsAllowed = true;
+            return true;
+        }
+        else{
+            answerResponse.setText("Incorrect!");
+            changeCorrectAnswerColor(correctAnswerIndex);
+            pointsAllowed = false;
+            return false;
+        }
+    }
+
+    private void incrementScore() {
+        if(pointsAllowed){
             score++;
         }
-        else{
-            changeCorrectAnswerColor(correctAnswerIndex);
-            //Thread.sleep(1000);
-            //setAllOptionsToDefaultColor();
-            answerResponse.setText("Wrong!");
-        }
     }
 
-    public void changeCorrectAnswerColor(int correctAnswerIndex) throws InterruptedException {
+    public void changeCorrectAnswerColor(int correctAnswerIndex) {
         String correctAnswerColor = "-fx-background-color: #45f3d0";
-        if(correctAnswerIndex == 1){
-            option1.setStyle(correctAnswerColor);
+        switch (correctAnswerIndex) {
+            case 1 -> option1.setStyle(correctAnswerColor);
+            case 2 -> option2.setStyle(correctAnswerColor);
+            case 3 -> option3.setStyle(correctAnswerColor);
+            default -> option4.setStyle(correctAnswerColor);
         }
-        else if(correctAnswerIndex == 2){
-            option2.setStyle(correctAnswerColor);
-        }
-        else if (correctAnswerIndex == 3){
-            option3.setStyle(correctAnswerColor);
-        }
-        else{
-            option4.setStyle(correctAnswerColor);
-        }
-        //Thread.sleep(1000);
-        //TimeUnit.SECONDS.sleep(1);
-        //setAllOptionsToDefaultColor();
     }
 
-    public void setAllOptionsToDefaultColor(){
+    public void setCorrectAnswerColorToDefault(int correctAnswerIndex){
         String defaultColor = "-fx-background-color: #ba0c2f";
+        switch (correctAnswerIndex) {
+            case 1 -> option1.setStyle(defaultColor);
+            case 2 -> option2.setStyle(defaultColor);
+            case 3 -> option3.setStyle(defaultColor);
+            default -> option4.setStyle(defaultColor);
+        }
         option1.setStyle(defaultColor);
         option2.setStyle(defaultColor);
         option3.setStyle(defaultColor);
         option4.setStyle(defaultColor);
     }
 
-    public void setAnswerChoice1(javafx.event.ActionEvent event) throws InterruptedException {
+    public void setAnswerChoice1(javafx.event.ActionEvent event){
         answerChoice = 1;
         onButtonPress(event);
     }
-    public void setAnswerChoice2(javafx.event.ActionEvent event) throws InterruptedException {
+    public void setAnswerChoice2(javafx.event.ActionEvent event){
         answerChoice = 2;
         onButtonPress(event);
     }
-    public void setAnswerChoice3(javafx.event.ActionEvent event) throws InterruptedException {
+    public void setAnswerChoice3(javafx.event.ActionEvent event){
         answerChoice = 3;
         onButtonPress(event);
     }
-    public void setAnswerChoice4(javafx.event.ActionEvent event) throws InterruptedException {
+    public void setAnswerChoice4(javafx.event.ActionEvent event){
         answerChoice = 4;
         onButtonPress(event);
     }
