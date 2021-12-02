@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
     <VBox layoutX="162.0" layoutY="60.0">
         <Label prefHeight="132.0" prefWidth="476.0" text="Select Your Categories!">
             <font>
@@ -108,7 +108,10 @@
                 <Label fx:id="questionNumberLabel" text="# Of Questions:">
                <VBox.margin>
                   <Insets top="3.0" />
-               </VBox.margin></Label>
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
             </VBox>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0">

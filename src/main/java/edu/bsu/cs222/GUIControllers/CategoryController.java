@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class CategoryController {
     TriviaAPIParser parser = new TriviaAPIParser();
@@ -27,17 +26,8 @@ public class CategoryController {
     @FXML
     private Label questionNumberLabel;
     @FXML
-    private CheckBox foodAndDrinkBox;
-    @FXML
-    private CheckBox geographyBox;
-    @FXML
-    private CheckBox generalKnowledgeBox;
-    @FXML
-    private CheckBox historyBox;
-    @FXML
-    private CheckBox artAndLiteratureBox;
-    @FXML
-    private CheckBox musicBox,moviesBox,sportsAndLeisureBox,societyAndCultureBox,scienceBox;
+    private CheckBox foodAndDrinkBox,geographyBox,generalKnowledgeBox,historyBox,artAndLiteratureBox
+            ,musicBox,moviesBox,sportsAndLeisureBox,societyAndCultureBox,scienceBox;
 
     public void setMain(Main main){
         this.main = main;
