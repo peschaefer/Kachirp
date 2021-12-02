@@ -1,9 +1,6 @@
 package edu.bsu.cs222.GUIControllers;
 
-import edu.bsu.cs222.Question;
-import edu.bsu.cs222.TriviaAPIConnector;
-import edu.bsu.cs222.TriviaAPIParser;
-import edu.bsu.cs222.URLBuilder;
+import edu.bsu.cs222.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -14,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class CategoryController {
+    public DialogPane errorDialogPane;
     TriviaAPIParser parser = new TriviaAPIParser();
     TriviaAPIConnector connector = new TriviaAPIConnector();
     ArrayList<String> guiCategorySelections = new ArrayList<>();
@@ -88,6 +86,7 @@ public class CategoryController {
     }
 
     public void startGame(ActionEvent event){
+        checkForValidConnection();
         populateCheckboxArrayList();
         ArrayList<String> categoryChoices = populateCategoryArrayList();
         try {
@@ -97,6 +96,13 @@ public class CategoryController {
             ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
             main.switchToQuestionPrompt(event, questionArrayList);
         } catch (Exception ignored){}
+    }
+
+    private void checkForValidConnection() {
+        ConnectionErrorHandler handler = new ConnectionErrorHandler();
+        if(handler.checkForConnectionError()){
+            errorDialogPane.setVisible(true);
+        }
     }
 
     public void changeToClosedHandCursor() {
