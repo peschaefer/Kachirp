@@ -37,3 +37,11 @@
 .slider .thumb{
     -fx-background-color: #000000;
 }
+
+.dialog-pane {
+    -fx-border-color: #ba0c2f;
+    -fx-border-width: 5;
+    -fx-border-radius: 15;
+}
+
+/*change color of slider*/

@@ -139,4 +139,24 @@
             </Button>
         </HBox>
     </VBox>
+   <DialogPane fx:id="errorDialogPane" layoutX="220.0" layoutY="176.0" prefHeight="180.0" prefWidth="360.0" visible="false">
+      <content>
+          <VBox alignment="CENTER" layoutX="180.0" layoutY="90.0" prefHeight="200.0" prefWidth="100.0">
+              <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="90.0" prefWidth="340.0"
+                     text="Uh-oh! This function requires an internet connection." textAlignment="CENTER"
+                     wrapText="true">
+                 <font>
+                     <Font size="20.0"/>
+                 </font>
+              </Label>
+              <Button mnemonicParsing="false" onAction="#returnToMain" text="Return To Main Menu">
+                 <VBox.margin>
+                     <Insets top="5.0"/>
+                 </VBox.margin>
+                 <font>
+                     <Font size="14.0"/>
+                 </font>
+              </Button>
+          </VBox>
+      </content></DialogPane>
 </AnchorPane>

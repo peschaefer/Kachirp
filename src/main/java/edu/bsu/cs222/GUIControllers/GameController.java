@@ -16,10 +16,10 @@ public class GameController{
     public Label answerResponse;
     public int answerChoice;
     public int currentQuestionIndex = 0;
-    public int score = 0;
     public boolean pointsAllowed;
     public Question question;
     public ArrayList<Question> questionArrayList = new ArrayList<>();
+    public boolean[] responseArray;
     Main main;
 
     public void setMain(Main main){
@@ -28,6 +28,7 @@ public class GameController{
 
     public void setQuestionArrayList(ArrayList<Question> questionArrayList){
         this.questionArrayList = questionArrayList;
+         responseArray = new boolean[questionArrayList.size()];
         setQuestionProperties();
     }
 
@@ -43,33 +44,39 @@ public class GameController{
         if(checkAnswer()) {
             currentQuestionIndex++;
             if (currentQuestionIndex == questionArrayList.size()) {
-                main.switchToEndScreen(event, score);
+                main.switchToEndScreen(event, getScore());
             } else {
                 setQuestionProperties();
             }
         }
     }
 
+    private int getScore() {
+        int score = 0;
+        for(boolean correct : responseArray){
+            if(correct){
+                score++;
+            }
+        }
+        return score;
+    }
+
     public Boolean checkAnswer(){
         int correctAnswerIndex = questionArrayList.get(currentQuestionIndex).getCorrectAnswerIndex()+1;
         if( correctAnswerIndex == answerChoice){
             answerResponse.setText("Correct!");
-            incrementScore();
+            responseArray[currentQuestionIndex] = true;
+            //incrementScore();
             setCorrectAnswerColorToDefault(correctAnswerIndex);
             pointsAllowed = true;
             return true;
         }
         else{
             answerResponse.setText("Incorrect!");
+            responseArray[currentQuestionIndex] = false;
             changeCorrectAnswerColor(correctAnswerIndex);
             pointsAllowed = false;
             return false;
-        }
-    }
-
-    private void incrementScore() {
-        if(pointsAllowed){
-            score++;
         }
     }
 
