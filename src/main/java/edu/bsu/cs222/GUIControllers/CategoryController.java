@@ -8,7 +8,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class CategoryController {
     public DialogPane errorDialogPane;
