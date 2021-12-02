@@ -5,7 +5,7 @@
 .button {
     -fx-background-color: #ba0c2f;
     -fx-text-fill: #ffffff;
-    -fx-border-radius: 10px;
+    -fx-background-radius: 15;
 }
 
 .label {
