@@ -6,15 +6,22 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.QuestionCreatorController">
-    <VBox alignment="CENTER" layoutX="88.0" layoutY="96.0" prefHeight="342.0" prefWidth="624.0">
+<AnchorPane prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.QuestionCreatorController">
+    <VBox alignment="CENTER" layoutX="88.0" layoutY="38.0" prefHeight="450.0" prefWidth="624.0">
+      <Label text="Question Creator">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="60.0" />
+         </VBox.margin></Label>
         <HBox>
             <VBox prefWidth="125.0">
                 <Label prefHeight="25.0" text="Question Bank Name:">
                <VBox.margin>
                   <Insets bottom="5.0" left="10.0" top="5.0" />
                </VBox.margin></Label>
-                <Label prefHeight="25.0" text="Current Question:">
+                <Label prefHeight="25.0" text="Question:">
                <VBox.margin>
                   <Insets bottom="5.0" left="10.0" top="5.0" />
                </VBox.margin></Label>
@@ -43,30 +50,30 @@
                <VBox.margin>
                   <Insets bottom="5.0" left="3.0" top="5.0" />
                </VBox.margin></TextField>
-                <TextField fx:id="questionTextField" onKeyPressed="#enableSubmitQuestionButton" prefHeight="25.0" prefWidth="400.0">
+                <TextField fx:id="questionTextField" onKeyPressed="#enableSubmitQuestionButton" onKeyReleased="#enableSubmitQuestionButton" prefHeight="25.0" prefWidth="400.0">
                <VBox.margin>
                   <Insets bottom="5.0" left="3.0" top="5.0" />
                </VBox.margin></TextField>
-                <TextField fx:id="correctAnswerField" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0">
+                <TextField fx:id="correctAnswerField" onKeyPressed="#enableSubmitQuestionButton" onKeyReleased="#enableSubmitQuestionButton" prefWidth="400.0">
                <VBox.margin>
                   <Insets bottom="5.0" left="3.0" top="5.0" />
                </VBox.margin></TextField>
-                <TextField fx:id="incorrectField3" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0">
+                <TextField fx:id="incorrectField3" onKeyPressed="#enableSubmitQuestionButton" onKeyReleased="#enableSubmitQuestionButton" prefWidth="400.0">
                <VBox.margin>
                   <Insets bottom="5.0" left="3.0" top="5.0" />
                </VBox.margin></TextField>
-                <TextField fx:id="incorrectField2" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0">
+                <TextField fx:id="incorrectField2" onKeyPressed="#enableSubmitQuestionButton" onKeyReleased="#enableSubmitQuestionButton" prefWidth="400.0">
                <VBox.margin>
                   <Insets bottom="5.0" left="3.0" top="5.0" />
                </VBox.margin></TextField>
-                <TextField fx:id="incorrectField1" onKeyPressed="#enableSubmitQuestionButton" prefWidth="400.0">
+                <TextField fx:id="incorrectField1" onKeyPressed="#enableSubmitQuestionButton" onKeyReleased="#enableSubmitQuestionButton" prefWidth="400.0">
                <VBox.margin>
                   <Insets bottom="5.0" left="3.0" top="5.0" />
                </VBox.margin></TextField>
             </VBox>
         </HBox>
         <Group>
-            <Button fx:id="submitQuestionButton" disable="true" layoutY="-14.0" mnemonicParsing="false" onAction="#addQuestion" prefWidth="140.0" text="Submit Question">
+            <Button fx:id="submitQuestionButton" disable="true" layoutY="-14.0" mnemonicParsing="false" onAction="#addQuestion" prefWidth="140.0" text="Add Question">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor></Button>
@@ -117,4 +124,12 @@
           </VBox>
       </content>
    </DialogPane>
+   <Button fx:id="returnButton" layoutX="588.0" layoutY="439.0" mnemonicParsing="false" onAction="#returnToMain" text="Return to Main Menu">
+      <font>
+         <Font size="16.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Button>
 </AnchorPane>

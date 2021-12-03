@@ -23,6 +23,7 @@ public class QuestionCreatorController {
     public Button saveBankButton;
     public DialogPane overwriteDialogBox;
     public QuestionBankCreator creator = new QuestionBankCreator();
+    public Button returnButton;
 
     QuestionBankWriter writer = new QuestionBankWriter();
 
@@ -107,5 +108,10 @@ public class QuestionCreatorController {
         incorrectField1.setDisable(value);
         incorrectField2.setDisable(value);
         incorrectField3.setDisable(value);
+        returnButton.setDisable(value);
+    }
+
+    public void returnToMain(ActionEvent event){
+        main.switchToMainMenu(event);
     }
 }

@@ -7,13 +7,14 @@ public class ConnectionErrorHandler {
     public Boolean checkForConnectionError(String triviaData){
         return triviaData.isEmpty();
     }
-    public Boolean checkForConnectionError(){
+
+    public Boolean checkForConnectionError() {
         try {
             URL url = new URL("http://www.google.com");
             URLConnection connection = url.openConnection();
             connection.connect();
             return false;
-        } catch(Exception e){
+        } catch (Exception e) {
             return true;
         }
     }

@@ -6,8 +6,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.BankSelectController">
-   <VBox alignment="CENTER" layoutX="169.0" layoutY="89.0" prefHeight="356.0" prefWidth="462.0">
+<AnchorPane prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.BankSelectController">
+   <VBox alignment="CENTER" layoutX="169.0" layoutY="118.0" prefHeight="356.0" prefWidth="462.0">
       <Label text="Question Bank Selector">
          <font>
             <Font size="45.0" />

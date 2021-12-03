@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
-    <VBox layoutX="162.0" layoutY="60.0">
-        <Label prefHeight="132.0" prefWidth="476.0" text="Select Your Categories!">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
+    <VBox alignment="TOP_CENTER" layoutX="162.0" layoutY="35.0">
+        <Label alignment="CENTER" prefHeight="132.0" prefWidth="476.0" text="Select Your Categories!">
             <font>
                 <Font size="40.0" />
             </font>
         </Label>
         <HBox>
-            <VBox>
+            <VBox alignment="CENTER_LEFT">
                 <CheckBox fx:id="foodAndDrinkBox" accessibleText="food and drink" mnemonicParsing="false" text="Food and Drink">
                     <font>
                         <Font size="20.0" />
@@ -70,14 +70,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </CheckBox>
-                <Slider fx:id="questionNumberSlider" blockIncrement="1.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onMouseDragged="#changeToClosedHandCursor" onMouseExited="#changeToOpenHandCursor" onMousePressed="#changeToClosedHandCursor" onMouseReleased="#onMouseRelease" snapToTicks="true">
-                    <cursor>
-                        <Cursor fx:constant="OPEN_HAND" />
-                    </cursor>
-               <VBox.margin>
-                  <Insets bottom="5.0" top="5.0" />
-               </VBox.margin>
-                </Slider>
+            <HBox.margin>
+               <Insets right="50.0" />
+            </HBox.margin>
             </VBox>
             <VBox>
                 <CheckBox fx:id="scienceBox" accessibleText="science" mnemonicParsing="false" text="Science">
@@ -135,11 +130,28 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </CheckBox>
-                <Label fx:id="questionNumberLabel" text="# Of Questions:">
-               <VBox.margin>
-                  <Insets top="3.0" />
-               </VBox.margin></Label>
             </VBox>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="13.0" prefWidth="486.0">
+            <VBox.margin>
+                <Insets top="15.0"/>
+            </VBox.margin>
+            <Label fx:id="questionNumberLabel" text="# Of Questions:">
+                <HBox.margin>
+                    <Insets right="20.0"/>
+                </HBox.margin>
+            </Label>
+            <Slider fx:id="questionNumberSlider" blockIncrement="1.0" majorTickUnit="1.0" max="20.0" min="1.0"
+                    minorTickCount="1" onMouseDragged="#changeToClosedHandCursor"
+                    onMouseExited="#changeToOpenHandCursor" onMousePressed="#changeToClosedHandCursor"
+                    onMouseReleased="#onMouseRelease" snapToTicks="true">
+                <cursor>
+                    <Cursor fx:constant="OPEN_HAND"/>
+                </cursor>
+                <HBox.margin>
+                    <Insets/>
+                </HBox.margin>
+            </Slider>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0">
             <Button fx:id="playButton" mnemonicParsing="false" onAction="#startGame" text="Play!">
@@ -150,10 +162,10 @@
                     <Cursor fx:constant="HAND" />
                 </cursor>
             <HBox.margin>
-               <Insets top="20.0" />
+               <Insets right="50.0" top="20.0" />
             </HBox.margin>
             </Button>
-            <Button fx:id="menuButton" mnemonicParsing="false" onAction="#returnToMain" text="Return To Main Menu">
+            <Button fx:id="menuButton" alignment="CENTER" mnemonicParsing="false" onAction="#returnToMain" text="Return To Main Menu">
                 <font>
                     <Font size="20.0" />
                 </font>

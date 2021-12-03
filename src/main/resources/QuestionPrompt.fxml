@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="533.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.GameController">
+<AnchorPane prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.GameController">
     <VBox alignment="TOP_CENTER" layoutX="24.0" layoutY="16.0" prefHeight="498.0" prefWidth="736.0" stylesheets="@styles.css">
         <Label fx:id="questionTextLabel" alignment="CENTER" prefHeight="175.0" prefWidth="577.0" text="This is where the question will go? did this work" textAlignment="CENTER" wrapText="true">
             <font>
