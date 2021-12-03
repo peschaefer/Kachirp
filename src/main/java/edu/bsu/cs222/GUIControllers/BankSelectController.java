@@ -41,11 +41,15 @@ public class BankSelectController {
         } catch (Exception ignored){}
     }
 
-    public void enableSubmitButton(ActionEvent event) {
+    public void enableSubmitButton() {
         if(bankComboBox.getValue() == null){
             submitButton.setDisable(true);
             return;
         }
         submitButton.setDisable(false);
+    }
+
+    public void returnToMain(ActionEvent event) {
+        main.switchToMainMenu(event);
     }
 }

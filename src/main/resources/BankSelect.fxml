@@ -7,13 +7,13 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.BankSelectController">
-   <VBox alignment="CENTER" layoutX="169.0" layoutY="118.0" prefHeight="356.0" prefWidth="462.0">
+   <VBox alignment="TOP_CENTER" layoutX="169.0" layoutY="34.0" prefHeight="467.0" prefWidth="462.0">
       <Label text="Question Bank Selector">
          <font>
             <Font size="45.0" />
          </font>
          <VBox.margin>
-            <Insets bottom="15.0" top="15.0" />
+            <Insets bottom="125.0" top="15.0" />
          </VBox.margin>
       </Label>
       <Label text="Please Select Your Question Bank!">
@@ -39,8 +39,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <VBox.margin>
-            <Insets top="10.0" />
+            <Insets top="25.0" />
          </VBox.margin>
       </Button>
    </VBox>
+   <Button layoutX="588.0" layoutY="439.0" mnemonicParsing="false" onAction="#returnToMain" text="Return to Main Menu">
+      <font>
+         <Font size="16.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
 </AnchorPane>
