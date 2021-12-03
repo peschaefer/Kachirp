@@ -16,10 +16,10 @@ public class GameController{
     public Label answerResponse;
     public int answerChoice;
     public int currentQuestionIndex = 0;
-    public boolean pointsAllowed;
+    public boolean pointsAllowed = true;
     public Question question;
     public ArrayList<Question> questionArrayList = new ArrayList<>();
-    public boolean[] responseArray;
+    public int score = 0;
     Main main;
 
     public void setMain(Main main){
@@ -28,7 +28,6 @@ public class GameController{
 
     public void setQuestionArrayList(ArrayList<Question> questionArrayList){
         this.questionArrayList = questionArrayList;
-         responseArray = new boolean[questionArrayList.size()];
         setQuestionProperties();
     }
 
@@ -44,39 +43,33 @@ public class GameController{
         if(checkAnswer()) {
             currentQuestionIndex++;
             if (currentQuestionIndex == questionArrayList.size()) {
-                main.switchToEndScreen(event, getScore());
+                main.switchToEndScreen(event, score);
             } else {
                 setQuestionProperties();
             }
         }
     }
 
-    private int getScore() {
-        int score = 0;
-        for(boolean correct : responseArray){
-            if(correct){
-                score++;
-            }
-        }
-        return score;
-    }
-
     public Boolean checkAnswer(){
         int correctAnswerIndex = questionArrayList.get(currentQuestionIndex).getCorrectAnswerIndex()+1;
         if( correctAnswerIndex == answerChoice){
             answerResponse.setText("Correct!");
-            responseArray[currentQuestionIndex] = true;
-            //incrementScore();
+            incrementScore();
             setCorrectAnswerColorToDefault(correctAnswerIndex);
             pointsAllowed = true;
             return true;
         }
         else{
             answerResponse.setText("Incorrect!");
-            responseArray[currentQuestionIndex] = false;
             changeCorrectAnswerColor(correctAnswerIndex);
             pointsAllowed = false;
             return false;
+        }
+    }
+
+    public void incrementScore(){
+        if (pointsAllowed){
+            score++;
         }
     }
 
@@ -98,10 +91,6 @@ public class GameController{
             case 3 -> option3.setStyle(defaultColor);
             default -> option4.setStyle(defaultColor);
         }
-        option1.setStyle(defaultColor);
-        option2.setStyle(defaultColor);
-        option3.setStyle(defaultColor);
-        option4.setStyle(defaultColor);
     }
 
     public void setAnswerChoice1(javafx.event.ActionEvent event){

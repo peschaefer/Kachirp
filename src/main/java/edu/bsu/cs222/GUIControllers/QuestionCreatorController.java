@@ -1,9 +1,11 @@
 package edu.bsu.cs222.GUIControllers;
 
 import edu.bsu.cs222.Question;
+import edu.bsu.cs222.QuestionBankCreator;
 import edu.bsu.cs222.QuestionBankWriter;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -19,6 +21,8 @@ public class QuestionCreatorController {
     public TextField incorrectField3;
     public Button submitQuestionButton;
     public Button saveBankButton;
+    public DialogPane overwriteDialogBox;
+    public QuestionBankCreator creator = new QuestionBankCreator();
 
     QuestionBankWriter writer = new QuestionBankWriter();
 
@@ -29,10 +33,19 @@ public class QuestionCreatorController {
         this.main = main;
     }
 
-//    public void checkForOverwrite(ActionEvent event) {
-//        System.out.println(creator.bankPresent(questionBankName.getText() + ".json"));
-//    }
+    public boolean checkForOverwrite() {
+        if(creator.bankPresent(questionBankName.getText() + ".json")) {
+            setElementsDisableProperty(true);
+            saveBankButton.setDisable(true);
+            submitQuestionButton.setDisable(true);
+            return true;
+        }
+        return false;
+    }
 
+    public void allowRename(){
+        setElementsDisableProperty(false);
+    }
 
     public void addQuestion() {
         String questionText = questionTextField.getText();
@@ -46,6 +59,14 @@ public class QuestionCreatorController {
     }
 
     public void submitBank(ActionEvent event) throws IOException {
+        if(checkForOverwrite()){
+            return;
+        }
+        writer.writeNewQuestionBank(currentQuestionList,questionBankName.getText() + ".json");
+        main.switchToMainMenu(event);
+    }
+
+    public void submitOverwrittenBank(ActionEvent event) throws IOException {
         writer.writeNewQuestionBank(currentQuestionList,questionBankName.getText() + ".json");
         main.switchToMainMenu(event);
     }
@@ -76,5 +97,15 @@ public class QuestionCreatorController {
             return;
         }
         saveBankButton.setDisable(false);
+    }
+
+    public void setElementsDisableProperty(boolean value){
+        overwriteDialogBox.setVisible(value);
+        questionBankName.setDisable(value);
+        questionTextField.setDisable(value);
+        correctAnswerField.setDisable(value);
+        incorrectField1.setDisable(value);
+        incorrectField2.setDisable(value);
+        incorrectField3.setDisable(value);
     }
 }

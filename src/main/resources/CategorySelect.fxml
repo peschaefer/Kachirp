@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.CategoryController">
     <VBox layoutX="162.0" layoutY="60.0">
         <Label prefHeight="132.0" prefWidth="476.0" text="Select Your Categories!">
             <font>
@@ -22,6 +22,9 @@
                <VBox.margin>
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </CheckBox>
                 <CheckBox fx:id="geographyBox" accessibleText="geography" mnemonicParsing="false" text="Geography">
                     <font>
@@ -30,6 +33,9 @@
                <VBox.margin>
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </CheckBox>
                 <CheckBox fx:id="generalKnowledgeBox" accessibleText="general knowledge" mnemonicParsing="false" text="General Knowledge">
                     <font>
@@ -38,6 +44,9 @@
                <VBox.margin>
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </CheckBox>
                 <CheckBox fx:id="historyBox" accessibleText="history" mnemonicParsing="false" text="History">
                     <font>
@@ -46,6 +55,9 @@
                <VBox.margin>
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </CheckBox>
                 <CheckBox fx:id="artAndLiteratureBox" accessibleText="literature" mnemonicParsing="false" text="Art and Literature">
                     <font>
@@ -54,6 +66,9 @@
                <VBox.margin>
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </CheckBox>
                 <Slider fx:id="questionNumberSlider" blockIncrement="1.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onMouseDragged="#changeToClosedHandCursor" onMouseExited="#changeToOpenHandCursor" onMousePressed="#changeToClosedHandCursor" onMouseReleased="#onMouseRelease" snapToTicks="true">
                     <cursor>
@@ -72,6 +87,9 @@
                <VBox.margin>
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </CheckBox>
                 <CheckBox fx:id="societyAndCultureBox" accessibleText="society and culture" mnemonicParsing="false" text="Society and Culture">
                     <font>
@@ -80,6 +98,9 @@
                <VBox.margin>
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </CheckBox>
                 <CheckBox fx:id="sportsAndLeisureBox" accessibleText="sports and leisure" mnemonicParsing="false" text="Sports and Leisure">
                     <font>
@@ -88,6 +109,9 @@
                <VBox.margin>
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </CheckBox>
                 <CheckBox fx:id="musicBox" accessibleText="music" mnemonicParsing="false" text="Music">
                     <font>
@@ -96,6 +120,9 @@
                <VBox.margin>
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </CheckBox>
                 <CheckBox fx:id="moviesBox" accessibleText="movies" mnemonicParsing="false" text="Movies">
                     <font>
@@ -104,6 +131,9 @@
                <VBox.margin>
                   <Insets bottom="5.0" right="10.0" top="5.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </CheckBox>
                 <Label fx:id="questionNumberLabel" text="# Of Questions:">
                <VBox.margin>
@@ -115,7 +145,7 @@
             </VBox>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0">
-            <Button mnemonicParsing="false" onAction="#startGame" text="Play!">
+            <Button fx:id="playButton" mnemonicParsing="false" onAction="#startGame" text="Play!">
                 <font>
                     <Font size="20.0" />
                 </font>
@@ -126,7 +156,7 @@
                <Insets top="20.0" />
             </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#returnToMain" text="Return To Main Menu">
+            <Button fx:id="menuButton" mnemonicParsing="false" onAction="#returnToMain" text="Return To Main Menu">
                 <font>
                     <Font size="20.0" />
                 </font>
@@ -142,20 +172,21 @@
    <DialogPane fx:id="errorDialogPane" layoutX="220.0" layoutY="176.0" prefHeight="180.0" prefWidth="360.0" visible="false">
       <content>
           <VBox alignment="CENTER" layoutX="180.0" layoutY="90.0" prefHeight="200.0" prefWidth="100.0">
-              <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="90.0" prefWidth="340.0"
-                     text="Uh-oh! This function requires an internet connection." textAlignment="CENTER"
-                     wrapText="true">
+              <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="90.0" prefWidth="340.0" text="Uh-oh! This function requires an internet connection." textAlignment="CENTER" wrapText="true">
                  <font>
-                     <Font size="20.0"/>
+                     <Font size="20.0" />
                  </font>
               </Label>
               <Button mnemonicParsing="false" onAction="#returnToMain" text="Return To Main Menu">
                  <VBox.margin>
-                     <Insets top="5.0"/>
+                     <Insets top="5.0" />
                  </VBox.margin>
                  <font>
-                     <Font size="14.0"/>
+                     <Font size="14.0" />
                  </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
               </Button>
           </VBox>
       </content></DialogPane>

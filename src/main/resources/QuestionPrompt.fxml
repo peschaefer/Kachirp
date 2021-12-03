@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="533.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.GameController">
-    <VBox alignment="TOP_CENTER" layoutX="24.0" layoutY="16.0" prefHeight="464.0" prefWidth="736.0" stylesheets="@styles.css">
-        <Label fx:id="questionTextLabel" alignment="CENTER" prefHeight="102.0" prefWidth="453.0" text="This is where the question will go? did this work" textAlignment="CENTER" wrapText="true">
+<AnchorPane prefHeight="533.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.GUIControllers.GameController">
+    <VBox alignment="TOP_CENTER" layoutX="24.0" layoutY="16.0" prefHeight="498.0" prefWidth="736.0" stylesheets="@styles.css">
+        <Label fx:id="questionTextLabel" alignment="CENTER" prefHeight="175.0" prefWidth="577.0" text="This is where the question will go? did this work" textAlignment="CENTER" wrapText="true">
             <font>
                 <Font size="30.0" />
             </font>
@@ -16,7 +16,7 @@
             <Insets top="5.0" />
          </VBox.margin>
         </Label>
-        <Button fx:id="option2" mnemonicParsing="false" onAction="#setAnswerChoice2" prefHeight="25.0" prefWidth="493.0" text="Button">
+        <Button fx:id="option2" minHeight="44.0" minWidth="493.0" mnemonicParsing="false" onAction="#setAnswerChoice2" text="Button" textAlignment="CENTER" wrapText="true">
   <font>
       <Font size="20.0" />
   </font>
@@ -27,7 +27,7 @@
       <Insets bottom="20.0" />
   </VBox.margin>
         </Button>
-        <Button fx:id="option3" mnemonicParsing="false" onAction="#setAnswerChoice3" prefWidth="493.0" text="Button">
+        <Button fx:id="option3" minHeight="44.0" minWidth="493.0" mnemonicParsing="false" onAction="#setAnswerChoice3" text="Button" textAlignment="CENTER" wrapText="true">
   <font>
       <Font size="20.0" />
   </font>
@@ -38,7 +38,7 @@
       <Insets bottom="20.0" />
   </VBox.margin>
         </Button>
-        <Button fx:id="option4" mnemonicParsing="false" onAction="#setAnswerChoice4" prefHeight="25.0" prefWidth="493.0" text="Button">
+        <Button fx:id="option4" minHeight="44.0" minWidth="493.0" mnemonicParsing="false" onAction="#setAnswerChoice4" text="Button" textAlignment="CENTER" wrapText="true">
   <font>
       <Font size="20.0" />
   </font>
@@ -49,7 +49,7 @@
       <Insets bottom="20.0" />
   </VBox.margin>
         </Button>
-        <Button fx:id="option1" mnemonicParsing="false" onAction="#setAnswerChoice1" prefWidth="493.0" text="Button">
+        <Button fx:id="option1" minHeight="44.0" minWidth="493.0" mnemonicParsing="false" onAction="#setAnswerChoice1" text="Button" textAlignment="CENTER" wrapText="true">
   <font>
       <Font size="20.0" />
   </font>
