@@ -136,12 +136,12 @@
             <VBox.margin>
                 <Insets top="15.0" />
             </VBox.margin>
-            <Label fx:id="questionNumberLabel" text="# Of Questions:">
+            <Label fx:id="questionNumberLabel" text="# Of Questions: 1">
                 <HBox.margin>
                     <Insets right="20.0" />
                 </HBox.margin>
             </Label>
-            <Slider fx:id="questionNumberSlider" blockIncrement="1.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onMouseDragged="#changeToClosedHandCursor" onMouseExited="#changeToOpenHandCursor" onMousePressed="#changeToClosedHandCursor" onMouseReleased="#onMouseRelease" snapToTicks="true">
+            <Slider fx:id="questionNumberSlider" blockIncrement="1.0" majorTickUnit="1.0" max="20.0" min="1.0" minorTickCount="1" onKeyPressed="#setNumberLabel" onKeyReleased="#setNumberLabel" onMouseDragged="#changeToClosedHandCursor" onMouseExited="#changeToOpenHandCursor" onMousePressed="#changeToClosedHandCursor" onMouseReleased="#onMouseRelease" snapToTicks="true">
                 <cursor>
                     <Cursor fx:constant="OPEN_HAND" />
                 </cursor>

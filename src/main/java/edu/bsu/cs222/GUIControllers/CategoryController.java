@@ -20,7 +20,7 @@ public class CategoryController {
     URLBuilder builder = new URLBuilder();
     Main main;
     Scene scene;
-    private int numberOfQuestions;
+    private int numberOfQuestions = 1;
     @FXML
     private Slider questionNumberSlider;
     @FXML
@@ -38,7 +38,7 @@ public class CategoryController {
     }
 
     private void populateCheckboxArrayList(){
-        //Send a GET request to the FXML document for all fxid's (later)
+        //Send a GET request to the FXML document for all fx id's (later)
         checkBoxes.add(foodAndDrinkBox);
         checkBoxes.add(geographyBox);
         checkBoxes.add(generalKnowledgeBox);
