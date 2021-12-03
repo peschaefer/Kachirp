@@ -39,9 +39,16 @@
 }
 
 .dialog-pane {
+    -fx-width: 360;
+    -fx-height: 180;
     -fx-border-color: #ba0c2f;
     -fx-border-width: 5;
     -fx-border-radius: 15;
+}
+
+.dialog-pane .label{
+    -fx-font-size: 20;
+    -fx-alignment: center;
 }
 
 /*change color of slider*/
