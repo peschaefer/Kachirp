@@ -4,7 +4,6 @@ import edu.bsu.cs222.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 import java.util.ArrayList;
@@ -86,10 +85,10 @@ public class CategoryController {
     }
 
     private void checkForValidConnection() {
+        disableButtons();
         ConnectionErrorHandler handler = new ConnectionErrorHandler();
         if(handler.checkForConnectionError()){
             errorDialogPane.setVisible(true);
-            disableButtons();
         }
     }
 
