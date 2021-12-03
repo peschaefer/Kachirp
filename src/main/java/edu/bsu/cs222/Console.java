@@ -99,16 +99,16 @@ public class Console {
         System.out.println("Here are the existing question banks:\n");
         consoleDisplay.printQuestionBanks();
 
-        String[] pathNames = new File("src/main/java/questionBanks").list();
+        String[] pathNames = reader.getQuestionBankList();
 
         assert pathNames != null;
-        String questionBankChoice = userInput.getInput("\nEnter the name of the bank you would like to play with.\n") + ".json";
+        String questionBankChoice = userInput.getInput("\nEnter the name of the bank you would like to play with.\n");
         while(true) {
             if (Arrays.asList(pathNames).contains(questionBankChoice)) {
                 return reader.buildFilePath(questionBankChoice);
             } else {
                 System.err.println("Did you even read the list? Do better.");
-                questionBankChoice = userInput.getInput() + ".json";
+                questionBankChoice = userInput.getInput();
             }
         }
     }

@@ -12,10 +12,17 @@ public class QuestionBankReader {
     }
 
     public String buildFilePath(String questionBankName){
-        return String.format("src/main/java/questionBanks/%s",questionBankName);
+        return String.format("src/main/java/questionBanks/%s.json",questionBankName);
     }
 
     public String[] getQuestionBankList(){
-        return new File("src/main/java/questionBanks").list();
+        String[] questionBankList = new File("src/main/java/questionBanks").list();
+        assert questionBankList != null;
+        int i = 0;
+        for(String bankName : questionBankList){
+            questionBankList[i] = bankName.substring(0,bankName.length()-5);
+            i++;
+        }
+        return questionBankList;
     }
 }
