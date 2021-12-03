@@ -26,17 +26,8 @@ public class CategoryController {
     @FXML
     private Label questionNumberLabel;
     @FXML
-    private CheckBox foodAndDrinkBox;
-    @FXML
-    private CheckBox geographyBox;
-    @FXML
-    private CheckBox generalKnowledgeBox;
-    @FXML
-    private CheckBox historyBox;
-    @FXML
-    private CheckBox artAndLiteratureBox;
-    @FXML
-    private CheckBox musicBox,moviesBox,sportsAndLeisureBox,societyAndCultureBox,scienceBox;
+    private CheckBox foodAndDrinkBox,geographyBox,generalKnowledgeBox,historyBox,artAndLiteratureBox
+            ,musicBox,moviesBox,sportsAndLeisureBox,societyAndCultureBox,scienceBox;
 
     public void setMain(Main main){
         this.main = main;
