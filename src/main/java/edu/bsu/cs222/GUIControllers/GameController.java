@@ -90,10 +90,6 @@ public class GameController{
             case 3 -> option3.setStyle(defaultColor);
             default -> option4.setStyle(defaultColor);
         }
-        option1.setStyle(defaultColor);
-        option2.setStyle(defaultColor);
-        option3.setStyle(defaultColor);
-        option4.setStyle(defaultColor);
     }
 
     public void setAnswerChoice1(javafx.event.ActionEvent event){

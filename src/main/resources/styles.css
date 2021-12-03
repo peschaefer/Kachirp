@@ -1,5 +1,7 @@
 .root {
     -fx-background-color: #F2F2F2;
+    -fx-border-color: #ba0c2f;
+    -fx-border-width: 5;
 }
 
 .button {
