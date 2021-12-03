@@ -106,7 +106,6 @@ public class Main extends Application {
             categoryController.setMain(this);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
-            categoryController.setScene(scene);
             stage.setScene(scene);
             stage.show();
         }

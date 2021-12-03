@@ -19,7 +19,6 @@ public class CategoryController {
     ArrayList<CheckBox> checkBoxes = new ArrayList<>();
     URLBuilder builder = new URLBuilder();
     Main main;
-    Scene scene;
     private int numberOfQuestions = 1;
     @FXML
     private Slider questionNumberSlider;
@@ -31,10 +30,6 @@ public class CategoryController {
 
     public void setMain(Main main){
         this.main = main;
-    }
-
-    public void setScene(Scene scene){
-        this.scene = scene;
     }
 
     private void populateCheckboxArrayList(){
