@@ -82,7 +82,7 @@
    <DialogPane fx:id="overwriteDialogBox" layoutX="220.0" layoutY="176.0" maxHeight="180.0" maxWidth="360.0" minHeight="180.0" minWidth="360.0" prefHeight="180.0" prefWidth="360.0" visible="false">
       <content>
           <VBox prefHeight="200.0" prefWidth="100.0">
-              <Label alignment="CENTER" minHeight="90.0" prefHeight="90.0" prefWidth="340.0" text="This question bank already exists, would you like to overwrite it?" textAlignment="CENTER" wrapText="true">
+              <Label alignment="CENTER" minHeight="90.0" prefHeight="90.0" prefWidth="340.0" text="This question bank already exists. Would you like to overwrite it?" textAlignment="CENTER" wrapText="true">
                  <VBox.margin>
                      <Insets />
                  </VBox.margin>
