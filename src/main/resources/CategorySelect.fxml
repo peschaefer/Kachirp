@@ -146,12 +146,12 @@
                     <Cursor fx:constant="OPEN_HAND" />
                 </cursor>
                 <HBox.margin>
-                    <Insets />
+                    <Insets right="40.0" />
                 </HBox.margin>
             </Slider>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0">
-            <Button fx:id="playButton" mnemonicParsing="false" onAction="#startGame" text="Play!">
+            <Button fx:id="playButton" mnemonicParsing="false" onAction="#startGame" text="       Play!       ">
                 <font>
                     <Font size="20.0" />
                 </font>
@@ -159,7 +159,7 @@
                     <Cursor fx:constant="HAND" />
                 </cursor>
             <HBox.margin>
-               <Insets right="50.0" top="20.0" />
+               <Insets top="20.0" />
             </HBox.margin>
             </Button>
             <Button fx:id="menuButton" alignment="CENTER" mnemonicParsing="false" onAction="#returnToMain" text="Return To Main Menu">
@@ -170,7 +170,7 @@
                     <Cursor fx:constant="HAND" />
                 </cursor>
                 <HBox.margin>
-                    <Insets left="140.0" top="20.0" />
+                    <Insets left="115.0" top="20.0" />
                 </HBox.margin>
             </Button>
         </HBox>

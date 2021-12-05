@@ -54,22 +54,17 @@ public class Console {
             System.err.println("The vanilla game relies on an internet connection, bozo.");
             return;
         }
-
         TriviaAPIParser parser = new TriviaAPIParser();
         int numberOfQuestions = selectNumberOfQuestions();
         consoleDisplay.displayCategoriesMenu();
-
         String urlDestination = urlBuilder.buildURL(userInput.getUserCategoryChoices(), numberOfQuestions);
-        String triviaData = connector.connectToApi(urlDestination);
-
-        if(errorHandler.checkForConnectionError(triviaData)){
+        if(errorHandler.checkForConnectionError()){
             System.err.println("You seem to have lost connection since choosing the vanilla game. Nice job.");
             return;
         }
-
+        String triviaData = connector.connectToApi(urlDestination);
         parser.addQuestions(triviaData);
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
-
         askQuestions(numberOfQuestions,questionArrayList);
     }
 
@@ -85,14 +80,10 @@ public class Console {
 
     public void playCustomGame() throws IOException {
         QuestionBankParser parser = new QuestionBankParser();
-
         String bankFilePath = selectQuestionBank();
-
         parser.addQuestions(reader.readQuestionBank(bankFilePath));
         ArrayList<Question> questionArrayList = parser.getQuestionArrayList();
-
         System.out.println();
-
         askQuestions(parser.getNumberOfQuestions(),questionArrayList);
     }
 

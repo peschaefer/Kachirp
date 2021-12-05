@@ -4,11 +4,8 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class ConnectionErrorHandler {
-    public Boolean checkForConnectionError(String triviaData){
-        return triviaData.isEmpty();
-    }
 
-    public Boolean checkForConnectionError() {
+    public boolean checkForConnectionError() {
         try {
             URL url = new URL("http://www.google.com");
             URLConnection connection = url.openConnection();
