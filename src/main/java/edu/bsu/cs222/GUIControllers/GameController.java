@@ -1,12 +1,11 @@
 package edu.bsu.cs222.GUIControllers;
 
 import edu.bsu.cs222.Question;
-//import edu.bsu.cs222.SoundPlayer;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import java.util.ArrayList;
 
-public class GameController{
+public class GameController extends SubController{
 
     public Label questionTextLabel;
     public Button option1;
@@ -14,17 +13,11 @@ public class GameController{
     public Button option3;
     public Button option4;
     public Label answerResponse;
-    public int answerChoice;
-    public int currentQuestionIndex = 0;
-    public boolean pointsAllowed = true;
-    public Question question;
-    public ArrayList<Question> questionArrayList = new ArrayList<>();
-    public int score = 0;
-    Main main;
-
-    public void setMain(Main main){
-        this.main = main;
-    }
+    private int answerChoice;
+    private int currentQuestionIndex = 0;
+    private boolean pointsAllowed = true;
+    private ArrayList<Question> questionArrayList = new ArrayList<>();
+    private int score = 0;
 
     public void setQuestionArrayList(ArrayList<Question> questionArrayList){
         this.questionArrayList = questionArrayList;

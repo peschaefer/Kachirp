@@ -1,4 +1,7 @@
-package edu.bsu.cs222;
+package edu.bsu.cs222.ConsoleExclusives;
+
+import edu.bsu.cs222.Question;
+import edu.bsu.cs222.QuestionFormatter;
 
 import java.io.File;
 import java.util.Random;

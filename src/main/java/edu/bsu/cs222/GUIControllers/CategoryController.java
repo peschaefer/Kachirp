@@ -2,34 +2,26 @@ package edu.bsu.cs222.GUIControllers;
 
 import edu.bsu.cs222.*;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 
 import java.util.ArrayList;
 
-public class CategoryController {
+public class CategoryController extends SubController{
+
     public DialogPane errorDialogPane;
     public Button menuButton;
     public Button playButton;
-    TriviaAPIParser parser = new TriviaAPIParser();
-    TriviaAPIConnector connector = new TriviaAPIConnector();
-    ArrayList<String> guiCategorySelections = new ArrayList<>();
-    ArrayList<CheckBox> checkBoxes = new ArrayList<>();
-    URLBuilder builder = new URLBuilder();
-    Main main;
-    private int numberOfQuestions = 1;
-    @FXML
-    private Slider questionNumberSlider;
-    @FXML
-    private Label questionNumberLabel;
-    @FXML
-    private CheckBox foodAndDrinkBox,geographyBox,generalKnowledgeBox,historyBox,artAndLiteratureBox
+    public CheckBox foodAndDrinkBox,geographyBox,generalKnowledgeBox,historyBox,artAndLiteratureBox
             ,musicBox,moviesBox,sportsAndLeisureBox,societyAndCultureBox,scienceBox;
-
-    public void setMain(Main main){
-        this.main = main;
-    }
+    public Label questionNumberLabel;
+    public Slider questionNumberSlider;
+    private final TriviaAPIParser parser = new TriviaAPIParser();
+    private final TriviaAPIConnector connector = new TriviaAPIConnector();
+    private final ArrayList<String> guiCategorySelections = new ArrayList<>();
+    private final ArrayList<CheckBox> checkBoxes = new ArrayList<>();
+    private final URLBuilder builder = new URLBuilder();
+    private int numberOfQuestions = 1;
 
     private void populateCheckboxArrayList(){
         checkBoxes.add(foodAndDrinkBox);
@@ -43,7 +35,6 @@ public class CategoryController {
         checkBoxes.add(musicBox);
         checkBoxes.add(moviesBox);
     }
-
 
     public ArrayList<String> populateCategoryArrayList(){
         guiCategorySelections.clear();
@@ -66,9 +57,6 @@ public class CategoryController {
         questionNumberLabel.setText("# Of Questions: " + numberOfQuestions);
     }
 
-    public void returnToMain(ActionEvent event) {
-            main.switchToMainMenu(event);
-    }
 
     public void startGame(ActionEvent event){
         checkForValidConnection();

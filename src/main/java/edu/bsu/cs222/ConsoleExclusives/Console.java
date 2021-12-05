@@ -1,4 +1,6 @@
-package edu.bsu.cs222;
+package edu.bsu.cs222.ConsoleExclusives;
+
+import edu.bsu.cs222.*;
 
 import java.io.IOException;
 import java.util.ArrayList;

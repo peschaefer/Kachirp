@@ -5,19 +5,17 @@ import edu.bsu.cs222.QuestionBankParser;
 import edu.bsu.cs222.QuestionBankReader;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
 import java.util.ArrayList;
 
-public class BankSelectController {
+public class BankSelectController extends SubController{
 
     public Button submitButton;
-    @FXML
-    private ComboBox<String> bankComboBox;
+    public ComboBox<String> bankComboBox;
 
-    Main main;
+
     QuestionBankReader reader = new QuestionBankReader();
     QuestionBankParser parser = new QuestionBankParser();
     String[] questionBanks = reader.getQuestionBankList();
@@ -25,10 +23,6 @@ public class BankSelectController {
 
     public void setBankComboBox(){
         bankComboBox.setItems(FXCollections.observableArrayList(questionBanks));
-    }
-
-    public void setMain(Main main){
-        this.main = main;
     }
 
     public void chooseBank(ActionEvent event){
@@ -47,9 +41,5 @@ public class BankSelectController {
             return;
         }
         submitButton.setDisable(false);
-    }
-
-    public void returnToMain(ActionEvent event) {
-        main.switchToMainMenu(event);
     }
 }

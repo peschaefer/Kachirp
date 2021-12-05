@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class QuestionCreatorController {
+public class QuestionCreatorController extends SubController{
 
     public TextField questionBankName;
     public TextField questionTextField;
@@ -22,17 +22,10 @@ public class QuestionCreatorController {
     public Button submitQuestionButton;
     public Button saveBankButton;
     public DialogPane overwriteDialogBox;
-    public QuestionBankCreator creator = new QuestionBankCreator();
     public Button returnButton;
-
-    QuestionBankWriter writer = new QuestionBankWriter();
-
-    Main main;
-    ArrayList<Question> currentQuestionList= new ArrayList<>();
-
-    public void setMain(Main main) {
-        this.main = main;
-    }
+    private final QuestionBankCreator creator = new QuestionBankCreator();
+    private final QuestionBankWriter writer = new QuestionBankWriter();
+    private final ArrayList<Question> currentQuestionList= new ArrayList<>();
 
     public boolean checkForOverwrite() {
         if(creator.bankPresent(questionBankName.getText() + ".json")) {
@@ -109,9 +102,5 @@ public class QuestionCreatorController {
         incorrectField2.setDisable(value);
         incorrectField3.setDisable(value);
         returnButton.setDisable(value);
-    }
-
-    public void returnToMain(ActionEvent event){
-        main.switchToMainMenu(event);
     }
 }

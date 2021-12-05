@@ -1,5 +1,7 @@
 package edu.bsu.cs222;
 
+import edu.bsu.cs222.ConsoleExclusives.UserInput;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
