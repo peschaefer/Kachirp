@@ -27,18 +27,12 @@ public class QuestionCreatorController extends SubController{
     private final QuestionBankWriter writer = new QuestionBankWriter();
     private final ArrayList<Question> currentQuestionList= new ArrayList<>();
 
-    public boolean checkForOverwrite() {
-        if(creator.bankPresent(questionBankName.getText() + ".json")) {
-            setElementsDisableProperty(true);
-            saveBankButton.setDisable(true);
-            submitQuestionButton.setDisable(true);
-            return true;
+    public void submitBank(ActionEvent event) throws IOException {
+        if(checkForOverwrite()){
+            return;
         }
-        return false;
-    }
-
-    public void allowRename(){
-        setElementsDisableProperty(false);
+        writer.writeNewQuestionBank(currentQuestionList,questionBankName.getText() + ".json");
+        main.switchToMainMenu(event);
     }
 
     public void addQuestion() {
@@ -52,12 +46,18 @@ public class QuestionCreatorController extends SubController{
         enableSaveBankButton();
     }
 
-    public void submitBank(ActionEvent event) throws IOException {
-        if(checkForOverwrite()){
-            return;
+    public boolean checkForOverwrite() {
+        if(creator.bankPresent(questionBankName.getText() + ".json")) {
+            setElementsDisableProperty(true);
+            saveBankButton.setDisable(true);
+            submitQuestionButton.setDisable(true);
+            return true;
         }
-        writer.writeNewQuestionBank(currentQuestionList,questionBankName.getText() + ".json");
-        main.switchToMainMenu(event);
+        return false;
+    }
+
+    public void allowRename(){
+        setElementsDisableProperty(false);
     }
 
     public void submitOverwrittenBank(ActionEvent event) throws IOException {
