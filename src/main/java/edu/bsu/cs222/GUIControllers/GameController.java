@@ -36,7 +36,7 @@ public class GameController extends SubController{
         if(checkAnswer()) {
             currentQuestionIndex++;
             if (currentQuestionIndex == questionArrayList.size()) {
-                main.switchToEndScreen(event, score);
+                main.switchToEndScreen(event, score,questionArrayList.size());
             } else {
                 setQuestionProperties();
             }

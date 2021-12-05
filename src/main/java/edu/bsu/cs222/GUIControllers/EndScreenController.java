@@ -7,8 +7,8 @@ public class EndScreenController extends SubController{
 
     public Label percentCorrectLabel;
 
-    public void setScoreLabel(int score){
-        percentCorrectLabel.setText(String.valueOf(score));
+    public void setScoreLabel(int score,int totalQuestions){
+        percentCorrectLabel.setText(score + " out of " + totalQuestions);
     }
 
 }

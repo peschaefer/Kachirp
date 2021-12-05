@@ -134,7 +134,7 @@ public class Main extends Application {
         stage.show();
     }
 
-    public void switchToEndScreen(ActionEvent event,int score) {
+    public void switchToEndScreen(ActionEvent event,int score,int totalQuestions) {
         try {
             FXMLLoader loader  = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("EndScreen.fxml")));
 
@@ -143,7 +143,7 @@ public class Main extends Application {
             EndScreenController endScreenController = loader.getController();
 
             endScreenController.setMain(this);
-            endScreenController.setScoreLabel(score);
+            endScreenController.setScoreLabel(score,totalQuestions);
         }
         catch (IOException ioException) {
             throw new RuntimeException(ioException);
