@@ -51,8 +51,4 @@ public class UserInput {
         }
         return userCategoryChoices;
     }
-
-    public String[] getCategoryArray() {
-        return categoryArray;
-    }
 }

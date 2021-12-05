@@ -32,7 +32,6 @@ public class CategoryController {
     }
 
     private void populateCheckboxArrayList(){
-        //Send a GET request to the FXML document for all fx id's (later)
         checkBoxes.add(foodAndDrinkBox);
         checkBoxes.add(geographyBox);
         checkBoxes.add(generalKnowledgeBox);
