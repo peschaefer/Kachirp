@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class QuestionFormatterTest {
-    String[] incorrectAnswers = new String[]{"Blue","Blue","Blue"};
+    private final String[] incorrectAnswers = new String[]{"Blue","Blue","Blue"};
     @Test
     public void formatQuestionTest(){
         QuestionFormatter formatter = new QuestionFormatter();

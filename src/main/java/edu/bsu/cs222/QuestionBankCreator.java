@@ -22,7 +22,6 @@ public class QuestionBankCreator {
                 break;
             }
             String correctAnswer = userInput.getInput("Please enter the correct answer");
-            System.out.println("Please enter three incorrect answers separated by commas");
             String[] incorrectAnswersArray = getIncorrectAnswers();
             Question question = new Question(questionText, correctAnswer, incorrectAnswersArray);
             questions.add(question);
@@ -31,6 +30,7 @@ public class QuestionBankCreator {
     }
 
     private String[] getIncorrectAnswers() {
+        System.out.println("Please enter three incorrect answers separated by commas");
         while(true) {
             try {
                 String incorrectAnswersString = userInput.getInput();

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class URLBuilder {
     public String buildURL(ArrayList<String> userCategoryChoices, int numberOfQuestions) {
-
         StringBuilder categoryStringBuilder = new StringBuilder();
 
         for (String category : userCategoryChoices) {

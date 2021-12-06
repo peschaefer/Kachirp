@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class QuestionBankParserTest {
-    InputStream testBankDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("questionBankTest.json");
-    String triviaBankData = JsonPath.read(testBankDataStream,"$..*").toString();
-    QuestionBankParser parser = new QuestionBankParser();
+    private final InputStream testBankDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("questionBankTest.json");
+    private final String triviaBankData = JsonPath.read(testBankDataStream,"$..*").toString();
+    private final QuestionBankParser parser = new QuestionBankParser();
 
     public QuestionBankParserTest() throws IOException {
     }

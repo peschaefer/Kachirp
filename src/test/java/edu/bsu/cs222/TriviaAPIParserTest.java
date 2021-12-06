@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 public class TriviaAPIParserTest {
 
-    InputStream testDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
-    String triviaData = JsonPath.read(testDataStream,"$..*").toString();
-    TriviaAPIParser parser = new TriviaAPIParser();
+    private final InputStream testDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
+    private final String triviaData = JsonPath.read(testDataStream,"$..*").toString();
+    private final TriviaAPIParser parser = new TriviaAPIParser();
 
     public TriviaAPIParserTest() throws IOException {
     }

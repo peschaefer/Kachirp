@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.io.*;
 
 public class QuestionBankReaderTest {
-    QuestionBankReader reader = new QuestionBankReader();
+    private final QuestionBankReader reader = new QuestionBankReader();
 
     @Test
     public void readQuestionBankTest() throws IOException {

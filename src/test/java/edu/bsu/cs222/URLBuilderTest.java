@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class URLBuilderTest {
 
-    ArrayList<String> categories = new ArrayList<>();
+    private final ArrayList<String> categories = new ArrayList<>();
 
     @Test
     public void buildUrlRandomCategoriesTest(){
