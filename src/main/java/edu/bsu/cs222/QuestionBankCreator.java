@@ -14,47 +14,50 @@ public class QuestionBankCreator {
 
     public void createCustomQuestions() throws IOException {
         ArrayList<Question> questions = new ArrayList<>();
+        String questionBankName = getQuestionBankName();
+        questionBankName = checkQuestionBank(questionBankName);
+        while(true){
+            String questionText = userInput.getInput("Please enter your question or nothing to quit");
+            if(questionText.isEmpty() || questionText.equalsIgnoreCase("nothing")){
+                break;
+            }
+            String correctAnswer = userInput.getInput("Please enter the correct answer");
+            System.out.println("Please enter three incorrect answers separated by commas");
+            String[] incorrectAnswersArray = getIncorrectAnswers();
+            Question question = new Question(questionText, correctAnswer, incorrectAnswersArray);
+            questions.add(question);
+        }
+        writer.writeNewQuestionBank(questions, questionBankName);
+    }
+
+    private String[] getIncorrectAnswers() {
+        while(true) {
+            try {
+                String incorrectAnswersString = userInput.getInput();
+                String[] incorrectAnswersArray = incorrectAnswersString.split(",");
+                if(incorrectAnswersArray.length != 3){
+                    throw new Exception();
+                }
+                return incorrectAnswersArray;
+            } catch (Exception e){
+                System.err.println("THREE. Incorrect. Answers. Separated. By. COMMAS.");
+            }
+        }
+    }
+
+    private String getQuestionBankName() {
         String questionBankName = userInput.getInput("What would you like to name this question bank?");
-        //Was primarily going to check and deny atypical ASCII for each user input
-        //but was shortened to string questionBankName due to console input allows accented lettering
         String regex = "^[a-zA-Z0-9]*$";
         while (true){
             if (!questionBankName.matches(regex) || questionBankName.isEmpty()) {
                 System.err.println("The bank's name must be within alphanumerical bounds mate.");
                 questionBankName = userInput.getInput("Try again");
-            } else { break; }
-        }
-
-        questionBankName = checkQuestionBank(questionBankName);
-
-        while(true){
-            String questionText = userInput.getInput("Please enter your question or nothing to quit");
-
-            if(questionText.isEmpty() || questionText.equalsIgnoreCase("nothing")){
+            }
+            else {
                 break;
             }
-
-            String correctAnswer = userInput.getInput("Please enter the correct answer");
-
-            System.out.println("Please enter three incorrect answers separated by commas");
-
-            while(true) {
-                try {
-
-                    String incorrectAnswersString = userInput.getInput();
-                    String[] incorrectAnswersArray = incorrectAnswersString.split(",");
-
-                    Question question = new Question(questionText, correctAnswer, incorrectAnswersArray);
-
-                    questions.add(question);
-
-                    break;
-                } catch (ArrayIndexOutOfBoundsException ignored){
-                    System.err.println("THREE. Incorrect. Answers. Separated. By. COMMAS.");
-                }
-            }
         }
-        writer.writeNewQuestionBank(questions, questionBankName);
+        return questionBankName;
     }
 
     private String checkQuestionBank(String questionBankChoice) {

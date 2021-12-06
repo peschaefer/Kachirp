@@ -3,13 +3,16 @@ package edu.bsu.cs222;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 public class QuestionTest {
-    String[] incorrectAnswers = new String[]{"Red","Green","Blue"};
-    String[] testAnswers = new String []{"Will","Peyton","Dawson","Will II"};
+    String[] incorrectAnswers = new String[]{"Red","Green","Purple"};
+
     @Test
     public void correctAnswerResponseTest() {
         Question testQuestion = new Question("What is the color of the sky?", "Blue", incorrectAnswers);
         int index = testQuestion.getCorrectAnswerIndex();
+        System.out.println(Arrays.toString(testQuestion.getAnswers()));
         Assertions.assertEquals("Blue", testQuestion.getAnswers()[index]);
     }
 
