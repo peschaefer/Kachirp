@@ -5,7 +5,6 @@ import edu.bsu.cs222.Question;
 import edu.bsu.cs222.QuestionFormatter;
 
 import java.io.File;
-import java.util.Random;
 
 public class ConsoleDisplay {
 
