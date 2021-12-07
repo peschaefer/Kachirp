@@ -1,5 +1,6 @@
 package edu.bsu.cs222.ConsoleExclusives;
 
+import edu.bsu.cs222.IncorrectMessageGetter;
 import edu.bsu.cs222.Question;
 import edu.bsu.cs222.QuestionFormatter;
 
@@ -54,16 +55,9 @@ public class ConsoleDisplay {
     }
 
     public void displayIncorrectAnswerMessage(Question currentQuestion) {
-        String[] incorrectAnswerResponses = new String[]{
-        "You are a failure, you should feel bad.",
-        "You're joking right?",
-        "We're all laughing at you by the way.",
-        "Should we give you an easier question next time?",
-        "Trivia isn't for everybody.",
-        "Disappointing.",
-        "Maybe think next time before choosing an answer.",};
-        Random random = new Random();
-        System.err.println("\n" + incorrectAnswerResponses[random.nextInt(incorrectAnswerResponses.length)]);
+        IncorrectMessageGetter getter = new IncorrectMessageGetter();
+        String response = getter.getIncorrectAnswerMessage();
+        System.err.println("\n" + response);
         System.out.printf("The answer was: %s\n\n",currentQuestion.getCorrectAnswer());
 
     }
