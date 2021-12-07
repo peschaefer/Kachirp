@@ -1,8 +1,6 @@
 package edu.bsu.cs222.ConsoleExclusives;
 
-import edu.bsu.cs222.IncorrectMessageGetter;
-import edu.bsu.cs222.Question;
-import edu.bsu.cs222.QuestionFormatter;
+import edu.bsu.cs222.*;
 
 import java.io.File;
 
@@ -44,12 +42,12 @@ public class ConsoleDisplay {
         (Selecting no categories will provide a random question bank)
         """);
     }
+
     public void printQuestionBanks() {
-        File testFile = new File("src/main/java/questionBanks");
-        String[] pathNames = testFile.list();
-        assert pathNames != null;
-        for(String path : pathNames){
-            System.out.println(path.substring(0,path.length()-5));
+        QuestionBankReader reader = new QuestionBankReader();
+        String[] bankList = reader.getQuestionBankList();
+        for(String bankName : bankList){
+            System.out.println(bankName);
         }
     }
 
