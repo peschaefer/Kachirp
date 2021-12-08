@@ -1,5 +1,6 @@
 package edu.bsu.cs222.GUIControllers;
 
+import edu.bsu.cs222.IncorrectMessageGetter;
 import edu.bsu.cs222.Question;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,9 +16,10 @@ public class GameController extends SubController{
     public Label answerResponse;
     private int answerChoice;
     private int currentQuestionIndex = 0;
+    private int score = 0;
     private boolean pointsAllowed = true;
     private ArrayList<Question> questionArrayList = new ArrayList<>();
-    private int score = 0;
+    private final IncorrectMessageGetter getter = new IncorrectMessageGetter();
 
     public void setQuestionArrayList(ArrayList<Question> questionArrayList){
         this.questionArrayList = questionArrayList;
@@ -46,14 +48,16 @@ public class GameController extends SubController{
     public Boolean checkAnswer(){
         int correctAnswerIndex = questionArrayList.get(currentQuestionIndex).getCorrectAnswerIndex()+1;
         if( correctAnswerIndex == answerChoice){
-            answerResponse.setText("Correct!");
+            answerResponse.setText("");
             incrementScore();
             setCorrectAnswerColorToDefault(correctAnswerIndex);
             pointsAllowed = true;
             return true;
         }
         else{
-            answerResponse.setText("Incorrect!");
+            if(pointsAllowed) {
+                answerResponse.setText(getter.getIncorrectAnswerMessage() + "\nClick the blue one.");
+            }
             changeCorrectAnswerColor(correctAnswerIndex);
             pointsAllowed = false;
             return false;

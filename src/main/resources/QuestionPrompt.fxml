@@ -57,10 +57,10 @@
       <Cursor fx:constant="HAND" />
   </cursor>
   <VBox.margin>
-      <Insets bottom="20.0" />
+      <Insets bottom="15.0" />
   </VBox.margin>
         </Button>
-        <Label fx:id="answerResponse" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="127.0" textAlignment="CENTER">
+        <Label fx:id="answerResponse" alignment="CENTER" contentDisplay="CENTER" prefHeight="65.0" prefWidth="405.0" textAlignment="CENTER" wrapText="true">
      <font>
          <Font size="18.0" />
      </font>
