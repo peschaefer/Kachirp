@@ -23,7 +23,7 @@ public class CategoryController extends SubController{
     private final URLBuilder builder = new URLBuilder();
     private int numberOfQuestions = 1;
 
-    private void populateCheckboxArrayList(){
+    protected void populateCheckboxArrayList(){
         checkBoxes.add(foodAndDrinkBox);
         checkBoxes.add(geographyBox);
         checkBoxes.add(generalKnowledgeBox);
@@ -36,7 +36,7 @@ public class CategoryController extends SubController{
         checkBoxes.add(moviesBox);
     }
 
-    public ArrayList<String> populateCategoryArrayList(){
+    private ArrayList<String> populateCategoryArrayList(){
         guiCategorySelections.clear();
         for (CheckBox box:checkBoxes) {
             if(box.isSelected()){
@@ -60,7 +60,6 @@ public class CategoryController extends SubController{
 
     public void startGame(ActionEvent event){
         checkForValidConnection();
-        populateCheckboxArrayList();
         ArrayList<String> categoryChoices = populateCategoryArrayList();
         try {
             String url = builder.buildURL(categoryChoices, numberOfQuestions);

@@ -102,6 +102,7 @@ public class Main extends Application {
             root = loader.load();
 
             CategoryController categoryController = loader.getController();
+            categoryController.populateCheckboxArrayList();
 
             categoryController.setMain(this);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
