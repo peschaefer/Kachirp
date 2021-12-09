@@ -1,0 +1,81 @@
+[ {
+  "questionText" : "What is Santa Claus' name in Italy?",
+  "answers" : [ "Pisa Pizza", "Babbo Natale", "Kanakaloka", "Pasta Fagioli" ],
+  "correctAnswerIndex" : 1,
+  "correctAnswer" : "Babbo Natale"
+}, {
+  "questionText" : "Which popular Christmas beverage is also called milk punch?",
+  "answers" : [ "Eggnog", "Chocolate Milk", "Milk Steak", "Ovaltine" ],
+  "correctAnswerIndex" : 0,
+  "correctAnswer" : "Eggnog"
+}, {
+  "questionText" : "How many ghosts show up in A Christmas Carol?",
+  "answers" : [ "2", "4", "5", "3" ],
+  "correctAnswerIndex" : 1,
+  "correctAnswer" : "4"
+}, {
+  "questionText" : "The movie \"Miracle on 34th Street\" is based on a real-life department store. What is it?",
+  "answers" : [ "JCPenney", "Sears", "Macy's", "Kohl's" ],
+  "correctAnswerIndex" : 2,
+  "correctAnswer" : "Macy's"
+}, {
+  "questionText" : "Elvis isn't going to have a white Christmas he's going to have a what?",
+  "answers" : [ "Peanut Butter and Banana Sandwich", "Blue Christmas", "Rock 'n Roll Christmas", "Yellow Christmas" ],
+  "correctAnswerIndex" : 1,
+  "correctAnswer" : "Blue Christmas"
+}, {
+  "questionText" : "How long is the pole that the singer would not touch the Grinch with?",
+  "answers" : [ "49.5 Feet", "29.5 Feet", "39.5 Feet", "19.5 Feet" ],
+  "correctAnswerIndex" : 2,
+  "correctAnswer" : "39.5 Feet"
+}, {
+  "questionText" : "Which country does Eggnog come from?",
+  "answers" : [ "France", "Germany", "England", "Norway" ],
+  "correctAnswerIndex" : 2,
+  "correctAnswer" : "England"
+}, {
+  "questionText" : "What is the first reindeer's name in \"Rudolph the Red-nosed Reindeer\"?",
+  "answers" : [ "Prancer", "Dancer", "Donner", "Dasher" ],
+  "correctAnswerIndex" : 3,
+  "correctAnswer" : "Dasher"
+}, {
+  "questionText" : "Which holiday is often referred to as the Festival of Lights?",
+  "answers" : [ "Kwanzaa", "Hanukkah", "Christmas", "Winter Solstice" ],
+  "correctAnswerIndex" : 1,
+  "correctAnswer" : "Hanukkah"
+}, {
+  "questionText" : "How many days is Hanukkah celebrated?",
+  "answers" : [ "Ten", "Six", "Eight", "Seven" ],
+  "correctAnswerIndex" : 2,
+  "correctAnswer" : "Eight"
+}, {
+  "questionText" : "What does Hanukkah mean when translated from Hebrew?",
+  "answers" : [ "Dedication", "Forgiving", "Family", "Giving" ],
+  "correctAnswerIndex" : 0,
+  "correctAnswer" : "Dedication"
+}, {
+  "questionText" : "What is Shamash?",
+  "answers" : [ "A typical Hanukkah dish", "The first candle on the menorah", "The final day of Hanukkah", "Home of the first Hanukkah celebration" ],
+  "correctAnswerIndex" : 1,
+  "correctAnswer" : "The first candle on the menorah"
+}, {
+  "questionText" : "How many years old is Kwanzaa?",
+  "answers" : [ "1000", "50", "300", "200" ],
+  "correctAnswerIndex" : 1,
+  "correctAnswer" : "50"
+}, {
+  "questionText" : "Which continent is most notable for celebrating Kwanzaa?",
+  "answers" : [ "Africa", "Asia", "South America", "Europe" ],
+  "correctAnswerIndex" : 0,
+  "correctAnswer" : "Africa"
+}, {
+  "questionText" : "Which colors are often used to represent Kwanzaa?",
+  "answers" : [ "Brown, White, and Blue", "Red, Black, and Green", "Green, Purple, and Black", "Orange, Red, and Yellow" ],
+  "correctAnswerIndex" : 1,
+  "correctAnswer" : "Red, Black, and Green"
+}, {
+  "questionText" : "Which number holds significance in Kwanzaa traditions?",
+  "answers" : [ "13", "3", "9", "7" ],
+  "correctAnswerIndex" : 3,
+  "correctAnswer" : "7"
+} ]
