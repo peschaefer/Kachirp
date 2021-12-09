@@ -2,10 +2,9 @@ Kachirp
 
 Kachirp is a jokingly passive agressive trivia game that pulls data from https://trivia.willfry.co.uk
 
-To run this program, run the main method and choose which option you would like to pursue. The two gamemodes include vanilla and custom. The vanilla game pulls from the API menitoned above and allows the user to specify number of questions as well as categories.  The custom game pulls data from the questionBanks directory.  To upload your own question banks, select option 3 and follow the instructions.  This bank is saved as a JSON file in the questionBanks directory
+To use this program, run it through the gradle sidebar under the "application" menu. Once running, select vanilla game to play with random questions from chosen categories. Select create custom question bank to create your own set of questions. Select custom game to play a game of trivia with a user created custom question bank. To exit, simply hit the exit button in the top right corner of the window.
 
 Warnings:
-
 When running tests individually, some print the following in the console:
 org.junit.platform.launcher.core.EngineDiscoveryOrchestrator lambda$logTestDescriptorExclusionReasons$7
 INFO: 0 containers and 7 tests were Method or class mismatch
