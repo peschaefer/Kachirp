@@ -1,6 +1,0 @@
-[ {
-  "questionText" : "What is 9+10?",
-  "answers" : [ "19", "20", "21", "22" ],
-  "correctAnswerIndex" : 2,
-  "correctAnswer" : "21"
-} ]
