@@ -2,8 +2,6 @@ package edu.bsu.cs222.ConsoleExclusives;
 
 import edu.bsu.cs222.*;
 
-import java.io.File;
-
 public class ConsoleDisplay {
 
     public void displayMainMenu(){

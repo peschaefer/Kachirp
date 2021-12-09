@@ -16,6 +16,6 @@ public class QuestionFormatterTest {
                 3. Blue
                 4. Blue
                 """,formatter.formatQuestion(testQuestion));
-        //testQuestion has all the same answers since the Question constructor randomizes the order of the answers.
+        //testQuestion has all the same answers because the Question constructor randomizes the order of the answers.
     }
 }

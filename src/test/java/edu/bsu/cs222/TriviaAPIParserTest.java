@@ -82,6 +82,6 @@ public class TriviaAPIParserTest {
     }
 
     //addQuestionsTest1 and addQuestionTest2 are written this way because the order of the questions is randomized.
-    //This means, all places need to be checked before we can determine if it failed
+    //This means, all indexes need to be checked before we can determine if it failed
 
 }
